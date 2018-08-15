@@ -128,7 +128,7 @@
     </dependencies>
     <modules>
         <module>cms-common</module>
-        <module>cms-mybatis</module>
+        <module>cms-dao</module>
         <module>cms-webapps</module>
         <module>cms-api</module>
     </modules>

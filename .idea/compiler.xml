@@ -8,7 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="cms-api" />
         <module name="cms-common" />
-        <module name="cms-mybatis" />
+        <module name="cms-dao" />
         <module name="cms-webapps" />
       </profile>
     </annotationProcessing>
