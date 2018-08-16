@@ -3,11 +3,11 @@
  * @File: ApiConstant.java
  * @Description:
  * @Author: sunys
- * @Date: 18-8-16 上午12:35
+ * @Date: 18-8-17 上午3:53
  * @since:
  */
 
-package com.syshlang.api;
+package com.syshlang.api.common;
 
 import com.syshlang.common.base.BaseConstants;
 

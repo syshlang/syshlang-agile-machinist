@@ -9,48 +9,67 @@
 
 package com.syshlang.common.base;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+
 /**
  * 统一返回结果类
  * @author sunys
  */
-public class BaseResult {
 
+@XmlRootElement
+public class BaseResult <T> implements Serializable {
+    private static final long serialVersionUID = 293025560562946952L;
 
-    /**
-     * 状态码：1001 成功，其他为失败
-     */
-    public String code;
+    private Integer code;
 
-    /**
-     * 成功为success，其他为失败原因
-     */
-    public String message;
+    private String desc;
 
-    /**
-     * 数据结果集
-     */
     public Object data;
 
-    public BaseResult(String code, String message, Object data) {
+    public BaseResult(){}
+
+
+    public BaseResult(Integer code,String desc){
         this.code = code;
-        this.message = message;
+        this.desc = desc;
+    }
+
+    public BaseResult(Integer code, String desc, Object data) {
+        this.code = code;
+        this.desc = desc;
         this.data = data;
     }
 
-    public String getCode() {
+    public BaseResult(BaseResultCode c){
+        this.code = c.getCode();
+        this.desc = c.getDesc();
+    }
+
+    public BaseResult(Exception e) {
+        this.desc = e.getMessage();
+        this.code = BaseResultCode.EXCEPTION.getCode();
+    }
+
+    public BaseResult(String errorMsg) {
+        this.desc = errorMsg;
+        this.code = BaseResultCode.EXCEPTION.getCode();
+    }
+
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
-    public String getMessage() {
-        return message;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public Object getData() {

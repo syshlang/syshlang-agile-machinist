@@ -3,11 +3,11 @@
  * @File: ApiResultConstant.java
  * @Description:
  * @Author: sunys
- * @Date: 18-8-16 上午12:44
+ * @Date: 18-8-17 上午3:53
  * @since:
  */
 
-package com.syshlang.api;
+package com.syshlang.api.common;
 
 /**
  * api系统接口结果常量枚举类
@@ -18,16 +18,16 @@ public enum ApiResultConstant {
     /**
      * 成功
      */
-    SUCCESS("1001", "success");
+    SUCCESS(1001, "success");
 
-    private String code;
+    private Integer code;
     private String message;
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
@@ -39,7 +39,7 @@ public enum ApiResultConstant {
         this.message = message;
     }
 
-    ApiResultConstant(String code, String message) {
+    ApiResultConstant(Integer code, String message) {
         this.code = code;
         this.message = message;
     }

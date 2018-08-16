@@ -13,16 +13,20 @@
     <artifactId>cms-api</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>cms-api</name>
+    <packaging>pom</packaging>
+    <url>http://maven.apache.org</url>
+
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <modules>
+        <module>cms-api-common</module>
+        <module>cms-api-service</module>
+    </modules>
     <dependencies>
-        <dependency>
-            <groupId>com.syshlang</groupId>
-            <artifactId>cms-common</artifactId>
-        </dependency>
+
     </dependencies>
 
 </project>

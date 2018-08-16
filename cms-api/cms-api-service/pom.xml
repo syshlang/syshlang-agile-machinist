@@ -4,15 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>syshlang-agile-cms</artifactId>
+        <artifactId>cms-api</artifactId>
         <groupId>com.syshlang</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <groupId>com.syshlang</groupId>
-    <artifactId>cms-common</artifactId>
+    <artifactId>cms-api-service</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>cms-common</name>
+    <name>cms-api-service</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,9 +20,17 @@
 
     <dependencies>
         <dependency>
-            <groupId>javax.persistence</groupId>
-            <artifactId>persistence-api</artifactId>
-            <version>1.0</version>
+            <groupId>com.syshlang</groupId>
+            <artifactId>cms-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.syshlang</groupId>
+            <artifactId>cms-api-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+
+
 </project>
