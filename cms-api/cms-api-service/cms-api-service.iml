@@ -12,5 +12,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="cms-common" />
     <orderEntry type="module" module-name="cms-api-common" />
+    <orderEntry type="library" name="Maven: tk.mybatis:mapper:3.3.6" level="project" />
   </component>
 </module>

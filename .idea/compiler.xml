@@ -14,7 +14,7 @@
         <module name="cms-webapps" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="7">
       <module name="cms-api-service" target="1.5" />
     </bytecodeTargetLevel>
   </component>
