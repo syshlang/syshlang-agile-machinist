@@ -1,5 +1,7 @@
 <html>
 <body>
-<h2>Hello World1!</h2>
+<script>
+    window.location.href="/module/login/index.html";
+</script>
 </body>
 </html>
