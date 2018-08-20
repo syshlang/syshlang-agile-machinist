@@ -27,7 +27,7 @@
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
-      classpath*:META-INF/spring/applicationContext-service.xml,classpath:META-INF/spring/mybatis*.xml
+      classpath*:META-INF/spring/*.xml,
     </param-value>
   </context-param>
 
@@ -50,6 +50,11 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>springMVC</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <!--
+  <servlet-mapping>
+    <servlet-name>springMVC</servlet-name>
     <url-pattern>*.html</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
@@ -64,7 +69,7 @@
   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>resources/*</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping>-->
 
   <!-- session配置 -->
   <session-config>
