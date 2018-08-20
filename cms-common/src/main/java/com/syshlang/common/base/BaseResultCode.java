@@ -27,7 +27,9 @@ public enum BaseResultCode {
 
     NONEAUTH(50001,"该用户未授权或授权过期"),
 
-    NOLOGINSTATUS(60001,"用户未登录");
+    NOLOGINSTATUS(60001,"用户未登录"),
+
+    LOGINFAILURE(20005,"登录失败");
 
     private Integer code;
 

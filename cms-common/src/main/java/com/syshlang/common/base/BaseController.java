@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author sunys
  */
 public abstract class BaseController {
-    private final static Logger LOGGER = LoggerFactory.getLogger(BaseController.class);
+    protected final static Logger LOGGER = LoggerFactory.getLogger(BaseController.class);
 
     @ExceptionHandler
     public String exceptionHandler(HttpServletRequest request, HttpServletResponse response, Exception exception){
