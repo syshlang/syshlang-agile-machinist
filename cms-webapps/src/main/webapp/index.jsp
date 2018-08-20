@@ -1,7 +1,7 @@
 <html>
 <body>
 <script>
-    window.location.href="/module/login/index.html";
+    window.location.href="/user/login/index.html";
 </script>
 </body>
 </html>
