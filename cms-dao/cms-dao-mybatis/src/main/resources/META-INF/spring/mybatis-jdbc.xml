@@ -71,7 +71,7 @@
 
     <!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->
     <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="**.mapper"/>
+        <property name="basePackage" value="com.syshlang.mapper"/>
         <!-- 通用Mapper通过属性注入进行配置，默认不配置时会注册Mapper<T>接口-->
         <!-- <property name="properties">
              <value>
