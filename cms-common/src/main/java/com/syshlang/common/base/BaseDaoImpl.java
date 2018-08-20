@@ -10,13 +10,12 @@
 package com.syshlang.common.base;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import tk.mybatis.mapper.entity.Example;
 
 import java.io.Serializable;
 import java.util.List;
 
 
-public class BaseDaoImpl<M extends BaseMapper, B extends BaseModel, PK extends Serializable> implements BaseDao<B, PK>{
+public abstract class BaseDaoImpl<M extends BaseMapper, B extends BaseModel, PK extends Serializable> implements BaseDao<B, PK>{
 
     @Autowired
     private M baseMapper;
