@@ -3,11 +3,11 @@
  * @File: UserController.java
  * @Description:
  * @Author: sunys
- * @Date: 18-8-21 上午12:24
+ * @Date: 18-8-21 上午1:49
  * @since:
  */
 
-package com.syshlang.controller.user;
+package com.syshlang.module.user;
 
 import com.syshlang.common.base.BaseController;
 import com.syshlang.common.base.BaseResult;
@@ -31,6 +31,7 @@ public class UserController extends BaseController {
 	
 	@RequestMapping("index.html")
 	public String index(HttpServletRequest request){
+		System.out.println("/user/login/index.html");
 		return "login/index";
 	}
 	
