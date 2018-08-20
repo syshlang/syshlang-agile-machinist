@@ -65,6 +65,12 @@
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
+            <dependency>
+                <groupId>com.syshlang</groupId>
+                <artifactId>cms-module</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
