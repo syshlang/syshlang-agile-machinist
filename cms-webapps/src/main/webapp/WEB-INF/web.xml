@@ -48,11 +48,10 @@
     <load-on-startup>1</load-on-startup>
     <async-supported>true</async-supported>
   </servlet>
-  <servlet-mapping>
+ <!-- <servlet-mapping>
     <servlet-name>springMVC</servlet-name>
     <url-pattern>/</url-pattern>
-  </servlet-mapping>
-  <!--
+  </servlet-mapping>-->
   <servlet-mapping>
     <servlet-name>springMVC</servlet-name>
     <url-pattern>*.html</url-pattern>
@@ -69,7 +68,7 @@
   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>resources/*</url-pattern>
-  </servlet-mapping>-->
+  </servlet-mapping>
 
   <!-- session配置 -->
   <session-config>
