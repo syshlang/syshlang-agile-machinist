@@ -26,14 +26,22 @@ import javax.servlet.http.HttpSession;
  * @author sunys
  */
 @Controller
-@RequestMapping("user/login")
+@RequestMapping("module/user")
 public class UserController extends BaseController {
-	
-	@RequestMapping("index.html")
-	public String index(HttpServletRequest request){
-		System.out.println("/user/login/index.html");
-		return "login/index";
-	}
+
+    @RequestMapping("login")
+    public String index(@RequestParam("username") String username,
+                        @RequestParam("password") String password){
+        System.out.println("username:"+username);
+        System.out.println("password:"+password);
+        return "redirect:/list.jsp";
+    }
+
+    @RequestMapping("index.html")
+    public String index(HttpServletRequest request){
+        return "login/index";
+    }
+
 	
 	@RequestMapping(value="login.json",method = RequestMethod.POST)
 	@ResponseBody
