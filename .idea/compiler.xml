@@ -10,12 +10,11 @@
         <module name="cms-api-service" />
         <module name="cms-common" />
         <module name="cms-dao-mybatis" />
+        <module name="cms-module" />
         <module name="cms-service" />
         <module name="cms-webapps" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="7">
-      <module name="cms-api-service" target="1.5" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="7" />
   </component>
 </project>
