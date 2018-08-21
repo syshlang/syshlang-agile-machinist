@@ -10,7 +10,7 @@
 	
 	<h4>Login Page</h4>
 	
-	<form action="user/login" method="POST">
+	<form action="module/user/login" method="POST">
 		username: <input type="text" name="username"/>
 		<br><br>
 		

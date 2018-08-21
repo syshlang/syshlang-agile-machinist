@@ -2,7 +2,7 @@
 <body>
 <script>
 
-    window.location.href="user/index.html";
+    window.location.href="module/user/index.html";
 
 </script>
 </body>

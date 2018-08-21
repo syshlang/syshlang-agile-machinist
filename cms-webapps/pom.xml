@@ -25,6 +25,10 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.syshlang</groupId>
+            <artifactId>cms-module</artifactId>
+        </dependency>
         <!-- jetty -->
         <dependency>
             <groupId>org.eclipse.jetty.aggregate</groupId>
@@ -37,12 +41,6 @@
             <artifactId>jetty-jsp</artifactId>
             <version>${jetty.version}</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -96,7 +94,7 @@
                     <stopKey>foo</stopKey>
                     <stopPort>8889</stopPort>
                     <webAppConfig>
-                        <contextPath>/${project.artifactId}</contextPath>
+                        <contextPath>/</contextPath>
                         <defaultsDescriptor></defaultsDescriptor>
                     </webAppConfig>
                 </configuration>
