@@ -20,13 +20,16 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.syshlang</groupId>
+            <artifactId>cms-common</artifactId>
+        </dependency>
+    </dependencies>
 
     <modules>
         <module>cms-api-common</module>
         <module>cms-api-service</module>
     </modules>
-    <dependencies>
-
-    </dependencies>
 
 </project>

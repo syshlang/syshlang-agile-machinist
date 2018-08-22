@@ -29,6 +29,16 @@
             <groupId>com.syshlang</groupId>
             <artifactId>cms-module</artifactId>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.2</version>
+        </dependency>
         <!-- jetty -->
         <dependency>
             <groupId>org.eclipse.jetty.aggregate</groupId>
