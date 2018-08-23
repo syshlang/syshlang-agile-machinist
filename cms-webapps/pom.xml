@@ -40,7 +40,7 @@
             <version>2.2</version>
         </dependency>
         <!-- jetty -->
-        <dependency>
+       <!-- <dependency>
             <groupId>org.eclipse.jetty.aggregate</groupId>
             <artifactId>jetty-webapp</artifactId>
             <version>${jetty.version}</version>
@@ -51,12 +51,12 @@
             <artifactId>jetty-jsp</artifactId>
             <version>${jetty.version}</version>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>
         <finalName>cms</finalName>
-        <plugins>
+        <!--<plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -72,9 +72,9 @@
                 <version>2.5</version>
                 <configuration>
                     <warName>cms</warName>
-                    <!--将类文件打成jar包 -->
+                    &lt;!&ndash;将类文件打成jar包 &ndash;&gt;
                     <archiveClasses>true</archiveClasses>
-                    <!--将资源文件打到classes目录下 -->
+                    &lt;!&ndash;将资源文件打到classes目录下 &ndash;&gt;
                     <webResources>
                         <resource>
                             <directory>src/main/resources</directory>
@@ -129,6 +129,6 @@
                     </execution>
                 </executions>
             </plugin>
-        </plugins>
+        </plugins>-->
     </build>
 </project>
