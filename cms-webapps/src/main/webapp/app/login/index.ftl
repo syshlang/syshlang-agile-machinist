@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
 	<title>文档管理系统</title>
-	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/login.css">
-	<script type="text/javascript" src="/static/easyui/jquery-1.8.0.min.js"></script>
-    <script type="text/javascript" src="/static/easyui/jquery.easyui.min.js"></script>
-    
+    <script src="/app/include/head.js"></script>
+    <link rel="stylesheet" type="text/css" href="/app/login/css/login.css">
     <script type="text/javascript" src="/app/login/js/login.js"></script>
     
     <script type="text/javascript">

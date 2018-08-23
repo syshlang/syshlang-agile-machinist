@@ -1,5 +1,19 @@
+/*
+ * Copyright (c) 2018. syshlang
+ * @File: login.css
+ * @Description:
+ * @Author: sunys
+ * @Date: 18-8-23 下午4:38
+ * @since:
+ */
+
 body {
-  background: #eee !important;
+  /*background: #eee !important;*/
+  background:url(/static/images/bg.gif);
+ /* filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+  -moz-background-size:100% 100%;
+  background-size:100% 100%;
+  background-attachment: fixed;*/
 }
 
 .wrapper {
