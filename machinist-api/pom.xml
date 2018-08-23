@@ -4,31 +4,26 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>cms-api</artifactId>
+        <artifactId>syshlang-agile-machinist</artifactId>
         <groupId>com.syshlang</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <groupId>com.syshlang</groupId>
-    <artifactId>cms-api-service</artifactId>
+    <artifactId>machinist-api</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>cms-api-service</name>
+    <name>machinist-api</name>
+    <packaging>pom</packaging>
+    <url>http://maven.apache.org</url>
+
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.syshlang</groupId>
-            <artifactId>cms-common</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.syshlang</groupId>
-            <artifactId>cms-api-common</artifactId>
-        </dependency>
-    </dependencies>
-
-
+    <modules>
+        <module>machinist-api-common</module>
+        <module>cms-api-service</module>
+    </modules>
 
 </project>

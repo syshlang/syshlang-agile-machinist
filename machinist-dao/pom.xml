@@ -10,9 +10,9 @@
     </parent>
 
     <groupId>com.syshlang</groupId>
-    <artifactId>cms-dao</artifactId>
+    <artifactId>machinist-dao</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>cms-dao</name>
+    <name>machinist-dao</name>
     <packaging>pom</packaging>
     <url>http://maven.apache.org</url>
 

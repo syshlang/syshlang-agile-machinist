@@ -22,9 +22,9 @@
     </parent>
 
     <groupId>com.syshlang</groupId>
-    <artifactId>cms-common</artifactId>
+    <artifactId>machinist-common</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>cms-common</name>
+    <name>machinist-common</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

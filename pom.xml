@@ -27,19 +27,19 @@
             <!--model-->
             <dependency>
                 <groupId>com.syshlang</groupId>
-                <artifactId>cms-common</artifactId>
+                <artifactId>machinist-common</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>com.syshlang</groupId>
-                <artifactId>cms-api</artifactId>
+                <artifactId>machinist-api</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>com.syshlang</groupId>
-                <artifactId>cms-api-common</artifactId>
+                <artifactId>machinist-api-common</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
@@ -51,7 +51,7 @@
             </dependency>
             <dependency>
                 <groupId>com.syshlang</groupId>
-                <artifactId>cms-dao</artifactId>
+                <artifactId>machinist-dao</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
@@ -328,10 +328,10 @@
         </dependency>
     </dependencies>
     <modules>
-        <module>cms-common</module>
-        <module>cms-dao</module>
+        <module>machinist-common</module>
+        <module>machinist-dao</module>
         <module>cms-webapps</module>
-        <module>cms-api</module>
+        <module>machinist-api</module>
         <module>cms-service</module>
         <module>cms-module</module>
     </modules>

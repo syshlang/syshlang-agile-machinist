@@ -23,7 +23,7 @@
     <dependencies>
         <dependency>
             <groupId>com.syshlang</groupId>
-            <artifactId>cms-common</artifactId>
+            <artifactId>machinist-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
@@ -33,7 +33,7 @@
         </dependency>
         <dependency>
             <groupId>com.syshlang</groupId>
-            <artifactId>cms-api-common</artifactId>
+            <artifactId>machinist-api-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
