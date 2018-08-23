@@ -15,6 +15,8 @@
         <module name="cms-webapps" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="7" />
+    <bytecodeTargetLevel target="7">
+      <module name="syshlang-agile-machinist" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
