@@ -12,6 +12,6 @@
 <title><spring:message code="404"/></title>
 </head>
 <body>
-404
+<spring:message code="404"/>
 </body>
 </html>
