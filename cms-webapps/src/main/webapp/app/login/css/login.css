@@ -9,8 +9,8 @@
 
 body {
  /* background: #eee !important;*/
-  background:url(/static/images/bg.png);
-  filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+ /* background:url(/static/images/bg.png);
+  filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";*/
  /* -moz-background-size:100% 100%;
   background-size:100% 100%;
   background-attachment: fixed;*/

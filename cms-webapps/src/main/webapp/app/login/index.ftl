@@ -5,7 +5,7 @@
     <script src="/app/include/head.js"></script>
     <link rel="stylesheet" type="text/css" href="/app/login/css/login.css">
     <script type="text/javascript" src="/app/login/js/login.js"></script>
-    
+    <script type="text/javascript" src="/app/login/js/vavs.js"></script>
     <script type="text/javascript">
         if (window != top){
             top.location.href = location.href;  
@@ -14,6 +14,7 @@
     </script>
 </head>
 <body>
+    <canvas id="cas"></canvas>
     <div class="wrapper">
     <form class="form-signin">       
       <h2 class="form-signin-heading">登录</h2>
