@@ -4,23 +4,33 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>syshlang-agile-machinist</artifactId>
+        <artifactId>machinist-api</artifactId>
         <groupId>com.syshlang</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <groupId>com.syshlang</groupId>
-    <artifactId>machinist-dao</artifactId>
+    <artifactId>cms-api</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>machinist-dao</name>
-    <packaging>pom</packaging>
-    <url>http://maven.apache.org</url>
+    <name>cms-api</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <modules>
-        <module>machinist-dao-mybatis</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.syshlang</groupId>
+            <artifactId>machinist-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.syshlang</groupId>
+            <artifactId>machinist-api-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+
+
 </project>

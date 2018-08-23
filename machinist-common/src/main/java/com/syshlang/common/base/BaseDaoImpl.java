@@ -22,7 +22,7 @@ public abstract class BaseDaoImpl<M extends BaseMapper, B extends BaseModel, PK 
 
     @Override
     public int countByExample(B baseModel) {
-        return baseMapper.selectCount(baseModel);
+        return 0;
     }
 
     @Override
@@ -37,7 +37,8 @@ public abstract class BaseDaoImpl<M extends BaseMapper, B extends BaseModel, PK 
 
     @Override
     public int insert(B baseModel) {
-        return baseMapper.insert(baseModel);
+
+        return 0;
     }
 
     @Override
@@ -122,12 +123,7 @@ public abstract class BaseDaoImpl<M extends BaseMapper, B extends BaseModel, PK 
 
     @Override
     public int deleteByPrimaryKeys(String ids) {
-        String[] split = ids.split(",");
-        int count = 0;
-        for (int i = 0; i < split.length; i++) {
-            int i1 = baseMapper.delete(Integer.parseInt(split[i]));
-            count++;
-        }
-        return count;
+
+        return 0;
     }
 }

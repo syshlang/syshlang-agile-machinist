@@ -20,7 +20,7 @@ import java.io.Serializable;
  * @author sunys
  */
 @RegisterMapper
-public interface BaseMapper<T extends BaseModel,PK extends Serializable> extends Mapper<T>, InsertListMapper<T> {
+public interface BaseMapper<T extends BaseModel,PK extends Serializable> {
    /*  *//**
      * 根据条件查询记录数量
      * @param baseModel

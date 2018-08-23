@@ -6,13 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cms-api-service" />
-        <module name="cms-dao-mybatis" />
-        <module name="cms-module" />
+        <module name="cms-api" />
+        <module name="cms-consumer" />
+        <module name="cms-dao" />
         <module name="cms-service" />
         <module name="cms-webapps" />
         <module name="machinist-api-common" />
         <module name="machinist-common" />
+        <module name="machinist-dao-mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="7" />

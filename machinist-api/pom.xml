@@ -23,7 +23,6 @@
 
     <modules>
         <module>machinist-api-common</module>
-        <module>cms-api-service</module>
     </modules>
 
 </project>

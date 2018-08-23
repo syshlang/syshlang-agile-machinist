@@ -2,14 +2,16 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cms-module" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cms-service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cms-webapps" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cms-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cms-web/cms-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cms-web/cms-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cms-web/cms-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cms-web/cms-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cms-web/cms-webapps" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/machinist-api" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/machinist-api/cms-api-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/machinist-api/machinist-api-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/machinist-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/machinist-dao" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/machinist-dao/cms-dao-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/machinist-dao/machinist-dao-mybatis" charset="UTF-8" />
   </component>
 </project>

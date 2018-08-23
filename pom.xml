@@ -45,7 +45,7 @@
             </dependency>
             <dependency>
                 <groupId>com.syshlang</groupId>
-                <artifactId>cms-api-service</artifactId>
+                <artifactId>cms-api</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
@@ -57,7 +57,7 @@
             </dependency>
             <dependency>
                 <groupId>com.syshlang</groupId>
-                <artifactId>cms-dao-mybatis</artifactId>
+                <artifactId>machinist-dao-mybatis</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
@@ -69,7 +69,7 @@
             </dependency>
             <dependency>
                 <groupId>com.syshlang</groupId>
-                <artifactId>cms-module</artifactId>
+                <artifactId>cms-consumer</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
@@ -330,10 +330,8 @@
     <modules>
         <module>machinist-common</module>
         <module>machinist-dao</module>
-        <module>cms-webapps</module>
         <module>machinist-api</module>
-        <module>cms-service</module>
-        <module>cms-module</module>
+        <module>cms-web</module>
     </modules>
 
 
