@@ -16,7 +16,7 @@
         </plugins>
     </build>
     <parent>
-        <artifactId>syshlang-agile-cms</artifactId>
+        <artifactId>syshlang-agile-machinist</artifactId>
         <groupId>com.syshlang</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
