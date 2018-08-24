@@ -34,7 +34,7 @@ public class BaseException extends RuntimeException{
     /**
      * 错误码
      */
-    private String code;
+    private Integer code;
 
     /**
      * 错误码对应的参数
@@ -58,11 +58,11 @@ public class BaseException extends RuntimeException{
         this.module = module;
     }
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
@@ -82,14 +82,14 @@ public class BaseException extends RuntimeException{
         this.defaultMessage = defaultMessage;
     }
 
-    public BaseException(String module, String code, Object[] args, String defaultMessage) {
+    public BaseException(String module, Integer code, Object[] args, String defaultMessage) {
         this.module = module;
         this.code = code;
         this.args = args;
         this.defaultMessage = defaultMessage;
     }
 
-    public BaseException(String module, String code, Object[] args)
+    public BaseException(String module, Integer code, Object[] args)
     {
         this(module, code, args, null);
     }
@@ -99,7 +99,7 @@ public class BaseException extends RuntimeException{
         this(module, null, null, defaultMessage);
     }
 
-    public BaseException(String code, Object[] args)
+    public BaseException(Integer code, Object[] args)
     {
         this(null, code, args, null);
     }
@@ -122,8 +122,8 @@ public class BaseException extends RuntimeException{
     @Override
     public String getMessage() {
         String message = null;
-        if (!StringUtils.isEmpty(code)) {
-            message = MyMessageUtils.message(code, args);
+        if (code != null) {
+            message = MyMessageUtils.message(String.valueOf(code), args);
         }
         if (message == null) {
             message = defaultMessage;

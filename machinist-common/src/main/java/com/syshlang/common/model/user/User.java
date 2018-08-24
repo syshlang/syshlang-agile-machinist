@@ -17,6 +17,9 @@ import javax.persistence.*;
 @Entity
 @Table(name="cms_user")
 public class User extends BaseModel {
+
+    private static final long serialVersionUID = 1L;
+
     /**
      * 编号
      *
@@ -94,7 +97,7 @@ public class User extends BaseModel {
      */
     private Long ctime;
 
-    private static final long serialVersionUID = 1L;
+
 
     public Integer getUserId() {
         return userId;

@@ -13,6 +13,8 @@ package com.syshlang.common.base;
  * 全局常量
  * @author sunys
  */
-public class BaseConstants {
+public class BaseConstant {
     private static final long serialVersionUID = 1L;
+
+    public static final  Class CLASS = BaseConstant.class;
 }

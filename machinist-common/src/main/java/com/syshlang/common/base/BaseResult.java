@@ -21,9 +21,9 @@ import java.io.Serializable;
 public class BaseResult <T> implements Serializable {
     private static final long serialVersionUID = 293025560562946952L;
 
-    private Integer code;
+    public Integer code;
 
-    private String desc;
+    public String desc;
 
     public Object data;
 
@@ -49,6 +49,11 @@ public class BaseResult <T> implements Serializable {
     public BaseResult(Exception e) {
         this.desc = e.getMessage();
         this.code = BaseResultCode.EXCEPTION.getCode();
+    }
+
+    public BaseResult(BaseException e) {
+        this.desc = e.getMessage();
+        this.code = e.getCode();
     }
 
     public BaseResult(String errorMsg) {

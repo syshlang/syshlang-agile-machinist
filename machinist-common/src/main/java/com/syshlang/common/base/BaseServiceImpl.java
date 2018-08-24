@@ -19,7 +19,6 @@ import java.util.List;
  */
 public abstract  class BaseServiceImpl<D extends BaseDao,B extends BaseModel, PK extends Serializable> implements BaseService<B, PK> {
 
-    @Autowired
     private D baseDao;
 
 

@@ -35,7 +35,7 @@ public enum BaseResultCode {
 
     private String  desc;
 
-    private BaseResultCode(Integer code,String desc){
+    BaseResultCode(Integer code,String desc){
         this.code = code;
         this.desc = desc;
     }

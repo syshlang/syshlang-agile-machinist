@@ -16,8 +16,7 @@ import java.util.List;
 
 
 public abstract class BaseDaoImpl<M extends BaseMapper, B extends BaseModel, PK extends Serializable> implements BaseDao<B, PK>{
-
-    @Autowired
+    
     private M baseMapper;
 
     @Override
