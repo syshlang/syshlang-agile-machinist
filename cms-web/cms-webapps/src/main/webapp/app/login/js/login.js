@@ -1,13 +1,14 @@
 function loginAction(){
 	var username = $('#username').val();
 	var password = $('#password').val();
+    var rememberMe = $('#rememberMe').val();
 	
 	if(username.length==0 || password.length == 0){
 		$("#msg").css('display','block'); 
 		$('#msg').html('请输入用户名和密码');
 		return ;
 	}
-	var params = {username:username,password:password};
+	var params = {username:username,password:password,rememberMe:rememberMe};
 	
 	$.post("/module/user/login.json",params,function(data,status){
 		if(data.code == 10000){

@@ -9,6 +9,7 @@
 
 package com.syshlang.cms.api.user;
 
+import com.syshlang.common.base.BaseResult;
 import com.syshlang.common.base.BaseService;
 import com.syshlang.common.model.user.User;
 
@@ -17,4 +18,5 @@ import com.syshlang.common.model.user.User;
  */
 public interface UserService extends BaseService<User, Integer> {
 
+    BaseResult userLogin(String username, String password, String rememberMe);
 }

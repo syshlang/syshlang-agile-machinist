@@ -9,12 +9,18 @@
 
 package com.syshlang.cms.module.user;
 
+import com.syshlang.cms.api.common.CmsConstant;
+import com.syshlang.cms.api.common.CmsResult;
+import com.syshlang.cms.api.common.CmsResultCode;
+import com.syshlang.cms.api.user.UserService;
 import com.syshlang.common.base.BaseController;
 import com.syshlang.common.base.BaseResult;
 import com.syshlang.common.base.BaseResultCode;
 import com.syshlang.common.model.user.User;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,13 +39,8 @@ public class UserController extends BaseController {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
-    @RequestMapping("login")
-    public String index(@RequestParam("username") String username,
-                        @RequestParam("password") String password){
-        System.out.println("username:"+username);
-        System.out.println("password:"+password);
-        return "redirect:/list.jsp";
-    }
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("index.html")
     public String index(HttpServletRequest request){
@@ -51,11 +52,13 @@ public class UserController extends BaseController {
 	@ResponseBody
 	public BaseResult login(HttpServletRequest request,
 							@RequestParam(value="username",defaultValue="",required=true) String username,
-							@RequestParam(value="password",defaultValue="",required=true) String password){
-		BaseResult result = null;
-		
+							@RequestParam(value="password",defaultValue="",required=true) String password,
+                            @RequestParam(value ="rememberMe",defaultValue="",required=false) String rememberMe){
+
+		BaseResult result = userService.userLogin(username,password,rememberMe);
 		HttpSession session = request.getSession();
-		
+
+
 		if(username.length() == 0 || password.length()==0){
 			return new BaseResult(BaseResultCode.NONEAUTH.getCode(),"请输入用户名和验证码");
 		}
