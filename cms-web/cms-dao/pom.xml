@@ -24,6 +24,10 @@
     <version>1.0-SNAPSHOT</version>
     <name>cms-dao</name>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.syshlang</groupId>

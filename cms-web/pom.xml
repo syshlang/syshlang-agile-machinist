@@ -13,7 +13,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>syshlang-agile-cms</artifactId>
+        <artifactId>syshlang-agile-machinist</artifactId>
         <groupId>com.syshlang</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -24,6 +24,57 @@
     <name>cms-web</name>
     <packaging>pom</packaging>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.syshlang</groupId>
+                <artifactId>machinist-common</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.syshlang</groupId>
+                <artifactId>machinist-api</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.syshlang</groupId>
+                <artifactId>machinist-dao</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.syshlang</groupId>
+                <artifactId>cms-api</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.syshlang</groupId>
+                <artifactId>cms-service</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.syshlang</groupId>
+                <artifactId>cms-consumer</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.syshlang</groupId>
+                <artifactId>cms-dao</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <modules>
         <module>cms-api</module>
         <module>cms-consumer</module>
@@ -31,6 +82,4 @@
         <module>cms-dao</module>
         <module>cms-webapps</module>
     </modules>
-
-
 </project>

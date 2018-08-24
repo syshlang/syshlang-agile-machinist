@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.syshlang</groupId>
-    <artifactId>syshlang-agile-cms</artifactId>
+    <artifactId>syshlang-agile-machinist</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
@@ -45,12 +45,6 @@
             </dependency>
             <dependency>
                 <groupId>com.syshlang</groupId>
-                <artifactId>cms-api</artifactId>
-                <version>${project.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.syshlang</groupId>
                 <artifactId>machinist-dao</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
@@ -58,18 +52,6 @@
             <dependency>
                 <groupId>com.syshlang</groupId>
                 <artifactId>machinist-dao-mybatis</artifactId>
-                <version>${project.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.syshlang</groupId>
-                <artifactId>cms-service</artifactId>
-                <version>${project.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.syshlang</groupId>
-                <artifactId>cms-consumer</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
