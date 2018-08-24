@@ -9,11 +9,13 @@
 
 package com.syshlang.api.common;
 
-import com.syshlang.common.base.BaseConstants;
+import com.syshlang.common.base.BaseConstant;
 
 /**
  * api系统常量类
  * @author sunys
  */
-public class ApiConstant extends BaseConstants {
+public class ApiConstant extends BaseConstant {
+
+    public static final  Class CLASS = ApiConstant.class;
 }

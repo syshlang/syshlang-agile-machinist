@@ -14,7 +14,7 @@ package com.syshlang.api.common;
  * @author sunys
  */
 
-public enum ApiResultConstant {
+public enum ApiResultCode {
     /**
      * 成功
      */
@@ -39,7 +39,7 @@ public enum ApiResultConstant {
         this.message = message;
     }
 
-    ApiResultConstant(Integer code, String message) {
+    ApiResultCode(Integer code, String message) {
         this.code = code;
         this.message = message;
     }

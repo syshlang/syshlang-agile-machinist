@@ -33,8 +33,8 @@ public class ApiResult<T extends BaseModel>  extends BaseResult {
         super(code, message);
     }
 
-    public ApiResult(ApiResultConstant apiResultConstant, Object data) {
-        super(apiResultConstant.getCode(), apiResultConstant.getMessage(), data);
+    public ApiResult(ApiResultCode apiResultCode, Object data) {
+        super(apiResultCode.getCode(), apiResultCode.getMessage(), data);
     }
 
     public ApiResult(BaseResultCode baseResultCode){
