@@ -26,6 +26,12 @@ public interface BaseDao<B extends BaseModel, PK extends Serializable> {
      * @param baseModel
      * @return
      */
+    int selectCount(B baseModel);
+    /**
+     * 根据条件查询记录数量
+     * @param baseModel
+     * @return
+     */
     int countByExample(B baseModel);
 
     /**
