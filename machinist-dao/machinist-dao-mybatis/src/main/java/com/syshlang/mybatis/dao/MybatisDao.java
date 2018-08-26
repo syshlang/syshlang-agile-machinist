@@ -23,6 +23,4 @@ public interface MybatisDao<U extends BaseModel, I extends Serializable> extends
 
     void testMybatisDao(U baseModel);
 
-    int selectCount(U baseModel);
-
 }
