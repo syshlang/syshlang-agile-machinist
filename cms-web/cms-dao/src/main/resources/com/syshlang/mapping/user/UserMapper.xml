@@ -81,7 +81,7 @@
             distinct
         </if>
         <include refid="Base_Column_List" />
-        from cms_user
+        from sys_user
         <if test="_parameter != null">
             <include refid="Example_Where_Clause" />
         </if>
@@ -92,15 +92,15 @@
    <!-- <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />
-        from cms_user
+        from sys_user
         where user_id = #{userId,jdbcType=INTEGER}
     </select>-->
   <!--  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from cms_user
+    delete from sys_user
     where user_id = #{userId,jdbcType=INTEGER}
   </delete>-->
    <!-- <delete id="deleteByExample" parameterType="com.zheng.cms.dao.model.UpmsUserExample">
-        delete from cms_user
+        delete from sys_user
         <if test="_parameter != null">
             <include refid="Example_Where_Clause" />
         </if>
@@ -109,7 +109,7 @@
         <selectKey keyProperty="userId" order="AFTER" resultType="java.lang.Integer">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert into cms_user (username, password, salt,
+        insert into sys_user (username, password, salt,
         realname, avatar, phone,
         email, sex, locked,
         ctime)
@@ -122,7 +122,7 @@
         <selectKey keyProperty="userId" order="AFTER" resultType="java.lang.Integer">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert into cms_user
+        insert into sys_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="username != null">
                 username,
@@ -189,13 +189,13 @@
         </trim>
     </insert>-->
    <!-- <select id="countByExample" parameterType="com.zheng.cms.dao.model.UpmsUserExample" resultType="java.lang.Long">
-        select count(*) from cms_user
+        select count(*) from sys_user
         <if test="_parameter != null">
             <include refid="Example_Where_Clause" />
         </if>
     </select>-->
     <!--<update id="updateByExampleSelective" parameterType="map">
-        update cms_user
+        update sys_user
         <set>
             <if test="record.userId != null">
                 user_id = #{record.userId,jdbcType=INTEGER},
@@ -236,7 +236,7 @@
         </if>
     </update>
     <update id="updateByExample" parameterType="map">
-        update cms_user
+        update sys_user
         set user_id = #{record.userId,jdbcType=INTEGER},
         username = #{record.username,jdbcType=VARCHAR},
         password = #{record.password,jdbcType=VARCHAR},
@@ -253,7 +253,7 @@
         </if>
     </update>
     <update id="updateByPrimaryKeySelective" parameterType="com.syshlang.common.model.user.User">
-        update cms_user
+        update sys_user
         <set>
             <if test="username != null">
                 username = #{username,jdbcType=VARCHAR},
@@ -289,7 +289,7 @@
         where user_id = #{userId,jdbcType=INTEGER}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.syshlang.common.model.user.User">
-    update cms_user
+    update sys_user
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       salt = #{salt,jdbcType=VARCHAR},
