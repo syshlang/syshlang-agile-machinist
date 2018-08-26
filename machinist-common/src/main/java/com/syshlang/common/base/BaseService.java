@@ -18,6 +18,13 @@ import java.util.List;
  * @author sunys
  */
 public interface BaseService<M extends BaseModel, PK extends Serializable> {
+
+    /**
+     * 根据条件查询记录数量
+     * @param baseModel
+     * @return
+     */
+    int selectCount(M baseModel);
     /**
      * 根据条件查询记录数量
      * @param baseModel
@@ -176,9 +183,5 @@ public interface BaseService<M extends BaseModel, PK extends Serializable> {
      */
     int deleteByPrimaryKeys(String ids);
 
-    /**
-     * 初始化mapper
-     */
-    void initMapper();
 
 }

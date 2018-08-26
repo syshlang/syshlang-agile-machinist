@@ -19,8 +19,13 @@ import java.util.List;
  */
 public abstract  class BaseServiceImpl<D extends BaseDao,B extends BaseModel, PK extends Serializable> implements BaseService<B, PK> {
 
+    @Autowired
     private D baseDao;
 
+    @Override
+    public int selectCount(B baseModel) {
+        return baseDao.selectCount(baseModel);
+    }
 
     @Override
     public int countByExample(B baseModel) {
@@ -125,10 +130,5 @@ public abstract  class BaseServiceImpl<D extends BaseDao,B extends BaseModel, PK
     @Override
     public int deleteByPrimaryKeys(String ids) {
         return  baseDao.deleteByPrimaryKeys(ids);
-    }
-
-    @Override
-    public void initMapper() {
-
     }
 }
