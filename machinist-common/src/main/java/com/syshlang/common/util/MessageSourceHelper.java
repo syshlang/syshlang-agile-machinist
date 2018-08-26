@@ -42,6 +42,9 @@ public class MessageSourceHelper {
     }
 	
 	public static String getMessage(String key, Object[] arguments, Locale locale) {
+    	if (messageSource == null){
+    		return null;
+		}
 		return messageSource.getMessage(key, arguments, locale);
 	}
 	
