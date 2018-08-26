@@ -9,7 +9,7 @@
 
 package com.syshlang.common.base;
 
-import com.syshlang.common.model.user.User;
+
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 import javax.persistence.MappedSuperclass;
@@ -19,7 +19,6 @@ import java.io.Serializable;
 
 @MappedSuperclass
 @XmlSeeAlso({
-        User.class
 })
 public abstract class BaseModel implements Serializable {
     private static final long serialVersionUID = 1051067260221482411L;
