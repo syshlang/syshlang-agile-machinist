@@ -21,6 +21,6 @@ import java.io.Serializable;
  */
 public interface MybatisDao<U extends BaseModel, I extends Serializable> extends BaseDao<U,I> {
 
-    void testMybatisDao();
+    void testMybatisDao(U baseModel);
 
 }

@@ -13,6 +13,7 @@ import com.syshlang.common.base.BaseDaoImpl;
 import com.syshlang.common.base.BaseModel;
 import com.syshlang.mybatis.dao.MybatisDao;
 import com.syshlang.mybatis.mapper.MybatisMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 import java.util.List;
@@ -22,6 +23,9 @@ import java.util.List;
  * @author sunys
  */
 public abstract class MybatisDaoImpl<M extends MybatisMapper, U extends BaseModel, I extends Serializable> extends BaseDaoImpl<U,I> implements MybatisDao<U,I> {
+
+    @Autowired
+    private MybatisMapper mybatisMapper;
 
     @Override
     public int countByExample(U baseModel) {
@@ -126,5 +130,10 @@ public abstract class MybatisDaoImpl<M extends MybatisMapper, U extends BaseMode
     @Override
     public int deleteByPrimaryKeys(String ids) {
         return 0;
+    }
+
+    @Override
+    public void testMybatisDao(U baseModel) {
+        mybatisMapper.insert(baseModel);
     }
 }
