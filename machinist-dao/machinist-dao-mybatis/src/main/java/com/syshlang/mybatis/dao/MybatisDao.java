@@ -23,5 +23,4 @@ public interface MybatisDao<U extends BaseModel, I extends Serializable> extends
 
     void testMybatisDao();
 
-    void testMybatisDao2();
 }
