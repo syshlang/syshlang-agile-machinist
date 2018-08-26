@@ -31,16 +31,6 @@ public class UserDaoImpl extends MybatisDaoImpl<UserMapper,User,Integer> impleme
 
     @Override
     public void test(User user) {
-        userMapper.delete(user);
-    }
-
-    @Override
-    public void testMybatisDao() {
-
-    }
-
-    @Override
-    public int insert(User baseModel) {
-        return super.insert(baseModel);
+        System.out.println("Test:userMapper");
     }
 }

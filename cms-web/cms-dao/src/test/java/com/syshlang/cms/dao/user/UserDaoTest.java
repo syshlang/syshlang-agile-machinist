@@ -27,8 +27,9 @@ public class UserDaoTest {
     @Autowired
     private  UserDao userDao;
 
+
     @Test
-    public void testDelete() {
+    public void test() {
         User user = new User();
         userDao.test(user);
     }
@@ -36,6 +37,36 @@ public class UserDaoTest {
     @Test
     public void testMybatisDao() {
         User user = new User();
-        userDao.testMybatisDao();
+        userDao.testMybatisDao(user);
     }
+
+    @Test
+    public void deleteByPrimaryKey() {
+        User user = new User();
+        user.setUserId(15);
+        int i = userDao.deleteByPrimaryKey(user);
+        System.out.println(i);
+    }
+
+    @Test
+    public void insert() {
+        User user = new User();
+        user.setUsername("sunys");
+        user.setPassword("123456");
+        user.setEmail("sunys@163.com");
+        user.setSex((byte) 1);
+        user.setPhone("13335894564");
+        user.setCtime(System.currentTimeMillis());
+        userDao.insert(user);
+    }
+
+    @Test
+    public void selectCount() {
+        User user = new User();
+        user.setUsername("sunys");
+        user.setSex((byte) 1);
+        int count = userDao.selectCount(user);
+        System.out.println(count);
+    }
+
 }
