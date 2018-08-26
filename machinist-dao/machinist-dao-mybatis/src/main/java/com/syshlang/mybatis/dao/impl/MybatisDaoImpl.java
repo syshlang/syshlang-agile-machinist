@@ -28,6 +28,11 @@ public abstract class MybatisDaoImpl<M extends MybatisMapper, U extends BaseMode
     private MybatisMapper mybatisMapper;
 
     @Override
+    public int selectCount(U baseModel) {
+        return mybatisMapper.selectCount(baseModel);
+    }
+
+    @Override
     public int countByExample(U baseModel) {
         return 0;
     }
@@ -38,13 +43,13 @@ public abstract class MybatisDaoImpl<M extends MybatisMapper, U extends BaseMode
     }
 
     @Override
-    public int deleteByPrimaryKey(Integer id) {
-        return 0;
+    public int deleteByPrimaryKey(U baseModel) {
+        return mybatisMapper.deleteByPrimaryKey(baseModel);
     }
 
     @Override
     public int insert(U baseModel) {
-        return 0;
+        return mybatisMapper.insert(baseModel);
     }
 
     @Override
@@ -134,6 +139,6 @@ public abstract class MybatisDaoImpl<M extends MybatisMapper, U extends BaseMode
 
     @Override
     public void testMybatisDao(U baseModel) {
-        mybatisMapper.insert(baseModel);
+        System.out.println("Test:U:"+baseModel);
     }
 }
