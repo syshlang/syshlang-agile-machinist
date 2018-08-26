@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `cms_user`
+-- Table structure for table `sys_user`
 --
 
-DROP TABLE IF EXISTS `cms_user`;
+DROP TABLE IF EXISTS `sys_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `cms_user` (
+CREATE TABLE `sys_user` (
   `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '编号',
   `username` varchar(20) NOT NULL COMMENT '帐号',
   `password` varchar(32) NOT NULL COMMENT '密码MD5(密码+盐)',
@@ -39,12 +39,12 @@ CREATE TABLE `cms_user` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cms_user`
+-- Dumping data for table `sys_user`
 --
 
-LOCK TABLES `cms_user` WRITE;
-/*!40000 ALTER TABLE `cms_user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cms_user` ENABLE KEYS */;
+LOCK TABLES `sys_user` WRITE;
+/*!40000 ALTER TABLE `sys_user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sys_user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

@@ -15,7 +15,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name="cms_user")
+@Table(name="sys_user")
 public class User extends BaseModel {
 
     private static final long serialVersionUID = 1L;
