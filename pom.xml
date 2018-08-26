@@ -323,6 +323,7 @@
         <module>machinist-api</module>
         <module>machinist-authority</module>
         <module>base-system</module>
+        <module>cms-web</module>
     </modules>
     <build>
         <plugins>

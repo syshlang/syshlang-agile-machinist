@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/cms-web/cms-webapps" />
+    <file type="web" url="file://$PROJECT_DIR$/base-system/base-system-web" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
