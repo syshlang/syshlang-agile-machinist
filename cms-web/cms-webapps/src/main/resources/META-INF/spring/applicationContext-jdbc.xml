@@ -4,7 +4,7 @@
   ~ @File: applicationContext-jdbc.xml
   ~ @Description:
   ~ @Author: sunys
-  ~ @Date: 18-8-21 上午1:34
+  ~ @Date: 18-8-26 下午5:05
   ~ @since:
   -->
 
@@ -15,7 +15,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 配置数据源 -->
-    <context:property-placeholder location="classpath*:jdbc.properties"/>
+    <bean id="propertyConfigurer" class="com.syshlang.common.plugin.EncryptPropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath*:jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
 
     <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
           init-method="init" destroy-method="close">

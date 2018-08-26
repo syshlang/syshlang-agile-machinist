@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Copyright (c) 2018. syshlang
-  ~ @File: mybatis-config.xml
-  ~ @Description:
-  ~ @Author: sunys
-  ~ @Date: 18-8-19 下午9:25
-  ~ @since:
-  -->
 
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-config.dtd">

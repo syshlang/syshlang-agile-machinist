@@ -132,7 +132,7 @@
 
     <build>
         <finalName>machinist-dao-mybatis</finalName>
-        <resources>
+        <!--<resources>
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
@@ -145,7 +145,7 @@
                 </includes>
                 <filtering>true</filtering>
             </resource>
-        </resources>
+        </resources>-->
     </build>
 
 </project>

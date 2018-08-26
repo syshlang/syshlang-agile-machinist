@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2018. syshlang
+  ~ @File: applicationContext-service.xml
+  ~ @Description:
+  ~ @Author: sunys
+  ~ @Date: 18-8-26 下午3:47
+  ~ @since:
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 装载service -->
+	<context:component-scan base-package="com.syshlang.cms.dao" />
+
+	<!-- 为Mybatis创建SqlSessionFactory，同时指定数据源 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath*:com/syshlang/mapping/user/*Mapper.xml" />
+		<property name="configLocation" value="classpath:META-INF/spring/mybatis-config.xml"/>
+		<!--  -->
+		<property name="plugins">
+			<array>
+				<bean class="com.github.pagehelper.PageHelper">
+					<property name="properties">
+						<value>
+							dialect=mysql
+							reasonable=true
+						</value>
+					</property>
+				</bean>
+			</array>
+		</property>
+	</bean>
+
+	<!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->
+	<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.syshlang.cms.mapper"/>
+		<!-- 通用Mapper通过属性注入进行配置，默认不配置时会注册Mapper<T>接口-->
+		<!-- <property name="properties">
+             <value>
+                 mappers=tk.mybatis.mapper.common.Mapper,tk.mybatis.mapper.common.special.InsertListMapper
+             </value>
+         </property>-->
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+	</bean>
+
+</beans>
