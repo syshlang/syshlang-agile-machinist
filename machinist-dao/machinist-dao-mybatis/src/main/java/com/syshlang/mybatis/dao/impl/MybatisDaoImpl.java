@@ -15,16 +15,116 @@ import com.syshlang.mybatis.dao.MybatisDao;
 import com.syshlang.mybatis.mapper.MybatisMapper;
 
 import java.io.Serializable;
+import java.util.List;
 
-public abstract class MybatisDaoImpl<M extends MybatisMapper, U extends BaseModel, I extends Serializable> extends BaseDaoImpl<M,U,I> implements MybatisDao<U,I> {
+/**
+ * 使用mybatis实现持久层
+ * @author sunys
+ */
+public abstract class MybatisDaoImpl<M extends MybatisMapper, U extends BaseModel, I extends Serializable> extends BaseDaoImpl<U,I> implements MybatisDao<U,I> {
 
     @Override
-    public void testMybatisDao() {
+    public int countByExample(U baseModel) {
+        return 0;
+    }
 
+    @Override
+    public int deleteByExample(U baseModel) {
+        return 0;
+    }
+
+    @Override
+    public int deleteByPrimaryKey(Integer id) {
+        return 0;
     }
 
     @Override
     public int insert(U baseModel) {
-        return super.insert(baseModel);
+        return 0;
+    }
+
+    @Override
+    public int insertSelective(U baseModel) {
+        return 0;
+    }
+
+    @Override
+    public List<U> selectByExampleWithBLOBs(U baseModel) {
+        return null;
+    }
+
+    @Override
+    public List<U> selectByExample(U baseModel) {
+        return null;
+    }
+
+    @Override
+    public List<U> selectByExampleWithBLOBsForStartPage(U baseModel, Integer pageNum, Integer pageSize) {
+        return null;
+    }
+
+    @Override
+    public List<U> selectByExampleForStartPage(U baseModel, Integer pageNum, Integer pageSize) {
+        return null;
+    }
+
+    @Override
+    public List<U> selectByExampleWithBLOBsForOffsetPage(U baseModel, Integer offset, Integer limit) {
+        return null;
+    }
+
+    @Override
+    public List<U> selectByExampleForOffsetPage(U baseModel, Integer offset, Integer limit) {
+        return null;
+    }
+
+    @Override
+    public U selectFirstByExample(U baseModele) {
+        return null;
+    }
+
+    @Override
+    public U selectFirstByExampleWithBLOBs(U baseModel) {
+        return null;
+    }
+
+    @Override
+    public BaseModel selectByPrimaryKey(Integer id) {
+        return null;
+    }
+
+    @Override
+    public int updateByExampleSelective(U baseModel, Integer id) {
+        return 0;
+    }
+
+    @Override
+    public int updateByExampleWithBLOBs(U baseModel, Integer id) {
+        return 0;
+    }
+
+    @Override
+    public int updateByExample(U baseModel, Integer id) {
+        return 0;
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(U baseModel) {
+        return 0;
+    }
+
+    @Override
+    public int updateByPrimaryKeyWithBLOBs(U baseModel) {
+        return 0;
+    }
+
+    @Override
+    public int updateByPrimaryKey(U baseModel) {
+        return 0;
+    }
+
+    @Override
+    public int deleteByPrimaryKeys(String ids) {
+        return 0;
     }
 }
