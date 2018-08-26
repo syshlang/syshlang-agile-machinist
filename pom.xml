@@ -321,8 +321,8 @@
         <module>machinist-common</module>
         <module>machinist-dao</module>
         <module>machinist-api</module>
-        <module>cms-web</module>
         <module>machinist-authority</module>
+        <module>base-system</module>
     </modules>
     <build>
         <plugins>
