@@ -13,6 +13,12 @@ package com.syshlang.common.base;
 import java.io.Serializable;
 import java.util.List;
 
+
+
+/**
+ *  Dao层基础接口定义，只提供接口，不关心持久层的实现
+ * @author sunys
+ */
 public interface BaseDao<B extends BaseModel, PK extends Serializable> {
 
     /**
