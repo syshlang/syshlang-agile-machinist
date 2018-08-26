@@ -40,11 +40,6 @@ public class UserDaoImpl extends MybatisDaoImpl<UserMapper,User,Integer> impleme
     }
 
     @Override
-    public void testMybatisDao2() {
-    }
-
-
-    @Override
     public int insert(User baseModel) {
         return super.insert(baseModel);
     }
