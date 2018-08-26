@@ -35,6 +35,11 @@ public class UserDaoImpl extends MybatisDaoImpl<UserMapper,User,Integer> impleme
     }
 
     @Override
+    public void testMybatisDao() {
+
+    }
+
+    @Override
     public void testMybatisDao2() {
     }
 
