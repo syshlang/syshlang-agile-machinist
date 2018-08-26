@@ -37,10 +37,10 @@ public interface BaseDao<B extends BaseModel, PK extends Serializable> {
 
     /**
      * 根据主键删除记录
-     * @param id
+     * @param baseModel
      * @return
      */
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(B baseModel);
 
     /**
      * 插入记录
