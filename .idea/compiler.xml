@@ -13,6 +13,7 @@
         <module name="base-system-service" />
         <module name="base-system-web" />
         <module name="machinist-api-common" />
+        <module name="machinist-authority-shiro" />
         <module name="machinist-common" />
         <module name="machinist-dao-mybatis" />
       </profile>
