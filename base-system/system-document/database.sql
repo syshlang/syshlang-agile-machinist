@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.20, for Win32 (AMD64)
+-- MySQL dump 10.13  Distrib 5.7.21, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: cms
 -- ------------------------------------------------------
--- Server version	5.7.20-log
+-- Server version	5.7.21-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -27,13 +27,14 @@ CREATE TABLE `sys_user` (
   `username` varchar(20) NOT NULL COMMENT '帐号',
   `password` varchar(32) NOT NULL COMMENT '密码MD5(密码+盐)',
   `salt` varchar(32) DEFAULT NULL COMMENT '盐',
-  `realname` varchar(20) DEFAULT NULL COMMENT '姓名',
+  `real_name` varchar(20) DEFAULT NULL COMMENT '姓名',
+  `nick_name` varchar(20) DEFAULT NULL COMMENT '昵称',
   `avatar` varchar(150) DEFAULT NULL COMMENT '头像',
   `phone` varchar(20) DEFAULT NULL COMMENT '电话',
   `email` varchar(50) DEFAULT NULL COMMENT '邮箱',
-  `sex` tinyint(4) DEFAULT '0' COMMENT '性别(0:未知,1:男,2:女)',
-  `locked` tinyint(4) DEFAULT '0' COMMENT '状态(0:正常,1:锁定)',
-  `ctime` bigint(20) DEFAULT NULL COMMENT '创建时间',
+  `sex` varchar(4) DEFAULT '0' COMMENT '性别(0:未知,1:男,2:女)',
+  `locked` varchar(4) DEFAULT '0' COMMENT '状态(0:正常,1:锁定)',
+  `create_time` bigint(20) DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='用户';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -56,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-27 10:19:17
+-- Dump completed on 2018-08-27 21:02:04

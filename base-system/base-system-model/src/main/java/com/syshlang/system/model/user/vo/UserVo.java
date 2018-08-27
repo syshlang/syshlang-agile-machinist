@@ -43,7 +43,12 @@ public class UserVo {
      *
      * @mbg.generated
      */
-    private String realname;
+    private String realName;
+
+    /**
+     * 昵称
+     */
+    private String nickName;
 
     /**
      * 头像
@@ -67,25 +72,25 @@ public class UserVo {
     private String email;
 
     /**
-     * 性别
+     * 性别(0:未知,1:男,2:女)
      *
      * @mbg.generated
      */
-    private Byte sex;
+    private String sex;
 
     /**
      * 状态(0:正常,1:锁定)
      *
      * @mbg.generated
      */
-    private Byte locked;
+    private String locked;
 
     /**
      * 创建时间
      *
      * @mbg.generated
      */
-    private Long ctime;
+    private Long createTime;
 
     public Integer getUserId() {
         return userId;
@@ -119,12 +124,20 @@ public class UserVo {
         this.salt = salt;
     }
 
-    public String getRealname() {
-        return realname;
+    public String getRealName() {
+        return realName;
     }
 
-    public void setRealname(String realname) {
-        this.realname = realname;
+    public void setRealName(String realName) {
+        this.realName = realName;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
     public String getAvatar() {
@@ -151,27 +164,27 @@ public class UserVo {
         this.email = email;
     }
 
-    public Byte getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(Byte sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
-    public Byte getLocked() {
+    public String getLocked() {
         return locked;
     }
 
-    public void setLocked(Byte locked) {
+    public void setLocked(String locked) {
         this.locked = locked;
     }
 
-    public Long getCtime() {
-        return ctime;
+    public Long getCreateTime() {
+        return createTime;
     }
 
-    public void setCtime(Long ctime) {
-        this.ctime = ctime;
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
     }
 }

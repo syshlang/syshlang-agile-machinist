@@ -54,7 +54,12 @@ public class User extends BaseModel {
      *
      * @mbg.generated
      */
-    private String realname;
+    private String realName;
+
+    /**
+     * 昵称
+     */
+    private String nickName;
 
     /**
      * 头像
@@ -78,25 +83,25 @@ public class User extends BaseModel {
     private String email;
 
     /**
-     * 性别
+     * 性别(0:未知,1:男,2:女)
      *
      * @mbg.generated
      */
-    private Byte sex;
+    private String sex;
 
     /**
      * 状态(0:正常,1:锁定)
      *
      * @mbg.generated
      */
-    private Byte locked;
+    private String locked;
 
     /**
      * 创建时间
      *
      * @mbg.generated
      */
-    private Long ctime;
+    private Long createTime;
 
 
 
@@ -132,12 +137,20 @@ public class User extends BaseModel {
         this.salt = salt;
     }
 
-    public String getRealname() {
-        return realname;
+    public String getRealName() {
+        return realName;
     }
 
-    public void setRealname(String realname) {
-        this.realname = realname;
+    public void setRealName(String realname) {
+        this.realName = realname;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
     public String getAvatar() {
@@ -164,28 +177,28 @@ public class User extends BaseModel {
         this.email = email;
     }
 
-    public Byte getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(Byte sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
-    public Byte getLocked() {
+    public String getLocked() {
         return locked;
     }
 
-    public void setLocked(Byte locked) {
+    public void setLocked(String locked) {
         this.locked = locked;
     }
 
-    public Long getCtime() {
-        return ctime;
+    public Long getCreateTime() {
+        return createTime;
     }
 
-    public void setCtime(Long ctime) {
-        this.ctime = ctime;
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
     }
 
     @Override
@@ -198,13 +211,14 @@ public class User extends BaseModel {
         sb.append(", username=").append(username);
         sb.append(", password=").append(password);
         sb.append(", salt=").append(salt);
-        sb.append(", realname=").append(realname);
+        sb.append(", realName=").append(realName);
+        sb.append(", nickName=").append(nickName);
         sb.append(", avatar=").append(avatar);
         sb.append(", phone=").append(phone);
         sb.append(", email=").append(email);
         sb.append(", sex=").append(sex);
         sb.append(", locked=").append(locked);
-        sb.append(", ctime=").append(ctime);
+        sb.append(", createTime=").append(createTime);
         sb.append("]");
         return sb.toString();
     }
@@ -225,13 +239,13 @@ public class User extends BaseModel {
                 && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
                 && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
                 && (this.getSalt() == null ? other.getSalt() == null : this.getSalt().equals(other.getSalt()))
-                && (this.getRealname() == null ? other.getRealname() == null : this.getRealname().equals(other.getRealname()))
+                && (this.getRealName() == null ? other.getRealName() == null : this.getRealName().equals(other.getRealName()))
                 && (this.getAvatar() == null ? other.getAvatar() == null : this.getAvatar().equals(other.getAvatar()))
                 && (this.getPhone() == null ? other.getPhone() == null : this.getPhone().equals(other.getPhone()))
                 && (this.getEmail() == null ? other.getEmail() == null : this.getEmail().equals(other.getEmail()))
                 && (this.getSex() == null ? other.getSex() == null : this.getSex().equals(other.getSex()))
                 && (this.getLocked() == null ? other.getLocked() == null : this.getLocked().equals(other.getLocked()))
-                && (this.getCtime() == null ? other.getCtime() == null : this.getCtime().equals(other.getCtime()));
+                && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
     }
 
     @Override
@@ -242,13 +256,13 @@ public class User extends BaseModel {
         result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
         result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
         result = prime * result + ((getSalt() == null) ? 0 : getSalt().hashCode());
-        result = prime * result + ((getRealname() == null) ? 0 : getRealname().hashCode());
+        result = prime * result + ((getRealName() == null) ? 0 : getRealName().hashCode());
         result = prime * result + ((getAvatar() == null) ? 0 : getAvatar().hashCode());
         result = prime * result + ((getPhone() == null) ? 0 : getPhone().hashCode());
         result = prime * result + ((getEmail() == null) ? 0 : getEmail().hashCode());
         result = prime * result + ((getSex() == null) ? 0 : getSex().hashCode());
         result = prime * result + ((getLocked() == null) ? 0 : getLocked().hashCode());
-        result = prime * result + ((getCtime() == null) ? 0 : getCtime().hashCode());
+        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         return result;
     }
 }
