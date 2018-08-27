@@ -61,7 +61,7 @@ public class UserController extends BaseController {
 		}
 		
 		if(username.equals("admin") && password.equals("123456")){
-			LOGGER.info("登录成功");
+			LOGGER.info("【"+username+"】登录成功！");
 			User user = new User();
 			user.setUserId(10000);
 			user.setUsername(username);
