@@ -49,7 +49,7 @@
     <bean id="authenticator"
           class="org.apache.shiro.authc.pam.ModularRealmAuthenticator">
         <property name="authenticationStrategy">
-            <bean class="org.apache.shiro.authc.pam.AllSuccessfulStrategy"></bean>
+            <bean class="org.apache.shiro.authc.pam.AllSuccessfulStrategy"/>
         </property>
     </bean>
 
