@@ -122,7 +122,7 @@
           factory-bean="filterChainDefinitionMapBuilder" factory-method="buildFilterChainDefinitionMap">
     </bean>
     <bean id="filterChainDefinitionMapBuilder"
-          class="com.syshlang.authority.shiro.factory.ShiroFilterChainDefinitionMapBuilder">
+          class="com.syshlang.authority.shiro.factory.ShiroFilterChainDefinitionMapBuilder" abstract="true">
     </bean>
 
     <!-- 设置SecurityUtils，相当于调用SecurityUtils.setSecurityManager(securityManager) -->
