@@ -22,22 +22,22 @@
     .tabs li.tabs-selected a.tabs-inner {
         font-weight: bold;
         outline: none;
-        color:#3399FF;
+        color:#008000;
     }
     .layout-split-west {
-        border-right: 0px solid #3399FF;
+        border-right: 0px solid #008000;
     }
     .layout-split-north {
-        border-bottom: 5px solid #3399FF;
+        border-bottom: 5px solid #008000;
     }
     .layout-split-south {
-        border-top: 5px solid #3399FF;
+        border-top: 5px solid #008000;
     }
     .layout-panel-west {
         z-index: 2;
-        border-top:5px solid #3399FF;
-        border-left:5px solid #3399FF;
-        border-bottom:5px solid #3399FF;
+        border-top:5px solid #008000;
+        border-left:5px solid #008000;
+        border-bottom:5px solid #008000;
     }
     
     .layout-expand {
@@ -46,15 +46,15 @@
         font-size: 1px;
         cursor: pointer;
         z-index: 1;
-        border-top:5px solid #3399FF;
-        border-left:5px solid #3399FF;
-        border-bottom:5px solid #3399FF;
+        border-top:5px solid #008000;
+        border-left:5px solid #008000;
+        border-bottom:5px solid #008000;
     }
     #center {
-        border-top:5px solid #3399FF;
-        border-bottom:5px solid #3399FF;
-        border-right:5px solid #3399FF;
-        border-left:5px solid #3399FF;
+        border-top:5px solid #008000;
+        border-bottom:5px solid #008000;
+        border-right:5px solid #008000;
+        border-left:5px solid #008000;
     }
     
     </style>
@@ -107,7 +107,7 @@
 	    .border_bottom{border-bottom:#ccc 1px solid;}
 	</style>
 </head>
-<body id="main" class="easyui-layout" style="background-color: #3399FF;" >
+<body id="main" class="easyui-layout" style="background-color: #008000;" >
     <div data-options="region:'north'" style="height:45px;border:0;" class="top2">
         <div class="" style="float:left;width:40px;text-align:left;color:#ffffff;margin-left:10px;margin-top:5px;"><img src="/static/images/logo.png" width="40px" /></div>
         <div class="" style="float:left;width:160px;text-align:left;color:#ffffff;margin-left:5px;"><h2 style="">文档管理系统</h2></div>
@@ -149,7 +149,7 @@
 		
 		<!--树形菜单  结束-->
     </div>
-    <div id="center" data-options="region:'center',border:false,resizable:true" style="background-color: #3399FF;">
+    <div id="center" data-options="region:'center',border:false,resizable:true" style="background-color: #008000;">
         <div id="mainCenter" class="easyui-tabs" data-options="region:'center',fit:true"  >
             <div id="mainGridLayout" class="easyui-layout" data-options="title:'首页',fit:true,iconCls:'icon-house'" >
                 <div data-options="region:'center',fit:true" style="padding:0.5px;">
