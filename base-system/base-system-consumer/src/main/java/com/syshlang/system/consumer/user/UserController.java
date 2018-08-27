@@ -31,7 +31,7 @@ import javax.servlet.http.HttpSession;
  * @author sunys
  */
 @Controller
-@RequestMapping("module/user")
+@RequestMapping("system/user")
 public class UserController extends BaseController {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(UserController.class);
