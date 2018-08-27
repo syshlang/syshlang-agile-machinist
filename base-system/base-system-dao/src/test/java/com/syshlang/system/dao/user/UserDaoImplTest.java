@@ -55,9 +55,9 @@ public class UserDaoImplTest {
         user.setUsername("sunys");
         user.setPassword("123456");
         user.setEmail("sunys@163.com");
-        user.setSex((byte) 1);
+        user.setSex("1");
         user.setPhone("13335894564");
-        user.setCtime(System.currentTimeMillis());
+        user.setCreateTime(System.currentTimeMillis());
         userDao.insert(user);
     }
 
@@ -65,7 +65,7 @@ public class UserDaoImplTest {
     public void selectCount() {
         User user = new User();
         user.setUsername("sunys");
-        user.setSex((byte) 1);
+        user.setSex("1");
         int count = userDao.selectCount(user);
         System.out.println(count);
     }

@@ -40,9 +40,9 @@ public class UserServiceImplTest {
         user.setUsername("sunys");
         user.setPassword("123456");
         user.setEmail("sunys@163.com");
-        user.setSex((byte) 1);
+        user.setSex("1");
         user.setPhone("13335894564");
-        user.setCtime(System.currentTimeMillis());
+        user.setCreateTime(System.currentTimeMillis());
         userService.insert(user);
     }
 
