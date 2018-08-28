@@ -37,7 +37,9 @@ public class ShiroSessionDao extends CachingSessionDAO {
 
     @Override
     protected Serializable doCreate(Session session) {
-        return null;
+        Serializable sessionId = generateSessionId(session);
+        assignSessionId(session, sessionId);
+        return sessionId;
     }
 
     @Override

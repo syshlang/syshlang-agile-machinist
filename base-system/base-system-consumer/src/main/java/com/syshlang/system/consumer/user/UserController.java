@@ -53,23 +53,6 @@ public class UserController extends BaseController {
                             @RequestParam(value ="rememberMe",defaultValue="",required=false) String rememberMe){
 
 		BaseResult result = userService.userLogin(username,password,rememberMe);
-		HttpSession session = request.getSession();
-
-
-		if(username.length() == 0 || password.length()==0){
-			return new BaseResult(BaseResultCode.NONEAUTH.getCode(),"请输入用户名和验证码");
-		}
-		
-		if(username.equals("admin") && password.equals("123456")){
-			LOGGER.info("【"+username+"】登录成功！");
-			User user = new User();
-			user.setUserId(10000);
-			user.setUsername(username);
-			session.setAttribute("user", user);
-			result =new BaseResult(BaseResultCode.SUCCESS);
-		}else{
-			result =new BaseResult(BaseResultCode.LOGINFAILURE);
-		}
 		return result;
 	}
 	

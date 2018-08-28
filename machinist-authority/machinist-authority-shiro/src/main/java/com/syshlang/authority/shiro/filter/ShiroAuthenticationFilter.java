@@ -37,7 +37,7 @@ public class ShiroAuthenticationFilter extends AuthenticationFilter {
      */
     @Override
     protected boolean onAccessDenied(ServletRequest servletRequest, ServletResponse servletResponse) throws Exception {
-        return false;
+        return true;
     }
 
     public void setLocalSessionKeyPrefix(String localSessionKeyPrefix) {
