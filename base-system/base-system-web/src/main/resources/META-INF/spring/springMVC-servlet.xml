@@ -44,15 +44,13 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
-    <bean id="configProperties"
-          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>classpath*:config.properties</value>
-            </list>
+    <bean id="mvcProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true" />
+        <property name="location">
+            <value>classpath:config.properties</value>
         </property>
     </bean>
-    <util:properties id="properties" location="classpath*:config.properties"/>
+    <util:properties id="properties" location="classpath:config.properties"/>
 
     <!--<bean id="log4jInitialization" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
         <property name="targetClass" value="org.springframework.util.Log4jConfigurer" />

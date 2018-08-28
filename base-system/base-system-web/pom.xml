@@ -25,12 +25,12 @@
       <version>${project.version}</version>
       <scope>compile</scope>
     </dependency>
-   <!-- <dependency>
+    <dependency>
       <groupId>com.syshlang</groupId>
       <artifactId>machinist-authority-shiro</artifactId>
       <version>${project.version}</version>
       <scope>compile</scope>
-    </dependency>-->
+    </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
