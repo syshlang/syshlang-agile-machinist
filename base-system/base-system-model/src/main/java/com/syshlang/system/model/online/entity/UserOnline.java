@@ -32,6 +32,10 @@ public class UserOnline extends BaseModel {
      */
     private Long userId;
     /**
+     * 加密
+     */
+    private String code;
+    /**
      * 登录IP地址
      */
     private String ipaddr;
@@ -82,6 +86,14 @@ public class UserOnline extends BaseModel {
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getIpaddr() {
@@ -153,6 +165,7 @@ public class UserOnline extends BaseModel {
         return "UserOnline{" +
                 "sessionId='" + sessionId + '\'' +
                 ", userId=" + userId +
+                ", code='" + code + '\'' +
                 ", ipaddr='" + ipaddr + '\'' +
                 ", loginLocation='" + loginLocation + '\'' +
                 ", browser='" + browser + '\'' +
@@ -163,5 +176,4 @@ public class UserOnline extends BaseModel {
                 ", expireTime=" + expireTime +
                 '}';
     }
-
 }

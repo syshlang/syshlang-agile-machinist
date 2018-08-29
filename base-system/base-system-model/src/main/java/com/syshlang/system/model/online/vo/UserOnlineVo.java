@@ -24,6 +24,10 @@ public class UserOnlineVo {
      */
     private Long userId;
     /**
+     * 加密
+     */
+    private String code;
+    /**
      * 登录IP地址
      */
     private String ipaddr;
@@ -70,6 +74,14 @@ public class UserOnlineVo {
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getIpaddr() {
