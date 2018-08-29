@@ -17,7 +17,7 @@ import com.syshlang.system.model.user.entity.User;
 /**
  * @author sunys
  */
-public interface UserService extends BaseService<User, Integer> {
+public interface UserService extends BaseService<User, Long> {
 
     BaseResult userLogin(String username, String password, String rememberMe);
 }

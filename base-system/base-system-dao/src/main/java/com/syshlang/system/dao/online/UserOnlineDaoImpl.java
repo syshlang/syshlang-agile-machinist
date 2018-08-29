@@ -12,6 +12,11 @@ package com.syshlang.system.dao.online;
 import com.syshlang.mybatis.dao.impl.MybatisDaoImpl;
 import com.syshlang.system.mapper.online.UserOnlineMapper;
 import com.syshlang.system.model.online.entity.UserOnline;
+import org.springframework.stereotype.Repository;
 
+/**
+ * @author sunys
+ */
+@Repository
 public class UserOnlineDaoImpl extends MybatisDaoImpl<UserOnlineMapper,UserOnline,Long> implements UserOnlineDao {
 }

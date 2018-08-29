@@ -35,7 +35,7 @@ import org.springframework.stereotype.Service;
  * @author sunys
  */
 @Service
-public class UserServiceImpl extends BaseServiceImpl<UserDao, User, Integer> implements UserService {
+public class UserServiceImpl extends BaseServiceImpl<UserDao, User, Long> implements UserService {
 
     private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
