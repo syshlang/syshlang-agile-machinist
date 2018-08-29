@@ -22,4 +22,13 @@ public class SystemConstant extends ApiConstant {
 
     public static final String RESOURCES_EMPTY_PASSWORD = "system.user.login.emptyPassword";
     public static final String EMPTY_PASSWORD = "密码不能为空!";
+
+    public static final String RESOURCES_INVALID_USERNAME = "system.user.login.invalidUsername";
+    public static final String INVALID_USERNAME = "帐号不存在!";
+
+    public static final String RESOURCES_INVALID_PASSWORD = "system.user.login.invalidPassword";
+    public static final String INVALID_PASSWORD = "密码错误！" ;
+
+    public static final String RESOURCES_LOCKED_ACCOUNT = "system.user.login.lockedAccount";
+    public static final String LOCKED_ACCOUNT = "帐号已锁定!";
 }

@@ -13,7 +13,16 @@ import com.syshlang.mybatis.dao.MybatisDao;
 import com.syshlang.system.model.online.entity.UserOnline;
 
 /**
+ * The interface User online dao.
+ *
  * @author sunys
  */
 public interface UserOnlineDao extends MybatisDao<UserOnline,Long> {
+    /**
+     * Select user online by session id user online.
+     *
+     * @param sessionId the session id
+     * @return the user online
+     */
+    UserOnline selectUserOnlineBySessionId(String sessionId);
 }

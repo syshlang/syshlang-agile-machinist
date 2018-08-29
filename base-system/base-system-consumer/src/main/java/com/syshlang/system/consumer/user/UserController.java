@@ -10,11 +10,23 @@
 package com.syshlang.system.consumer.user;
 
 
+import com.syshlang.api.common.ApiConstant;
 import com.syshlang.common.base.BaseController;
 import com.syshlang.common.base.BaseResult;
 import com.syshlang.common.base.BaseResultCode;
+import com.syshlang.system.api.common.ShiroConstant;
+import com.syshlang.system.api.common.SystemResult;
+import com.syshlang.system.api.common.SystemResultCode;
+import com.syshlang.system.api.online.UserOnlineService;
 import com.syshlang.system.api.user.UserService;
+import com.syshlang.system.model.online.entity.UserOnline;
 import com.syshlang.system.model.user.entity.User;
+import org.apache.commons.lang.BooleanUtils;
+import org.apache.commons.lang.StringUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.*;
+import org.apache.shiro.session.Session;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +50,8 @@ public class UserController extends BaseController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private UserOnlineService userOnlineService;
 
     @RequestMapping("index.html")
     public String index(HttpServletRequest request){
@@ -52,7 +66,40 @@ public class UserController extends BaseController {
 							@RequestParam(value="password",defaultValue="",required=true) String password,
                             @RequestParam(value ="rememberMe",defaultValue="",required=false) String rememberMe){
 
-		BaseResult result = userService.userLogin(username,password,rememberMe);
+		BaseResult result = new BaseResult(BaseResultCode.SUCCESS);
+        if (StringUtils.isBlank(username)){
+            return new SystemResult(SystemResultCode.EMPTY_USERNAME);
+        }
+        if (StringUtils.isBlank(password)){
+            return  new SystemResult(SystemResultCode.EMPTY_PASSWORD);
+        }
+        Subject subject = SecurityUtils.getSubject();
+        Session session = subject.getSession(false);
+        if (session != null){
+        	String sessionId = session.getId().toString();
+			UserOnline userOnline = userOnlineService.selectUserOnlineBySessionId(ShiroConstant.SYSHLANG_SYSTEM_USER_SERVER_SESSION_ID+sessionId);
+			if (userOnline != null){
+				if (StringUtils.isNotBlank(userOnline.getCode())) {
+					return result;
+				}
+			}
+		}
+		try {
+			// 使用shiro认证
+			UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, password);
+			if (BooleanUtils.toBoolean(rememberMe)) {
+				usernamePasswordToken.setRememberMe(true);
+			} else {
+				usernamePasswordToken.setRememberMe(false);
+			}
+			subject.login(usernamePasswordToken);
+		} catch (UnknownAccountException e) {
+			return new SystemResult(SystemResultCode.INVALID_USERNAME);
+		} catch (IncorrectCredentialsException e) {
+			return new SystemResult(SystemResultCode.INVALID_PASSWORD);
+		} catch (LockedAccountException e) {
+			return new SystemResult(SystemResultCode.LOCKED_ACCOUNT);
+		}
 		return result;
 	}
 	

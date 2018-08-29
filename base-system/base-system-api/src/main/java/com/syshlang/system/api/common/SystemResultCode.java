@@ -17,7 +17,19 @@ public enum SystemResultCode {
     /**
      * 密码不能为空
      */
-    EMPTY_PASSWORD(10102,SystemConstant.RESOURCES_EMPTY_PASSWORD,SystemConstant.EMPTY_PASSWORD);
+    EMPTY_PASSWORD(10102,SystemConstant.RESOURCES_EMPTY_PASSWORD,SystemConstant.EMPTY_PASSWORD),
+    /**
+     * 帐号不存在
+     */
+    INVALID_USERNAME(10102,SystemConstant.RESOURCES_INVALID_USERNAME,SystemConstant.INVALID_USERNAME),
+    /**
+     *密码错误
+     */
+    INVALID_PASSWORD(10102,SystemConstant.RESOURCES_INVALID_PASSWORD,SystemConstant.INVALID_PASSWORD),
+    /**
+     * 帐号已锁定
+     */
+    LOCKED_ACCOUNT(10102,SystemConstant.RESOURCES_LOCKED_ACCOUNT,SystemConstant.LOCKED_ACCOUNT);
 
 
     private Integer code;
