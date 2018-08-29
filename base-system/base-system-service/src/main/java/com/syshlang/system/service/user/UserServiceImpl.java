@@ -60,7 +60,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserDao, User, Integer> imp
             Session session = subject.getSession();
             String sessionId = session.getId().toString();
             User user = new User();
-            user.setUserId(10000);
+            user.setUserId(10000L);
             user.setUsername(username);
             session.setAttribute("user", user);
             result =new BaseResult(BaseResultCode.SUCCESS);

@@ -44,7 +44,7 @@ public class UserDaoImplTest {
     @Test
     public void deleteByPrimaryKey() {
         User user = new User();
-        user.setUserId(15);
+        user.setUserId(15L);
         int i = userDao.deleteByPrimaryKey(user);
         System.out.println(i);
     }
