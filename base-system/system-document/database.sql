@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `sys_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sys_user` (
-  `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '编号',
+  `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户编号',
   `username` varchar(20) NOT NULL COMMENT '帐号',
   `password` varchar(32) NOT NULL COMMENT '密码MD5(密码+盐)',
   `salt` varchar(32) DEFAULT NULL COMMENT '盐',
@@ -47,6 +47,37 @@ LOCK TABLES `sys_user` WRITE;
 /*!40000 ALTER TABLE `sys_user` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sys_user` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `sys_user_online`
+--
+
+DROP TABLE IF EXISTS `sys_user_online`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sys_user_online` (
+  `session_id` varchar(50) NOT NULL DEFAULT '' COMMENT '用户会话id',
+  `user_id` int(10) unsigned NOT NULL COMMENT '用户编号',
+  `ipaddr` varchar(50) DEFAULT '' COMMENT '登录IP地址',
+  `login_location` varchar(255) DEFAULT '' COMMENT '登录地点',
+  `browser` varchar(50) DEFAULT '' COMMENT '浏览器类型',
+  `os` varchar(50) DEFAULT '' COMMENT '操作系统',
+  `status` varchar(4) DEFAULT '' COMMENT '状态(0:离线,1:在线)',
+  `start_time` datetime DEFAULT NULL COMMENT 'session创建时间',
+  `last_time` datetime DEFAULT NULL COMMENT 'session最后访问时间',
+  `expire_time` int(5) DEFAULT '0' COMMENT '超时时间，单位为分钟',
+  PRIMARY KEY (`session_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='在线用户记录';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sys_user_online`
+--
+
+LOCK TABLES `sys_user_online` WRITE;
+/*!40000 ALTER TABLE `sys_user_online` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sys_user_online` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -57,4 +88,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-27 21:02:04
+-- Dump completed on 2018-08-29 22:29:39
