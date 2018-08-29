@@ -17,5 +17,5 @@ import com.syshlang.system.model.user.entity.User;
  * @author sunys
  */
 
-public interface UserMapper extends MybatisMapper<User,Integer> {
+public interface UserMapper extends MybatisMapper<User,Long> {
 }

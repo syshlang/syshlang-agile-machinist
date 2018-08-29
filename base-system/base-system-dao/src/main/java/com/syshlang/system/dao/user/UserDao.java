@@ -13,7 +13,7 @@ package com.syshlang.system.dao.user;
 import com.syshlang.mybatis.dao.MybatisDao;
 import com.syshlang.system.model.user.entity.User;
 
-public interface UserDao extends MybatisDao<User,Integer> {
+public interface UserDao extends MybatisDao<User,Long> {
 
 
     void  test(User user);

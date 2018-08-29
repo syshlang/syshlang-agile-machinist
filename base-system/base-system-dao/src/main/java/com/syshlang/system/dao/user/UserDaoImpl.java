@@ -22,7 +22,7 @@ import org.springframework.stereotype.Repository;
  * @author sunys
  */
 @Repository
-public class UserDaoImpl extends MybatisDaoImpl<UserMapper,User,Integer> implements UserDao {
+public class UserDaoImpl extends MybatisDaoImpl<UserMapper,User,Long> implements UserDao {
 
     private static final Logger log = LoggerFactory.getLogger(UserDaoImpl.class);
 

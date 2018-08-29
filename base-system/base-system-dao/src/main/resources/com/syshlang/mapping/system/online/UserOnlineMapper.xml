@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syshlang.system.model.online.entity.UserOnline">
+    <resultMap id="BaseResultMap" type="com.syshlang.system.model.online.entity.UserOnline">
+        <id column="session_id" jdbcType="VARCHAR" property="sessionId" />
+        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="ipaddr" jdbcType="VARCHAR" property="ipaddr" />
+        <result column="login_location" jdbcType="VARCHAR" property="loginLocation" />
+        <result column="browser" jdbcType="VARCHAR" property="browser" />
+        <result column="os" jdbcType="VARCHAR" property="os" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+        <result column="start_time" jdbcType="DATETIME" property="startTime" />
+        <result column="last_time" jdbcType="DATETIME" property="lastTime" />
+        <result column="expire_time" jdbcType="INTEGER" property="expireTime" />
+    </resultMap>
+
+
+</mapper> 
