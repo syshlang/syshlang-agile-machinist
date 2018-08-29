@@ -9,8 +9,8 @@
         <result column="browser" jdbcType="VARCHAR" property="browser" />
         <result column="os" jdbcType="VARCHAR" property="os" />
         <result column="status" jdbcType="VARCHAR" property="status" />
-        <result column="start_time" jdbcType="DATETIME" property="startTime" />
-        <result column="last_time" jdbcType="DATETIME" property="lastTime" />
+        <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+        <result column="last_time" jdbcType="TIMESTAMP" property="lastTime" />
         <result column="expire_time" jdbcType="INTEGER" property="expireTime" />
     </resultMap>
 
