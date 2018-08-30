@@ -10,15 +10,14 @@
 package com.syshlang.system.consumer.user;
 
 
-import com.syshlang.api.common.ApiConstant;
 import com.syshlang.common.base.BaseController;
 import com.syshlang.common.base.BaseResult;
 import com.syshlang.common.base.BaseResultCode;
-import com.syshlang.system.api.common.ShiroConstant;
 import com.syshlang.system.api.common.SystemResult;
 import com.syshlang.system.api.common.SystemResultCode;
 import com.syshlang.system.api.online.UserOnlineService;
 import com.syshlang.system.api.user.UserService;
+import com.syshlang.system.authority.shiro.api.ShiroConstant;
 import com.syshlang.system.model.online.entity.UserOnline;
 import com.syshlang.system.model.user.entity.User;
 import org.apache.commons.lang.BooleanUtils;

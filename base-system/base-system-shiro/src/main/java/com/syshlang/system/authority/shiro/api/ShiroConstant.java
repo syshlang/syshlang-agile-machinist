@@ -3,11 +3,11 @@
  * @File: ShiroConstant.java
  * @Description:
  * @Author: sunys
- * @Date: 18-8-30 上午12:23
+ * @Date: 18-8-30 下午10:01
  * @since:
  */
 
-package com.syshlang.system.api.common;
+package com.syshlang.system.authority.shiro.api;
 
 import com.syshlang.api.common.ApiConstant;
 

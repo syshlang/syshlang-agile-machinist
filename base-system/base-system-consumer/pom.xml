@@ -36,6 +36,10 @@
             <groupId>com.syshlang</groupId>
             <artifactId>base-system-service</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.syshlang</groupId>
+            <artifactId>base-system-shiro</artifactId>
+        </dependency>
         <!--<dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
