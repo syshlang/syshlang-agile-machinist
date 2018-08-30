@@ -112,8 +112,8 @@
     <bean id="systemRealm" class="com.syshlang.authority.shiro.realm.ShiroAuthorityRealm">
         <property name="credentialsMatcher">
             <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
-                <property name="hashAlgorithmName" value="MD5"></property>
-                <property name="hashIterations" value="1024"></property>
+                <property name="hashAlgorithmName" value="${shiro.hashAlgorithmName}"></property>
+                <property name="hashIterations" value="${shiro.hashIterations}"></property>
             </bean>
         </property>
     </bean>
