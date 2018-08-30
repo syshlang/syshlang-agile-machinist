@@ -27,7 +27,7 @@
     </dependency>
     <dependency>
       <groupId>com.syshlang</groupId>
-      <artifactId>machinist-authority-shiro</artifactId>
+      <artifactId>base-system-shiro</artifactId>
       <version>${project.version}</version>
       <scope>compile</scope>
     </dependency>

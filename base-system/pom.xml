@@ -78,6 +78,12 @@
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
+            <dependency>
+                <groupId>com.syshlang</groupId>
+                <artifactId>base-system-shiro</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
             <!-- shiro -->
             <dependency>
                 <groupId>org.apache.shiro</groupId>
@@ -140,5 +146,6 @@
         <module>base-system-service</module>
         <module>base-system-consumer</module>
         <module>base-system-web</module>
+        <module>base-system-shiro</module>
     </modules>
 </project>
