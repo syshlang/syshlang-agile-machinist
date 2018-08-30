@@ -21,15 +21,15 @@ public enum SystemResultCode {
     /**
      * 帐号不存在
      */
-    INVALID_USERNAME(10102,SystemConstant.RESOURCES_INVALID_USERNAME,SystemConstant.INVALID_USERNAME),
+    INVALID_USERNAME(10103,SystemConstant.RESOURCES_INVALID_USERNAME,SystemConstant.INVALID_USERNAME),
     /**
      *密码错误
      */
-    INVALID_PASSWORD(10102,SystemConstant.RESOURCES_INVALID_PASSWORD,SystemConstant.INVALID_PASSWORD),
+    INVALID_PASSWORD(10104,SystemConstant.RESOURCES_INVALID_PASSWORD,SystemConstant.INVALID_PASSWORD),
     /**
      * 帐号已锁定
      */
-    LOCKED_ACCOUNT(10102,SystemConstant.RESOURCES_LOCKED_ACCOUNT,SystemConstant.LOCKED_ACCOUNT);
+    LOCKED_ACCOUNT(10105,SystemConstant.RESOURCES_LOCKED_ACCOUNT,SystemConstant.LOCKED_ACCOUNT);
 
 
     private Integer code;
