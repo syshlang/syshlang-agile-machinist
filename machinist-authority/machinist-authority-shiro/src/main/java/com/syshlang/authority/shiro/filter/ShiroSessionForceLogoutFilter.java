@@ -29,19 +29,11 @@ public class ShiroSessionForceLogoutFilter extends AccessControlFilter {
 
     @Override
     protected boolean isAccessAllowed(ServletRequest servletRequest, ServletResponse servletResponse, Object o) throws Exception {
-        Session session = getSubject(servletRequest, servletResponse).getSession(false);
-        if(session == null) {
-            return true;
-        }
-        boolean forceout = session.getAttribute(forceLogout) == null;
-        return  forceout;
+        return false;
     }
 
     @Override
     protected boolean onAccessDenied(ServletRequest servletRequest, ServletResponse servletResponse) throws Exception {
-        getSubject(servletRequest, servletResponse).logout();
-        String loginUrl = getLoginUrl() + (getLoginUrl().contains("?") ? "&" : "?") + "forceLogout=1";
-        WebUtils.issueRedirect(servletRequest, servletResponse, loginUrl);
         return false;
     }
 
