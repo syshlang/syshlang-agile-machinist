@@ -69,4 +69,13 @@ public class UserServiceImpl extends BaseServiceImpl<UserDao, User, Long> implem
         }
         return result;
     }
+
+    @Override
+    public User selectUserByUserName(String username) {
+        if (StringUtils.isBlank(username)){
+            return null;
+        }
+        User user = userDao.selectUserByUserName(username);
+        return null;
+    }
 }

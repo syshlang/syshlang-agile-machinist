@@ -18,6 +18,7 @@ import com.syshlang.system.api.common.SystemResultCode;
 import com.syshlang.system.api.online.UserOnlineService;
 import com.syshlang.system.api.user.UserService;
 import com.syshlang.system.authority.shiro.api.ShiroConstant;
+import com.syshlang.system.authority.shiro.util.ShiroMd5Util;
 import com.syshlang.system.model.online.entity.UserOnline;
 import com.syshlang.system.model.user.entity.User;
 import org.apache.commons.lang.BooleanUtils;
@@ -85,6 +86,7 @@ public class UserController extends BaseController {
 		}
 		try {
 			// 使用shiro认证
+			password = ShiroMd5Util.saltMd5(password,username,1024);
 			UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, password);
 			if (BooleanUtils.toBoolean(rememberMe)) {
 				usernamePasswordToken.setRememberMe(true);
@@ -98,6 +100,8 @@ public class UserController extends BaseController {
 			return new SystemResult(SystemResultCode.INVALID_PASSWORD);
 		} catch (LockedAccountException e) {
 			return new SystemResult(SystemResultCode.LOCKED_ACCOUNT);
+		}catch (ExcessiveAttemptsException e){
+			return new SystemResult(SystemResultCode.RETRY_LIMIT);
 		}
 		return result;
 	}

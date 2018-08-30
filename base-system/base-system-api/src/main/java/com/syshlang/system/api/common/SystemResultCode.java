@@ -13,23 +13,27 @@ public enum SystemResultCode {
     /**
      * 用户名不能为空
      */
-    EMPTY_USERNAME(10101, SystemConstant.RESOURCES_EMPTY_USERNAME,SystemConstant.EMPTY_USERNAME),
+    EMPTY_USERNAME(10101, SystemConstant.UserConstant.RESOURCES_EMPTY_USERNAME,SystemConstant.UserConstant.EMPTY_USERNAME),
     /**
      * 密码不能为空
      */
-    EMPTY_PASSWORD(10102,SystemConstant.RESOURCES_EMPTY_PASSWORD,SystemConstant.EMPTY_PASSWORD),
+    EMPTY_PASSWORD(10102,SystemConstant.UserConstant.RESOURCES_EMPTY_PASSWORD,SystemConstant.UserConstant.EMPTY_PASSWORD),
     /**
      * 帐号不存在
      */
-    INVALID_USERNAME(10103,SystemConstant.RESOURCES_INVALID_USERNAME,SystemConstant.INVALID_USERNAME),
+    INVALID_USERNAME(10103,SystemConstant.UserConstant.RESOURCES_INVALID_USERNAME,SystemConstant.UserConstant.INVALID_USERNAME),
     /**
      *密码错误
      */
-    INVALID_PASSWORD(10104,SystemConstant.RESOURCES_INVALID_PASSWORD,SystemConstant.INVALID_PASSWORD),
+    INVALID_PASSWORD(10104,SystemConstant.UserConstant.RESOURCES_INVALID_PASSWORD,SystemConstant.UserConstant.INVALID_PASSWORD),
     /**
      * 帐号已锁定
      */
-    LOCKED_ACCOUNT(10105,SystemConstant.RESOURCES_LOCKED_ACCOUNT,SystemConstant.LOCKED_ACCOUNT);
+    LOCKED_ACCOUNT(10105,SystemConstant.UserConstant.RESOURCES_LOCKED_ACCOUNT,SystemConstant.UserConstant.LOCKED_ACCOUNT),
+    /**
+     * 输入密码次数过多
+     */
+    RETRY_LIMIT(10106,SystemConstant.UserConstant.RESOURCES_RETRY_LIMIT,SystemConstant.UserConstant.RETRY_LIMIT);
 
 
     private Integer code;
