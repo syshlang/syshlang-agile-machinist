@@ -9,15 +9,23 @@
 
 package com.syshlang.system.authority.shiro.realm;
 
+import com.syshlang.common.util.enumutil.EnumUtil;
+import com.syshlang.system.api.common.SystemConstant;
+import com.syshlang.system.api.common.SystemResultCode;
 import com.syshlang.system.api.user.UserService;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.UsernamePasswordToken;
+import com.syshlang.system.authority.shiro.matcher.LoginCredentialsMatcher;
+import com.syshlang.system.authority.shiro.util.ShiroMd5Util;
+import com.syshlang.system.model.user.entity.User;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.enums.EnumUtils;
+import org.apache.shiro.authc.*;
+import org.apache.shiro.authc.credential.CredentialsMatcher;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.util.ByteSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,31 +63,35 @@ public class ShiroAuthorityRealm extends AuthorizingRealm {
             String username = usernamePasswordToken.getUsername();
             String password = new String(usernamePasswordToken.getPassword());
             LOGGER.info("ShiroAuthorityRealm#AuthenticationInfo:{}",username);
-           // User user = userService.selectUserByUserName(username);
-        }
-
-
-
-
-
-     /*   CredentialsMatcher credentialsMatcher = getCredentialsMatcher();
-        if (credentialsMatcher != null){
-            HashedCredentialsMatcher hashedCredentialsMatcher = (HashedCredentialsMatcher) credentialsMatcher;
-            String hashAlgorithmName = hashedCredentialsMatcher.getHashAlgorithmName();
-            int hashIterations = hashedCredentialsMatcher.getHashIterations();
-            if (StringUtils.isNotBlank(hashAlgorithmName)
-                    && hashAlgorithmName.equalsIgnoreCase(HASHALGORITHMNAME_MD5)){
-                ShiroMd5Util.saltMd5(hashAlgorithmName,)
+            //User user = userService.selectUserByUserName(username);
+            User user = new User();
+            user.setUsername("admin");
+            user.setLocked("0");
+            if (user == null){
+                throw new UnknownAccountException();
+            }
+            if (user.getLocked().equals(SystemConstant.UserConstant.USER_ENUM.STATUS_LOCKED.getCode())){
+                throw new LockedAccountException();
             }
 
-        }
+            Object principal = username;
+            Object credentials = null;
+            CredentialsMatcher credentialsMatcher = getCredentialsMatcher();
+            if (credentialsMatcher != null){
+                LoginCredentialsMatcher loginCredentialsMatcher = (LoginCredentialsMatcher) credentialsMatcher;
+                String hashAlgorithmName = loginCredentialsMatcher.getHashAlgorithmName();
+                int hashIterations = loginCredentialsMatcher.getHashIterations();
+                if (StringUtils.isNotBlank(hashAlgorithmName)
+                        && hashAlgorithmName.equalsIgnoreCase(HASHALGORITHMNAME_MD5)){
+                    credentials = ShiroMd5Util.saltMd5(password,username,hashIterations);
+                }
+            }
+            ByteSource credentialsSalt = ByteSource.Util.bytes(username);;
+            SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(principal, credentials, credentialsSalt, getName());
+            return  info;
 
-        AuthenticationInfo authenticationInfo  = new SimpleAuthenticationInfo(username, password, getName());
-        if (credentialsMatcher != null){
-            boolean doCredentialsMatch = credentialsMatcher.doCredentialsMatch(authenticationToken, authenticationInfo);
-
+        }else {
+            throw new IncorrectCredentialsException();
         }
-        return new SimpleAuthenticationInfo(username, password, getName());*/
-        return null;
     }
 }
