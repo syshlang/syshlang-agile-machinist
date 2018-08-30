@@ -10,7 +10,7 @@
 package com.syshlang.common.plugin;
 
 
-import com.syshlang.common.util.AESUtil;
+import com.syshlang.common.util.security.AESUtil;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 
 /**
