@@ -30,12 +30,25 @@ public class ShiroSessionDao extends CachingSessionDAO {
     private String theWayCacheSession;
 
 
+    /**
+     * 如DefaultSessionManager在创建完session后会调用该方法；
+     * 如保存到关系数据库/文件系统/NoSQL数据库；即可以实现会话的持久化；
+     * 返回会话ID；主要此处返回的ID.equals(session.getId())；
+     * @param session  //http://sgq0085.iteye.com/blog/2170405
+     * @return
+     */
     @Override
     protected Serializable doCreate(Session session) {
         Serializable sessionId = generateSessionId(session);
         assignSessionId(session, sessionId);
-        if (sessionId != null){
-//http://sgq0085.iteye.com/blog/2170405
+        if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.EHCACHE.getWay())){
+            return sessionId;
+        }
+        if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.DB.getWay())){
+
+        }
+        if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.REDIS.getWay())){
+
         }
         return sessionId;
     }
