@@ -9,6 +9,8 @@
 
 package com.syshlang.system.authority.shiro.session;
 
+import com.syshlang.system.authority.shiro.api.ShiroConstant;
+import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.eis.CachingSessionDAO;
 import org.slf4j.Logger;
@@ -22,7 +24,21 @@ import java.io.Serializable;
 public class ShiroSessionDao extends CachingSessionDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(ShiroSessionDao.class);
 
-    private String forceLogout="SHIRO_FORCE_LOGOUT";
+    private static String forceLogout="SHIRO_FORCE_LOGOUT";
+    // 默认会话的过期时间
+    private static final int SESSION_TIMEOUT = 300000;
+    private String theWayCacheSession;
+
+
+    @Override
+    protected Serializable doCreate(Session session) {
+        Serializable sessionId = generateSessionId(session);
+        assignSessionId(session, sessionId);
+        if (sessionId != null){
+
+        }
+        return sessionId;
+    }
 
     @Override
     protected void doUpdate(Session session) {
@@ -32,13 +48,6 @@ public class ShiroSessionDao extends CachingSessionDAO {
     @Override
     protected void doDelete(Session session) {
 
-    }
-
-    @Override
-    protected Serializable doCreate(Session session) {
-        Serializable sessionId = generateSessionId(session);
-        assignSessionId(session, sessionId);
-        return sessionId;
     }
 
     @Override
@@ -63,5 +72,16 @@ public class ShiroSessionDao extends CachingSessionDAO {
 
     public String getForceLogout() {
         return forceLogout;
+    }
+
+    public void setTheWayCacheSession(String theWayCacheSession) {
+        if (StringUtils.isBlank(theWayCacheSession)){
+            theWayCacheSession = ShiroConstant.WAY_CACHESESSION.DB.getWay();
+        }
+        this.theWayCacheSession = theWayCacheSession;
+    }
+
+    public String getTheWayCacheSession() {
+        return theWayCacheSession;
     }
 }

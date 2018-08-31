@@ -78,6 +78,7 @@
     <!-- 会话DAO，可重写，持久化session -->
     <bean id="sessionDAO" class="com.syshlang.system.authority.shiro.session.ShiroSessionDao">
         <property name="forceLogout" value="${shiro.forceLogout.flag}"/>
+        <property name="theWayCacheSession" value="${shiro.way.cachesession}"/>
     </bean>
 
     <!-- 会话Cookie模板 -->
