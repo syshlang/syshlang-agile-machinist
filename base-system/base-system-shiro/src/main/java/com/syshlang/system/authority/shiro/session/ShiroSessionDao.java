@@ -35,7 +35,7 @@ public class ShiroSessionDao extends CachingSessionDAO {
         Serializable sessionId = generateSessionId(session);
         assignSessionId(session, sessionId);
         if (sessionId != null){
-
+//http://sgq0085.iteye.com/blog/2170405
         }
         return sessionId;
     }
