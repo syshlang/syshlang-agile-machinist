@@ -9,18 +9,14 @@
 
 package com.syshlang.system.authority.shiro.realm;
 
-import com.syshlang.common.util.enumutil.EnumUtil;
 import com.syshlang.system.api.common.SystemConstant;
-import com.syshlang.system.api.common.SystemResultCode;
 import com.syshlang.system.api.user.UserService;
 import com.syshlang.system.authority.shiro.matcher.LoginCredentialsMatcher;
 import com.syshlang.system.authority.shiro.util.ShiroMd5Util;
 import com.syshlang.system.model.user.entity.User;
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.enums.EnumUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authc.credential.CredentialsMatcher;
-import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
