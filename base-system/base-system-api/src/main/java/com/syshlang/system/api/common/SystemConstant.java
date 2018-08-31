@@ -44,23 +44,13 @@ public class SystemConstant extends ApiConstant {
 
             STATUS_NORMAL("0","正常"),
             STATUS_LOCKED("1","锁定");
-            private String code;
-            private String desc;
-
+            private final String code;
+            private final String desc;
             public String getCode() {
                 return code;
             }
-
-            public void setCode(String code) {
-                this.code = code;
-            }
-
             public String getDesc() {
                 return desc;
-            }
-
-            public void setDesc(String desc) {
-                this.desc = desc;
             }
             USER_ENUM(String code, String desc) {
                 this.code = code;
