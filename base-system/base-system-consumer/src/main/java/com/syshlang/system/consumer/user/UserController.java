@@ -18,6 +18,7 @@ import com.syshlang.system.api.common.SystemResultCode;
 import com.syshlang.system.api.online.UserOnlineService;
 import com.syshlang.system.api.user.UserService;
 import com.syshlang.system.authority.shiro.api.ShiroConstant;
+import com.syshlang.system.authority.shiro.api.ShiroController;
 import com.syshlang.system.authority.shiro.util.ShiroMd5Util;
 import com.syshlang.system.model.online.entity.UserOnline;
 import com.syshlang.system.model.user.entity.User;
@@ -44,7 +45,7 @@ import javax.servlet.http.HttpSession;
  */
 @Controller
 @RequestMapping("system/user")
-public class UserController extends BaseController {
+public class UserController extends ShiroController {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 

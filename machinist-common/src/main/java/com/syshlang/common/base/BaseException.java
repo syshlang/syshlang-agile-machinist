@@ -133,7 +133,7 @@ public class BaseException extends RuntimeException{
 
     @Override
     public String toString() {
-        return "BaseException{" +
+        return this.getClass()+"{" +
                 "module='" + module + '\'' +
                 ", code='" + code + '\'' +
                 ", args=" + Arrays.toString(args) +

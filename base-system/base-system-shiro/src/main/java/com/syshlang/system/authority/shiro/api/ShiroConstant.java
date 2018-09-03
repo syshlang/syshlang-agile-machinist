@@ -9,12 +9,12 @@
 
 package com.syshlang.system.authority.shiro.api;
 
-import com.syshlang.api.common.ApiConstant;
+import com.syshlang.system.api.common.SystemConstant;
 
 /**
  * @author sunys
  */
-public class ShiroConstant extends ApiConstant {
+public class ShiroConstant extends SystemConstant {
     public static final  Class CLASS = ShiroConstant.class;
 
     // 全局会话key

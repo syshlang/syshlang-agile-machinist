@@ -9,9 +9,12 @@
 
 package com.syshlang.system.authority.shiro.session;
 
+import com.syshlang.system.api.common.SystemConstant;
 import com.syshlang.system.authority.shiro.api.ShiroConstant;
+import com.syshlang.system.authority.shiro.api.ShiroException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.session.Session;
+import org.apache.shiro.session.UnknownSessionException;
 import org.apache.shiro.session.mgt.eis.CachingSessionDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +35,18 @@ public class ShiroSessionDao extends CachingSessionDAO {
 
 
     /**
+     * 重写CachingSessionDAO中readSession方法，
+     * 如果Session中没有登陆信息就调用doReadSession方法从存储中重读
+     * @param sessionId
+     * @return
+     * @throws UnknownSessionException
+     */
+    @Override
+    public Session readSession(Serializable sessionId) throws UnknownSessionException {
+        return super.readSession(sessionId);
+    }
+
+    /**
      * 如DefaultSessionManager在创建完session后会调用该方法；
      * 如保存到关系数据库/文件系统/NoSQL数据库；即可以实现会话的持久化；
      * 返回会话ID；主要此处返回的ID.equals(session.getId())；
@@ -40,16 +55,17 @@ public class ShiroSessionDao extends CachingSessionDAO {
      */
     @Override
     protected Serializable doCreate(Session session) {
+        theWayCacheSession = "";
         Serializable sessionId = generateSessionId(session);
-        assignSessionId(session, sessionId);
+        //assignSessionId(session, sessionId);
         if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.EHCACHE.getWay())){
             return sessionId;
-        }
-        if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.DB.getWay())){
+        } else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.DB.getWay())){
 
-        }
-        if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.REDIS.getWay())){
+        } else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.REDIS.getWay())){
 
+        }else{
+            throw new ShiroException(SystemConstant.SYSTEM_EXCEPTION.EXCEPTION_PARAM.getCode(),new String[]{"系统参数配置异常：参数命名[shiro.way.cachesession]"});
         }
         return sessionId;
     }
@@ -65,13 +81,21 @@ public class ShiroSessionDao extends CachingSessionDAO {
     }
 
     /**
-     * 重写CachingSessionDAO中readSession方法，
-     * 如果Session中没有登陆信息就调用doReadSession方法从存储中重读
+     * 读取Session,并重置过期时间
      * @param serializable
      * @return
      */
     @Override
     protected Session doReadSession(Serializable serializable) {
+        if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.EHCACHE.getWay())){
+
+        }else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.DB.getWay())){
+
+        }else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.REDIS.getWay())){
+
+        }else{
+            throw new ShiroException(SystemConstant.SYSTEM_EXCEPTION.EXCEPTION_PARAM.getCode(),new String[]{"系统参数配置异常：参数命名[shiro.way.cachesession]"});
+        }
         return null;
     }
 

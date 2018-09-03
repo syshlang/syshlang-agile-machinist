@@ -9,7 +9,7 @@
 
 package com.syshlang.system.consumer.home;
 
-import com.syshlang.common.base.BaseController;
+import com.syshlang.system.authority.shiro.api.ShiroController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("system/home")
-public class HomeController extends BaseController {
+public class HomeController extends ShiroController {
     private final static Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
 
     @RequestMapping("index.html")

@@ -17,6 +17,67 @@ import com.syshlang.api.common.ApiConstant;
 public class SystemConstant extends ApiConstant {
     public static final  Class CLASS = SystemConstant.class;
 
+    /**
+     * 系统所属模块枚举类
+     */
+    public enum SYSTEM_MODULE{
+        SYSTEM_MODULE_USER(1010,"user.Login","用户登录");
+
+        private final Integer code; //模块代号
+        private final String codeStr; //模块代码
+        private final String desc; //描述
+
+        public Integer getCode() {
+            return code;
+        }
+
+        public String getCodeStr() {
+            return codeStr;
+        }
+
+        public String getDesc() {
+            return desc;
+        }
+
+        SYSTEM_MODULE(Integer code, String codeStr, String desc) {
+            this.code = code;
+            this.codeStr = codeStr;
+            this.desc = desc;
+        }
+    }
+
+    /**
+     * 系统异常类型枚举
+     */
+    public enum SYSTEM_EXCEPTION{
+        EXCEPTION_USER(1010,"user.Login","用户相关异常"),
+        EXCEPTION_PARAM(1020,"exception.param","参数相关异常");
+        private final Integer code; //异常代号前缀
+        private final String codeStr; //异常编码
+        private final String desc; //描述
+
+        public Integer getCode() {
+            return code;
+        }
+
+        public String getCodeStr() {
+            return codeStr;
+        }
+
+        public String getDesc() {
+            return desc;
+        }
+
+        SYSTEM_EXCEPTION(Integer code, String codeStr, String desc) {
+            this.code = code;
+            this.codeStr = codeStr;
+            this.desc = desc;
+        }
+    }
+
+    /**
+     * 用户相关
+     */
     public static class UserConstant{
         public static final String RESOURCES_EMPTY_USERNAME = "system.user.login.emptyUsername";
         public static final String EMPTY_USERNAME = "用户名不能为空!";

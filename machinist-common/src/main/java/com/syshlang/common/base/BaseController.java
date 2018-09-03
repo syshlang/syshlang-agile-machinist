@@ -25,21 +25,10 @@ public abstract class BaseController {
     @ExceptionHandler
     public String exceptionHandler(HttpServletRequest request, HttpServletResponse response, Exception exception){
         LOGGER.error("统一异常处理：", exception);
-        request.setAttribute("ex", exception);
-        if (null != request.getHeader("X-Requested-With")
-                && "XMLHttpRequest".equalsIgnoreCase(request.getHeader("X-Requested-With"))) {
-            request.setAttribute("requestHeader", "ajax");
-        }
-       /* // shiro没有权限异常
-        if (exception instanceof UnauthorizedException) {
-            return "/403.jsp";
-        }
-        // shiro会话已过期异常
-        if (exception instanceof InvalidSessionException) {
-            return "/error.jsp";
-        }*/
-        return "/error.jsp";
+        return doExceptionHandler(request,response,exception);
     }
+
+    protected abstract String doExceptionHandler(HttpServletRequest request, HttpServletResponse response, Exception exception);
 
     /**
      * 返回jsp视图
