@@ -13,7 +13,7 @@ import com.syshlang.common.base.BaseServiceImpl;
 import com.syshlang.system.api.online.UserOnlineService;
 import com.syshlang.system.dao.online.UserOnlineDao;
 import com.syshlang.system.model.online.entity.UserOnline;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

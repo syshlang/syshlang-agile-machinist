@@ -20,7 +20,7 @@ import com.syshlang.system.api.common.SystemResultCode;
 import com.syshlang.system.api.user.UserService;
 import com.syshlang.system.dao.user.UserDao;
 import com.syshlang.system.model.user.entity.User;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;

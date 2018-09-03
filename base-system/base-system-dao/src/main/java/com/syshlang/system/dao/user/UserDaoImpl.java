@@ -12,9 +12,8 @@ package com.syshlang.system.dao.user;
 
 import com.syshlang.mybatis.dao.impl.MybatisDaoImpl;
 import com.syshlang.system.mapper.user.UserMapper;
-import com.syshlang.system.model.online.entity.UserOnline;
 import com.syshlang.system.model.user.entity.User;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

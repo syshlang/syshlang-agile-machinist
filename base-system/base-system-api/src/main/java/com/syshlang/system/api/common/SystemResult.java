@@ -10,10 +10,8 @@
 package com.syshlang.system.api.common;
 
 import com.syshlang.api.common.ApiResult;
-import com.syshlang.api.common.ApiResultCode;
-import com.syshlang.common.base.BaseResultCode;
 import com.syshlang.common.util.MessageSourceHelper;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author sunys

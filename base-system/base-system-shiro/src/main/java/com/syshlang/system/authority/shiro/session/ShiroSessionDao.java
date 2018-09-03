@@ -10,7 +10,7 @@
 package com.syshlang.system.authority.shiro.session;
 
 import com.syshlang.system.authority.shiro.api.ShiroConstant;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.eis.CachingSessionDAO;
 import org.slf4j.Logger;
@@ -27,6 +27,7 @@ public class ShiroSessionDao extends CachingSessionDAO {
     private static String forceLogout="SHIRO_FORCE_LOGOUT";
     // 默认会话的过期时间
     private static final int SESSION_TIMEOUT = 300000;
+
     private String theWayCacheSession;
 
 
@@ -63,6 +64,12 @@ public class ShiroSessionDao extends CachingSessionDAO {
 
     }
 
+    /**
+     * 重写CachingSessionDAO中readSession方法，
+     * 如果Session中没有登陆信息就调用doReadSession方法从存储中重读
+     * @param serializable
+     * @return
+     */
     @Override
     protected Session doReadSession(Serializable serializable) {
         return null;

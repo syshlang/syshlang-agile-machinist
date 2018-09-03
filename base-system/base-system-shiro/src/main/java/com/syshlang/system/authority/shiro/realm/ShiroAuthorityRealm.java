@@ -14,7 +14,7 @@ import com.syshlang.system.api.user.UserService;
 import com.syshlang.system.authority.shiro.matcher.LoginCredentialsMatcher;
 import com.syshlang.system.authority.shiro.util.ShiroMd5Util;
 import com.syshlang.system.model.user.entity.User;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;

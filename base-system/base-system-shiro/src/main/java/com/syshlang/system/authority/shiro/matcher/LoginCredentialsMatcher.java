@@ -10,7 +10,7 @@
 package com.syshlang.system.authority.shiro.matcher;
 
 import com.syshlang.system.authority.shiro.realm.ShiroAuthorityRealm;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
