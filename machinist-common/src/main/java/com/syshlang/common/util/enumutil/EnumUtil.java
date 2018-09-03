@@ -9,7 +9,7 @@
 
 package com.syshlang.common.util.enumutil;
 
-import org.apache.commons.lang.enums.EnumUtils;
+import org.apache.commons.lang3.EnumUtils;
 
 import java.lang.reflect.Field;
 
