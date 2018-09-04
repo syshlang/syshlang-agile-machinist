@@ -11,6 +11,7 @@ package com.syshlang.system.consumer.user;
 
 
 import com.syshlang.common.base.BaseController;
+import com.syshlang.common.base.BaseException;
 import com.syshlang.common.base.BaseResult;
 import com.syshlang.common.base.BaseResultCode;
 import com.syshlang.system.api.common.SystemResult;
@@ -103,6 +104,8 @@ public class UserController extends ShiroController {
 			return new SystemResult(SystemResultCode.LOCKED_ACCOUNT);
 		}catch (ExcessiveAttemptsException e){
 			return new SystemResult(SystemResultCode.RETRY_LIMIT);
+		}catch (BaseException e){
+			LOGGER.error(e.toString());
 		}
 		return result;
 	}
