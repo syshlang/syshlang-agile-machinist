@@ -20,6 +20,7 @@ public class ShiroFilterChainDefinitionMapBuilder{
     public LinkedHashMap<String, String> buildFilterChainDefinitionMap(){
         LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
         map.put("/system/user/index.html", "anon");
+        map.put("**/home/**","authc");
         map.put("*/login.json", "anon");
         map.put("/logout", "logout");
         map.put("/app/**","anon");

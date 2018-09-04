@@ -44,6 +44,11 @@ public class ShiroException extends BaseException {
     }
 
     @Override
+    public Throwable fillInStackTrace() {
+        return super.fillInStackTrace();
+    }
+
+    @Override
     public String toString() {
         return super.toString();
     }

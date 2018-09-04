@@ -65,7 +65,7 @@ public class ShiroSessionDao extends CachingSessionDAO {
         } else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.REDIS.getWay())){
 
         }else{
-            throw new ShiroException(SystemConstant.SYSTEM_EXCEPTION.EXCEPTION_PARAM.getCode(),new String[]{"系统参数配置异常：参数命名[shiro.way.cachesession]"});
+            throw new ShiroException(SystemConstant.SYSTEM_EXCEPTION.EXCEPTION_PARAM.getCode(),new String[]{"系统参数配置异常：参数名称[shiro.way.cachesession]"});
         }
         return sessionId;
     }
@@ -94,7 +94,7 @@ public class ShiroSessionDao extends CachingSessionDAO {
         }else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.REDIS.getWay())){
 
         }else{
-            throw new ShiroException(SystemConstant.SYSTEM_EXCEPTION.EXCEPTION_PARAM.getCode(),new String[]{"系统参数配置异常：参数命名[shiro.way.cachesession]"});
+            throw new ShiroException(SystemConstant.SYSTEM_EXCEPTION.EXCEPTION_PARAM.getCode(),new String[]{"系统参数配置异常：参数名称[shiro.way.cachesession]"});
         }
         return null;
     }
