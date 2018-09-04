@@ -9,11 +9,9 @@
 
 package com.syshlang.common.base;
 
-import com.syshlang.common.model.exception.ExceptionVO;
 import com.syshlang.common.util.MyMessageUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.util.StringUtils;
 
 import java.util.Arrays;
 
@@ -129,6 +127,11 @@ public class BaseException extends RuntimeException{
             message = defaultMessage;
         }
         return message;
+    }
+
+    @Override
+    public Throwable fillInStackTrace() {
+        return this;
     }
 
     @Override
