@@ -40,6 +40,11 @@ public class ShiroAuthenticationFilter extends AuthenticationFilter {
         return true;
     }
 
+    @Override
+    protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
+        return super.isAccessAllowed(request, response, mappedValue);
+    }
+
     public void setLocalSessionKeyPrefix(String localSessionKeyPrefix) {
         this.localSessionKeyPrefix = localSessionKeyPrefix;
     }
