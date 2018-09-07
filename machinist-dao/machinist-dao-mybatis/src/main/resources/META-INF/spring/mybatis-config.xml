@@ -6,7 +6,15 @@
 <configuration>
 
     <settings>
-        <setting name="logImpl" value="STDOUT_LOGGING" />
+        <!-- 全局映射器启用缓存 -->
+        <setting name="cacheEnabled" value="true" />
+        <!-- 允许 JDBC 支持自动生成主键 -->
+        <setting name="useGeneratedKeys" value="true" />
+        <!-- 配置默认的执行器 -->
+        <setting name="defaultExecutorType" value="REUSE" />
+        <!-- 指定 MyBatis 所用日志的具体实现 -->
+        <setting name="logImpl" value="SLF4J" />
+        <!--<setting name="logImpl" value="STDOUT_LOGGING" />-->
         <!-- myBatis本身的配置，开启下划线驼峰自动转换 -->
         <setting name="mapUnderscoreToCamelCase" value="true" />
     </settings>
