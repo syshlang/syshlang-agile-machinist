@@ -26,6 +26,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -43,7 +45,11 @@ public class ShiroAuthorityRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         String username = (String) principalCollection.getPrimaryPrincipal();
-        return new SimpleAuthorizationInfo();
+        Set<String> roles = new HashSet<>();
+        roles.add("user");
+        SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
+        simpleAuthorizationInfo.setRoles(roles);
+        return simpleAuthorizationInfo;
     }
 
     /**
@@ -82,10 +88,9 @@ public class ShiroAuthorityRealm extends AuthorizingRealm {
                     credentials = ShiroMd5Util.saltMd5(password,username,hashIterations);
                 }
             }
-            ByteSource credentialsSalt = ByteSource.Util.bytes(username);;
+            ByteSource credentialsSalt = ByteSource.Util.bytes(username);
             SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(principal, credentials, credentialsSalt, getName());
             return  info;
-
         }else {
             throw new IncorrectCredentialsException();
         }
