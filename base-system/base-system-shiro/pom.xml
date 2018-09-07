@@ -66,11 +66,11 @@
             <artifactId>shiro-spring</artifactId>
         </dependency>
         <!--ehcache -->
-        <dependency>
+       <!-- <dependency>
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache-core</artifactId>
             <version>2.6.11</version>
-        </dependency>
+        </dependency>-->
         <!-- 解析客户端操作系统、浏览器等 -->
         <dependency>
             <groupId>eu.bitwalker</groupId>
