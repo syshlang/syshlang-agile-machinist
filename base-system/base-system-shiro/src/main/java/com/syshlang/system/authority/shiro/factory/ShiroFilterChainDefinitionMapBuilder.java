@@ -12,7 +12,7 @@ package com.syshlang.system.authority.shiro.factory;
 import java.util.LinkedHashMap;
 
 /**
- * 实例工厂方法的方式配置权限过滤抽象类,由需要调用的系统实现方法
+ * 实例工厂方法的方式配置权限过滤
  * @author sunys
  */
 public class ShiroFilterChainDefinitionMapBuilder{
@@ -20,7 +20,7 @@ public class ShiroFilterChainDefinitionMapBuilder{
     public LinkedHashMap<String, String> buildFilterChainDefinitionMap(){
         LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
         map.put("/system/user/index.html", "anon");
-        map.put("**/home/**","authc");
+        map.put("/system/home/**","user");
         map.put("*/login.json", "anon");
         map.put("/logout", "logout");
         map.put("/app/**","anon");
