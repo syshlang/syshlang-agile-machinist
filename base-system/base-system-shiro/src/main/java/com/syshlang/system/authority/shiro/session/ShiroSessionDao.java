@@ -55,7 +55,6 @@ public class ShiroSessionDao extends CachingSessionDAO {
      */
     @Override
     protected Serializable doCreate(Session session) {
-        theWayCacheSession = "";
         Serializable sessionId = generateSessionId(session);
         //assignSessionId(session, sessionId);
         if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.EHCACHE.getWay())){
