@@ -25,7 +25,7 @@ public class ShiroFilterChainDefinitionMapBuilder{
         map.put("/logout", "logout");
         map.put("/app/**","anon");
         map.put("/static/**","anon");
-        map.put("/**", "sessionForceLogout,authc");
+        map.put("/**", "forceLogout,authc");
         return map;
     }
 }

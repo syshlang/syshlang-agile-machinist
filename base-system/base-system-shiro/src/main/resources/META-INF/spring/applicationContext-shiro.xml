@@ -31,7 +31,7 @@
         <property name="filters">
             <util:map>
                 <entry key="authc" value-ref="authenticationFilter"/>
-                <entry key="sessionForceLogout" value-ref="sessionForceLogout"/>
+                <entry key="forceLogout" value-ref="sessionForceLogout"/>
             </util:map>
         </property>
         <property name="filterChainDefinitionMap" ref="filterChainDefinitionMap"/>
