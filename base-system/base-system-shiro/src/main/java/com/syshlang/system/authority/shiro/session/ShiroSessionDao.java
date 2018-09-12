@@ -85,12 +85,15 @@ public class ShiroSessionDao extends CachingSessionDAO {
     }
 
     private void saveSession(String theWayCacheSession, Session session){
+        if (session  == null){
+            return;
+        }
         UserOnline userOnline = new UserOnline();
         String sessionId = ShiroConstant.SYSHLANG_SYSTEM_SHIRO_SESSION_ID+"_"+session.getId();
         userOnline.setSessionId(sessionId);
         //userOnline.setUserId(0L);
         userOnline.setCode(SerializeUtils.serialize(session));
-        userOnline.setIpaddr("");
+        userOnline.setIpaddr(session.getHost());
         userOnline.setLoginLocation("");
         userOnline.setBrowser("");
         userOnline.setOs("");
