@@ -20,7 +20,7 @@ public class ShiroConstant extends SystemConstant {
     // 全局会话key
     public static final String SYSHLANG_SYSTEM_USER_SERVER_SESSION_ID = "syshlang_system_user_server_session_id";
     // 会话key
-    private final static String SYSHLANG_SYSTEM_SHIRO_SESSION_ID = "syshlang_system_shiro_session_id";
+    public final static String SYSHLANG_SYSTEM_SHIRO_SESSION_ID = "syshlang_system_shiro_session_id";
 
     public enum WAY_CACHESESSION{
         DB("DB"),EHCACHE("EHCACHE"),REDIS("REDIS");

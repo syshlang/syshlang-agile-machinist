@@ -8,16 +8,21 @@
  */
 
 package com.syshlang.system.authority.shiro.session;
+import java.util.Date;
 
 import com.syshlang.system.api.common.SystemConstant;
+import com.syshlang.system.api.online.UserOnlineService;
 import com.syshlang.system.authority.shiro.api.ShiroConstant;
 import com.syshlang.system.authority.shiro.api.ShiroException;
+import com.syshlang.system.authority.shiro.util.SerializeUtils;
+import com.syshlang.system.model.online.entity.UserOnline;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.UnknownSessionException;
 import org.apache.shiro.session.mgt.eis.CachingSessionDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 
@@ -33,17 +38,35 @@ public class ShiroSessionDao extends CachingSessionDAO {
 
     private String theWayCacheSession;
 
-
+    @Autowired
+    private UserOnlineService userOnlineService;
     /**
-     * 重写CachingSessionDAO中readSession方法，
-     * 如果Session中没有登陆信息就调用doReadSession方法从存储中重读
+     * 读取Session,并重置过期时间
      * @param sessionId
      * @return
-     * @throws UnknownSessionException
      */
     @Override
-    public Session readSession(Serializable sessionId) throws UnknownSessionException {
-        return super.readSession(sessionId);
+    protected Session doReadSession(Serializable sessionId) {
+        Session  session = super.readSession(sessionId);
+        if (session == null){
+            session = readSessionFromCache(theWayCacheSession,sessionId);
+        }
+        return session;
+    }
+
+
+    private Session readSessionFromCache(String theWayCacheSession, Serializable sessionId) {
+
+        if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.EHCACHE.getWay())){
+            return super.getCachedSession(sessionId);
+        } else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.DB.getWay())){
+
+        } else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.REDIS.getWay())){
+
+        }else{
+            throw new ShiroException(SystemConstant.SYSTEM_EXCEPTION.EXCEPTION_PARAM.getCode(),new String[]{"系统参数配置异常：参数名称[shiro.way.cachesession]"});
+        }
+        return null;
     }
 
     /**
@@ -57,8 +80,26 @@ public class ShiroSessionDao extends CachingSessionDAO {
     protected Serializable doCreate(Session session) {
         Serializable sessionId = generateSessionId(session);
         assignSessionId(session, sessionId);
+        saveSession(theWayCacheSession,session);
+        return sessionId;
+    }
+
+    private void saveSession(String theWayCacheSession, Session session){
+        UserOnline userOnline = new UserOnline();
+        String sessionId = ShiroConstant.SYSHLANG_SYSTEM_SHIRO_SESSION_ID+"_"+session.getId();
+        userOnline.setSessionId(sessionId);
+        //userOnline.setUserId(0L);
+        userOnline.setCode(SerializeUtils.serialize(session));
+        userOnline.setIpaddr("");
+        userOnline.setLoginLocation("");
+        userOnline.setBrowser("");
+        userOnline.setOs("");
+        userOnline.setStatus("");
+        userOnline.setStartTime(new Date());
+        userOnline.setLastTime(new Date());
+        userOnline.setExpireTime(0L);
+        userOnline.setDb("");
         if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.EHCACHE.getWay())){
-            return sessionId;
         } else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.DB.getWay())){
 
         } else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.REDIS.getWay())){
@@ -66,37 +107,27 @@ public class ShiroSessionDao extends CachingSessionDAO {
         }else{
             throw new ShiroException(SystemConstant.SYSTEM_EXCEPTION.EXCEPTION_PARAM.getCode(),new String[]{"系统参数配置异常：参数名称[shiro.way.cachesession]"});
         }
-        return sessionId;
     }
 
+    /**
+     *  更新会话；如更新会话最后访问时间/停止会话/设置超时时间/设置移除属性等会调用
+     * @param session
+     */
     @Override
     protected void doUpdate(Session session) {
 
     }
 
+    /**
+     * 删除会话；当会话过期/会话停止（如用户退出时）会调用
+     * @param session
+     */
     @Override
     protected void doDelete(Session session) {
 
     }
 
-    /**
-     * 读取Session,并重置过期时间
-     * @param serializable
-     * @return
-     */
-    @Override
-    protected Session doReadSession(Serializable serializable) {
-        if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.EHCACHE.getWay())){
 
-        }else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.DB.getWay())){
-
-        }else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.REDIS.getWay())){
-
-        }else{
-            throw new ShiroException(SystemConstant.SYSTEM_EXCEPTION.EXCEPTION_PARAM.getCode(),new String[]{"系统参数配置异常：参数名称[shiro.way.cachesession]"});
-        }
-        return null;
-    }
 
 
     /**
