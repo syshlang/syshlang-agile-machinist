@@ -3,7 +3,7 @@ var checkHealthId;
 var healthflag = true;
 
 checkHealthId =setInterval( function () {
-    $.ajax({
+   /* $.ajax({
         type: "GET",
         cache: false,
         url: "health.json",
@@ -21,15 +21,16 @@ checkHealthId =setInterval( function () {
         	}
         	
         }
-    });
+    });*/
 },2000);
 
 function exitAction(){
-	$.post("/module/login/exit.json",{},function(data,status){
+	/*$.post("/module/login/exit.json",{},function(data,status){
 		if(data.code == 10000){
 			window.location.href="/module/login/index.html";
 		}
-	});
+	});*/
+    window.location.href="/logout";
 }
 
 
