@@ -58,7 +58,7 @@ DROP TABLE IF EXISTS `sys_user_online`;
 CREATE TABLE `sys_user_online` (
   `session_id` varchar(100) NOT NULL DEFAULT '' COMMENT '用户会话id',
   `user_id` int(10) unsigned DEFAULT NULL COMMENT '编号',
-  `code` varchar(100) NOT NULL COMMENT '加密code',
+  `code` varchar(1000) NOT NULL COMMENT '加密code',
   `ipaddr` varchar(50) DEFAULT '' COMMENT '登录IP地址',
   `login_location` varchar(255) DEFAULT '' COMMENT '登录地点',
   `browser` varchar(50) DEFAULT '' COMMENT '浏览器类型',
@@ -89,4 +89,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-13 16:37:47
+-- Dump completed on 2018-09-13 16:41:34
