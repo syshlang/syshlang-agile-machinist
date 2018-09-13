@@ -24,6 +24,7 @@ import java.util.List;
  */
 public abstract class MybatisDaoImpl<M extends MybatisMapper, U extends BaseModel, I extends Serializable> extends BaseDaoImpl<U,I> implements MybatisDao<U,I> {
 
+    @Autowired
     private M mybatisMapper;
 
     @Override

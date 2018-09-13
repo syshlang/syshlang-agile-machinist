@@ -10,7 +10,6 @@
 package com.syshlang.system.consumer.user;
 
 
-import com.syshlang.common.base.BaseController;
 import com.syshlang.common.base.BaseException;
 import com.syshlang.common.base.BaseResult;
 import com.syshlang.common.base.BaseResultCode;
