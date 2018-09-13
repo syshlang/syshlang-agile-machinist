@@ -66,7 +66,7 @@ CREATE TABLE `sys_user_online` (
   `status` varchar(4) DEFAULT '' COMMENT '状态(0:离线,1:在线)',
   `start_time` datetime DEFAULT NULL COMMENT 'session创建时间',
   `last_time` datetime DEFAULT NULL COMMENT 'session最后访问时间',
-  `expire_time` int(5) DEFAULT '0' COMMENT '超时时间，单位为分钟',
+  `expire_time` bigint(50) DEFAULT '0' COMMENT '超时时间，单位为分钟',
   PRIMARY KEY (`session_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='在线用户记录';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -89,4 +89,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-13 16:41:34
+-- Dump completed on 2018-09-13 16:46:03
