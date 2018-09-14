@@ -41,6 +41,8 @@ public class ShiroSessionDao extends CachingSessionDAO {
 
     @Autowired
     private UserOnlineService userOnlineService;
+
+
     /**
      * 读取Session,并重置过期时间
      * @param sessionId
@@ -53,17 +55,20 @@ public class ShiroSessionDao extends CachingSessionDAO {
 
 
     private Session readSessionFromCache(String theWayCacheSession, Serializable sessionId) {
-
+        LOGGER.debug("doReadSession >>>>> heWayCache={},sessionId={}", theWayCacheSession,sessionId);
+        Session session = null;
         if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.EHCACHE.getWay())){
-            return super.getCachedSession(sessionId);
+            session =  super.getCachedSession(sessionId);
         } else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.DB.getWay())){
+            String sessionIdStr = getSessionId(sessionId.toString());
+            UserOnline userOnline = userOnlineService.selectUserOnlineBySessionId(sessionIdStr);
+            if (userOnline != null){
+                session =  SerializeUtils.deserialize(userOnline.getCode());
+            }
+        } else{
 
-        } else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.REDIS.getWay())){
-
-        }else{
-            throw new ShiroException(SystemConstant.SYSTEM_EXCEPTION.EXCEPTION_PARAM.getCode(),new String[]{"系统参数配置异常：参数名称[shiro.way.cachesession]"});
         }
-        return null;
+        return session;
     }
 
     /**
@@ -86,7 +91,8 @@ public class ShiroSessionDao extends CachingSessionDAO {
             return;
         }
         UserOnline userOnline = new UserOnline();
-        String sessionId = ShiroConstant.SYSHLANG_SYSTEM_USER_SERVER_SESSION_ID+"_"+session.getId();
+        String sessionId = getSessionId(session.getId().toString());
+        LOGGER.debug("doCreate >>>>> heWayCache={},sessionId={}", theWayCacheSession,sessionId);
         userOnline.setSessionId(sessionId);
         //userOnline.setUserId(0L);
         userOnline.setCode(SerializeUtils.serialize(session));
@@ -98,14 +104,12 @@ public class ShiroSessionDao extends CachingSessionDAO {
         }
         userOnline.setStartTime(new Date());
         userOnline.setLastTime(new Date());
-        userOnline.setExpireTime(System.currentTimeMillis());
+        userOnline.setExpireTime(session.getTimeout() / 1000 / 60);
         if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.EHCACHE.getWay())){
+
         } else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.DB.getWay())){
             userOnlineService.insert(userOnline);
-        } else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.REDIS.getWay())){
-
-        }else{
-            throw new ShiroException(SystemConstant.SYSTEM_EXCEPTION.EXCEPTION_PARAM.getCode(),new String[]{"系统参数配置异常：参数名称[shiro.way.cachesession]"});
+        } else {
         }
     }
 
@@ -123,18 +127,25 @@ public class ShiroSessionDao extends CachingSessionDAO {
     }
 
     private void updateSession(String theWayCacheSession, Session session) {
+        // 更新session的最后一次访问时间
         UserSession userSession = (UserSession) session;
         UserSession userSessionCache = (UserSession) doReadSession(session.getId());
-        if (userSessionCache == null){
-
+        if (userSessionCache != null){
+            long deltaTime = System.currentTimeMillis()-userSessionCache.getLastAccessTime().getTime();
+            if (deltaTime >= userSessionCache.getTimeout()){
+                userSession.setStatus(UserSession.OnlineStatus.off_line);
+                userSession.setAttribute("FORCE_LOGOUT","FORCE_LOGOUT");
+            }else{
+                userSession.setStatus(userSessionCache.getStatus());
+                userSession.setAttribute("FORCE_LOGOUT", userSessionCache.getAttribute("FORCE_LOGOUT"));
+            }
         }
         if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.EHCACHE.getWay())){
+
         } else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.DB.getWay())){
 
-        } else if (theWayCacheSession.equalsIgnoreCase(ShiroConstant.WAY_CACHESESSION.REDIS.getWay())){
+        } else {
 
-        }else{
-            throw new ShiroException(SystemConstant.SYSTEM_EXCEPTION.EXCEPTION_PARAM.getCode(),new String[]{"系统参数配置异常：参数名称[shiro.way.cachesession]"});
         }
     }
 
@@ -144,11 +155,16 @@ public class ShiroSessionDao extends CachingSessionDAO {
      */
     @Override
     protected void doDelete(Session session) {
-        String sessionId = ShiroConstant.SYSHLANG_SYSTEM_USER_SERVER_SESSION_ID+"_"+session.getId();
+        String sessionId = getSessionId(session.getId().toString());
     }
 
 
-
+    private String getSessionId(String sessionId) {
+        if (StringUtils.isBlank(sessionId)){
+            return null;
+        }
+        return ShiroConstant.SYSHLANG_SYSTEM_USER_SERVER_SESSION_ID + "_" + sessionId;
+    }
 
     /**
      *
