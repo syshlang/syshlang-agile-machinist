@@ -11,6 +11,9 @@ package com.syshlang.system.authority.shiro.session;
 
 import org.apache.shiro.session.mgt.SimpleSession;
 
+/**
+ * @author sunys
+ */
 public class UserSession extends SimpleSession {
     private static final long serialVersionUID = 1021716392773039896L;
     /** 用户ID */
@@ -38,7 +41,7 @@ public class UserSession extends SimpleSession {
     private transient boolean attributeChanged = false;
 
 
-    public static enum OnlineStatus {
+    public enum OnlineStatus {
         /**
          * 在线
          */
