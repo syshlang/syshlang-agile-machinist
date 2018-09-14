@@ -81,6 +81,17 @@ public class ShiroAuthorityRealm extends AuthorizingRealm {
                 credentials = user.getPassword();
                 salt = user.getSalt();
             }
+            /*CredentialsMatcher credentialsMatcher = getCredentialsMatcher();
+            if (credentialsMatcher != null){
+                LoginCredentialsMatcher loginCredentialsMatcher = (LoginCredentialsMatcher) credentialsMatcher;
+                String hashAlgorithmName = loginCredentialsMatcher.getHashAlgorithmName();
+                int hashIterations = loginCredentialsMatcher.getHashIterations();
+                if (StringUtils.isNotBlank(hashAlgorithmName)
+                        && hashAlgorithmName.equalsIgnoreCase(HASHALGORITHMNAME_MD5)){
+                    credentials = ShiroMd5Util.saltMd5(passwordCheck,salt,hashIterations);
+                    credentials = passwordCheck;
+                }
+            }*/
             ByteSource credentialsSalt = ByteSource.Util.bytes(salt);
             SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(principal, credentials, credentialsSalt, getName());
             return  info;
