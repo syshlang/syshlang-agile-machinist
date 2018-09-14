@@ -86,7 +86,7 @@ public class ShiroSessionDao extends CachingSessionDAO {
             return;
         }
         UserOnline userOnline = new UserOnline();
-        String sessionId = ShiroConstant.SYSHLANG_SYSTEM_SHIRO_SESSION_ID+"_"+session.getId();
+        String sessionId = ShiroConstant.SYSHLANG_SYSTEM_USER_SERVER_SESSION_ID+"_"+session.getId();
         userOnline.setSessionId(sessionId);
         //userOnline.setUserId(0L);
         userOnline.setCode(SerializeUtils.serialize(session));
@@ -144,7 +144,7 @@ public class ShiroSessionDao extends CachingSessionDAO {
      */
     @Override
     protected void doDelete(Session session) {
-        String sessionId = ShiroConstant.SYSHLANG_SYSTEM_SHIRO_SESSION_ID+"_"+session.getId();
+        String sessionId = ShiroConstant.SYSHLANG_SYSTEM_USER_SERVER_SESSION_ID+"_"+session.getId();
     }
 
 

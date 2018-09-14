@@ -19,7 +19,6 @@ import com.syshlang.system.api.online.UserOnlineService;
 import com.syshlang.system.api.user.UserService;
 import com.syshlang.system.authority.shiro.api.ShiroConstant;
 import com.syshlang.system.authority.shiro.api.ShiroController;
-import com.syshlang.system.authority.shiro.util.ShiroMd5Util;
 import com.syshlang.system.model.online.entity.UserOnline;
 import com.syshlang.system.model.user.entity.User;
 import org.apache.commons.lang3.BooleanUtils;
@@ -75,6 +74,9 @@ public class UserController extends ShiroController {
             return  new SystemResult(SystemResultCode.EMPTY_PASSWORD);
         }
         Subject subject = SecurityUtils.getSubject();
+        if(subject.isAuthenticated()){
+        	return result;
+		}
         Session session = subject.getSession(false);
         if (session != null){
         	String sessionId = session.getId().toString();
@@ -86,8 +88,6 @@ public class UserController extends ShiroController {
 			}
 		}
 		try {
-			// 使用shiro认证
-			password = ShiroMd5Util.saltMd5(password,username,1024);
 			UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, password);
 			if (BooleanUtils.toBoolean(rememberMe)) {
 				usernamePasswordToken.setRememberMe(true);
