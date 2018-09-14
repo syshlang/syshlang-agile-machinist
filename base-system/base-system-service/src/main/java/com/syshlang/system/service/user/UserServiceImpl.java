@@ -75,7 +75,6 @@ public class UserServiceImpl extends BaseServiceImpl<UserDao, User, Long> implem
         if (StringUtils.isBlank(username)){
             return null;
         }
-        User user = userDao.selectUserByUserName(username);
-        return null;
+        return userDao.selectUserByUserName(username);
     }
 }
