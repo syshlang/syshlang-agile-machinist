@@ -63,32 +63,25 @@ public class ShiroAuthorityRealm extends AuthorizingRealm {
         if (authenticationToken != null){
             UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) authenticationToken;
             String username = usernamePasswordToken.getUsername();
-            String password = new String(usernamePasswordToken.getPassword());
             LOGGER.info("ShiroAuthorityRealm#AuthenticationInfo:{}",username);
-            //User user = userService.selectUserByUserName(username);
-            User user = new User();
-            user.setUsername("admin");
-            user.setLocked("0");
-            if (user == null){
-                throw new UnknownAccountException();
-            }
-            if (user.getLocked().equals(SystemConstant.UserConstant.USER_ENUM.STATUS_LOCKED.getCode())){
-                throw new LockedAccountException();
-            }
-
             Object principal = username;
             Object credentials = null;
-            CredentialsMatcher credentialsMatcher = getCredentialsMatcher();
-            if (credentialsMatcher != null){
-                LoginCredentialsMatcher loginCredentialsMatcher = (LoginCredentialsMatcher) credentialsMatcher;
-                String hashAlgorithmName = loginCredentialsMatcher.getHashAlgorithmName();
-                int hashIterations = loginCredentialsMatcher.getHashIterations();
-                if (StringUtils.isNotBlank(hashAlgorithmName)
-                        && hashAlgorithmName.equalsIgnoreCase(HASHALGORITHMNAME_MD5)){
-                    credentials = ShiroMd5Util.saltMd5(password,username,hashIterations);
+            String salt="";
+            if (username.equalsIgnoreCase("admin")){
+                credentials ="038bdaf98f2037b31f1e75b5b4c9b26e";
+                salt = username;
+            }else{
+                User user = userService.selectUserByUserName(username);
+                if (user == null){
+                    throw new UnknownAccountException();
                 }
+                if (user.getLocked().equals(SystemConstant.UserConstant.USER_ENUM.STATUS_LOCKED.getCode())){
+                    throw new LockedAccountException();
+                }
+                credentials = user.getPassword();
+                salt = user.getSalt();
             }
-            ByteSource credentialsSalt = ByteSource.Util.bytes(username);
+            ByteSource credentialsSalt = ByteSource.Util.bytes(salt);
             SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(principal, credentials, credentialsSalt, getName());
             return  info;
         }else {
