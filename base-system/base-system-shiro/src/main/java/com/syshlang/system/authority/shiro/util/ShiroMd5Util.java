@@ -41,4 +41,12 @@ public class ShiroMd5Util {
         }
         return null;
     }
+
+
+    public static void main(String[] args) {
+        String credentials = "123456";
+        String salt = "sunys";
+        int hashIterations = 1024;
+        System.out.println(saltMd5(credentials,salt,hashIterations));
+    }
 }
