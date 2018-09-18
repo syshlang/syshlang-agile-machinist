@@ -1,0 +1,12 @@
+@startuml
+
+browser -> server: first Request
+server --> browser: first Response
+
+browser -> server: second Request
+browser <-- server: second Response
+
+
+browser -> server: third Request
+browser <-- server: third Response
+@enduml

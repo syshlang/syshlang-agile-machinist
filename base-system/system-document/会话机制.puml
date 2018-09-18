@@ -1,0 +1,14 @@
+@startuml
+actor  browser #red
+database server
+browser -> server: first Request
+server -[#0000FF]> server: create session
+server --> browser: first Response(sessionId)
+browser --[#0000FF]> browser: save session(sessionId)
+
+browser -> server: second Request(sessionId)
+browser <-- server: second Response
+
+browser -> server: third Request(sessionId)
+browser <-- server: third Response
+@endumle
