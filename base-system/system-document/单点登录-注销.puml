@@ -1,0 +1,16 @@
+@startuml
+actor  browser #red
+participant "server(系统1)" #green
+participant "server(系统2)" #green
+database "SSO(认证中心)" #blue
+
+browser -> "server(系统1)": 注销请求（会话ID）
+"server(系统1)" -[#0000FF]> "server(系统1)": 取出授权令牌（会话ID）
+"server(系统1)" --> "SSO(认证中心)":  注销请求（授权令牌）
+"SSO(认证中心)" --[#0000FF]> "SSO(认证中心)":  校验授权\n令牌有效（授权令牌）
+"SSO(认证中心)" --[#0000FF]> "SSO(认证中心)":  销毁全局会话（授权令牌）
+"SSO(认证中心)" --[#0000FF]> "SSO(认证中心)":  取出注册系统（授权令牌）
+"SSO(认证中心)" --> "server(系统2)": 销毁局部会话（授权令牌）
+"SSO(认证中心)" --> "server(系统1)": 销毁局部会话（授权令牌）
+"SSO(认证中心)" -->"browser":登录页面（系统1的地址）
+@endumle
