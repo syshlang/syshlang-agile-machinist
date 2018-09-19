@@ -38,7 +38,7 @@
         </dependency>
         <dependency>
             <groupId>com.syshlang</groupId>
-            <artifactId>base-system-shiro</artifactId>
+            <artifactId>system-sso-client</artifactId>
         </dependency>
         <!--<dependency>
             <groupId>javax.servlet</groupId>

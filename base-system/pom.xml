@@ -80,60 +80,21 @@
             </dependency>
             <dependency>
                 <groupId>com.syshlang</groupId>
-                <artifactId>base-system-shiro</artifactId>
+                <artifactId>base-system-sso</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
-            <!-- shiro -->
             <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-core</artifactId>
-                <version>${shiro.version}</version>
+                <groupId>com.syshlang</groupId>
+                <artifactId>system-sso-client</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
             </dependency>
             <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-web</artifactId>
-                <version>${shiro.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-aspectj</artifactId>
-                <version>${shiro.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-cas</artifactId>
-                <version>${shiro.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-ehcache</artifactId>
-                <version>${shiro.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-hazelcast</artifactId>
-                <version>${shiro.version}</version>
-            </dependency>
-            <!--<dependency>
-              <groupId>org.apache.shiro</groupId>
-              <artifactId>shiro-features</artifactId>
-              <version>${shiro.version}</version>
-            </dependency>-->
-            <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-guice</artifactId>
-                <version>${shiro.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-quartz</artifactId>
-                <version>${shiro.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-spring</artifactId>
-                <version>${shiro.version}</version>
+                <groupId>com.syshlang</groupId>
+                <artifactId>system-sso-server</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -146,6 +107,6 @@
         <module>base-system-service</module>
         <module>base-system-consumer</module>
         <module>base-system-web</module>
-        <module>base-system-shiro</module>
+        <module>base-system-sso</module>
     </modules>
 </project>

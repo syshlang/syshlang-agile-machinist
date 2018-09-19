@@ -26,12 +26,6 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>com.syshlang</groupId>
-      <artifactId>base-system-shiro</artifactId>
-      <version>${project.version}</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
       <version>1.2</version>

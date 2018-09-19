@@ -43,9 +43,5 @@
             <groupId>com.syshlang</groupId>
             <artifactId>base-system-api</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-core</artifactId>
-        </dependency>
     </dependencies>
 </project>

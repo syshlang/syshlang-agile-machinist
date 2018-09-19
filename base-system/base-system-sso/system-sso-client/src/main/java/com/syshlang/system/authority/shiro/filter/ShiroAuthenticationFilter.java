@@ -10,6 +10,7 @@
 package com.syshlang.system.authority.shiro.filter;
 
 
+import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.AuthenticationFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,16 +31,29 @@ public class ShiroAuthenticationFilter extends AuthenticationFilter {
      * 表示当访问拒绝时是否已经处理了；
      * 如果返回true表示需要继续处理；
      * 如果返回false表示该拦截器实例已经处理了，将直接返回即可。
-     * @param servletRequest
-     * @param servletResponse
+     * @param request
+     * @param response
      * @return
      * @throws Exception
      */
     @Override
-    protected boolean onAccessDenied(ServletRequest servletRequest, ServletResponse servletResponse) throws Exception {
+    protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
+        /*Subject subject = getSubject(request, response);
+        if (subject != null)
+        {
+            subject.logout();
+        }
+        saveRequestAndRedirectToLogin(request, response);*/
         return true;
     }
 
+    /**
+     * 表示是否允许访问；mappedValue就是[urls]配置中拦截器参数部分，如果允许访问返回true，否则false；
+     * @param request
+     * @param response
+     * @param mappedValue
+     * @return
+     */
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
         return super.isAccessAllowed(request, response, mappedValue);
