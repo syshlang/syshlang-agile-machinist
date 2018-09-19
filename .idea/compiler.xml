@@ -16,6 +16,7 @@
         <module name="machinist-authority-shiro" />
         <module name="machinist-common" />
         <module name="machinist-dao-mybatis" />
+        <module name="machinist-ui" />
         <module name="system-sso-client" />
         <module name="system-sso-server" />
       </profile>

@@ -335,6 +335,7 @@
         <module>machinist-authority</module>
         <module>base-system</module>
         <module>cms-web</module>
+        <module>machinist-ui</module>
     </modules>
     <build>
         <plugins>
