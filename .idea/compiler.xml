@@ -11,12 +11,13 @@
         <module name="base-system-dao" />
         <module name="base-system-model" />
         <module name="base-system-service" />
-        <module name="base-system-shiro" />
         <module name="base-system-web" />
         <module name="machinist-api-common" />
         <module name="machinist-authority-shiro" />
         <module name="machinist-common" />
         <module name="machinist-dao-mybatis" />
+        <module name="system-sso-client" />
+        <module name="system-sso-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="7" />

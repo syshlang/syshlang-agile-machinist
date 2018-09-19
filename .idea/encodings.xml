@@ -8,7 +8,9 @@
     <file url="file://$PROJECT_DIR$/base-system/base-system-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/base-system/base-system-model" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/base-system/base-system-service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/base-system/base-system-shiro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/base-system/base-system-sso" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/base-system/base-system-sso/system-sso-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/base-system/base-system-sso/system-sso-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/base-system/base-system-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cms-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/machinist-api" charset="UTF-8" />
