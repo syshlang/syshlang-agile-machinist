@@ -19,11 +19,20 @@
 
     <context:component-scan base-package="com.syshlang"/>
 
+    <!-- 拦截器 -->
+    <mvc:interceptors>
+        <!-- 公共拦截器 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.syshlang.system.web.interceptor.WebInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <mvc:annotation-driven>
         <!-- 处理responseBody 里面日期类型 -->
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-                <property name="objectMapper">
+                <property name="objectMapper">r
                     <bean class="com.fasterxml.jackson.databind.ObjectMapper">
                         <property name="dateFormat">
                             <bean class="java.text.SimpleDateFormat">
@@ -43,14 +52,16 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
-
-    <bean id="mvcProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="ignoreUnresolvablePlaceholders" value="true" />
-        <property name="location">
-            <value>classpath:config.properties</value>
-        </property>
-    </bean>
-    <util:properties id="properties" location="classpath:config.properties"/>
+    <!--
+       <bean id="mvcProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+           <property name="ignoreUnresolvablePlaceholders" value="true" />
+           <property name="location">
+               <value>classpath:config.properties</value>
+           </property>
+       </bean>
+       <util:properties id="properties" location="classpath:config.properties"/>
+     -->
+      <context:property-placeholder location="classpath:config.properties"/>
 
     <!--<bean id="log4jInitialization" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
         <property name="targetClass" value="org.springframework.util.Log4jConfigurer" />
