@@ -96,5 +96,6 @@
     <modules>
         <module>system-sso-client</module>
         <module>system-sso-server</module>
+        <module>system-sso-common</module>
     </modules>
 </project>

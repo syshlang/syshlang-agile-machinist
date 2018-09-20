@@ -19,6 +19,7 @@
         <module name="machinist-dao-mybatis" />
         <module name="machinist-ui" />
         <module name="system-sso-client" />
+        <module name="system-sso-common" />
         <module name="system-sso-server" />
       </profile>
     </annotationProcessing>
