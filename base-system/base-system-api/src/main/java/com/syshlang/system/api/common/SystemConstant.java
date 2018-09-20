@@ -17,6 +17,29 @@ import com.syshlang.api.common.ApiConstant;
 public class SystemConstant extends ApiConstant {
     public static final  Class CLASS = SystemConstant.class;
 
+
+    public enum SYSTEM_ENV{
+        SYSTEM_ENV_DEV("dev","开发环境"),
+        SYSTEM_ENV_TEST("test","演示环境"),
+        SYSTEM_ENV_PRO("pro","生产环境");
+
+        private final String env;
+        private final String desc;
+
+        public String getEnv() {
+            return env;
+        }
+
+        public String getDesc() {
+            return desc;
+        }
+
+        SYSTEM_ENV(String env, String desc) {
+            this.env = env;
+            this.desc = desc;
+        }
+    }
+
     /**
      * 系统所属模块枚举类
      */
