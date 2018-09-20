@@ -9,7 +9,9 @@
 
 package com.syshlang.system.web.interceptor;
 
+import com.syshlang.common.util.enumutil.EnumUtil;
 import com.syshlang.common.util.properties.PropertiesFileUtil;
+import com.syshlang.system.api.common.SystemConstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -36,7 +38,8 @@ public class WebInterceptor  extends HandlerInterceptorAdapter {
         String profileEnv = PropertiesFileUtil.getInstance().get("profile.env");
         String uiPath = PropertiesFileUtil.getInstance().get("ui.path");
         request.setAttribute("appName", appName);
-        request.setAttribute("profileEnv", profileEnv);
+        LOGGER.info("当前系统环境："+EnumUtil.getEnumDesc(SystemConstant.SYSTEM_ENV.class,profileEnv));
+        request.setAttribute("system_env", EnumUtil.getEnumDesc(SystemConstant.SYSTEM_ENV.class,profileEnv));
         request.setAttribute("uiPath", uiPath);
         return true;
     }
