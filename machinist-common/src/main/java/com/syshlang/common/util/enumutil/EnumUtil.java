@@ -12,6 +12,8 @@ package com.syshlang.common.util.enumutil;
 import org.apache.commons.lang3.EnumUtils;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * 枚举类工具
@@ -48,6 +50,25 @@ public class EnumUtil extends EnumUtils {
             return enum1.equals(enum2);
         } else {
             return enum2.equals(enum1);
+        }
+    }
+
+    public static <E extends Enum<E>> String  getEnumDesc(Class<E> enumClass, String key) {
+        try {
+            if (key == null) {
+                return null;
+            }
+            String enumName  = enumClass.getSimpleName()+"_"+key.toUpperCase();
+            E e = Enum.valueOf(enumClass, enumName);
+            if (e == null){
+                return null;
+            }
+            Method method = e.getClass().getDeclaredMethod("getDesc");
+            Object result = method.invoke(e);
+            return String.valueOf(result);
+        } catch (IllegalArgumentException | NoSuchMethodException
+                | IllegalAccessException | InvocationTargetException var3) {
+            return null;
         }
     }
 }
