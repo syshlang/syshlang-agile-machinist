@@ -11,8 +11,8 @@ package com.syshlang.system.sso.client.session;
 import java.util.Date;
 
 import com.syshlang.system.api.online.UserOnlineService;
-import com.syshlang.system.sso.client.api.ShiroConstant;
-import com.syshlang.system.sso.client.util.SerializeUtils;
+import com.syshlang.system.sso.common.api.ShiroConstant;
+import com.syshlang.system.sso.common.util.SerializeUtils;
 import com.syshlang.system.model.online.entity.UserOnline;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.session.Session;

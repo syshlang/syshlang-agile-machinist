@@ -7,7 +7,7 @@
  * @since:
  */
 
-package com.syshlang.system.sso.client.api;
+package com.syshlang.system.sso.common.api;
 
 import com.syshlang.common.base.BaseController;
 import org.apache.shiro.authz.UnauthorizedException;

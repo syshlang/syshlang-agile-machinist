@@ -7,7 +7,7 @@
  * @since:
  */
 
-package com.syshlang.system.sso.client.util;
+package com.syshlang.system.sso.common.util;
 
 
 import org.apache.commons.lang3.StringUtils;
