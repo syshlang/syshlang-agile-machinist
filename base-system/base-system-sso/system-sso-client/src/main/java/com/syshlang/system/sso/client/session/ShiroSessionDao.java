@@ -3,22 +3,19 @@
  * @File: ShiroSessionDao.java
  * @Description:
  * @Author: sunys
- * @Date: 18-8-30 下午9:23
+ * @Date: 18-9-20 下午9:59
  * @since:
  */
 
-package com.syshlang.system.authority.shiro.session;
+package com.syshlang.system.sso.client.session;
 import java.util.Date;
 
-import com.syshlang.system.api.common.SystemConstant;
 import com.syshlang.system.api.online.UserOnlineService;
-import com.syshlang.system.authority.shiro.api.ShiroConstant;
-import com.syshlang.system.authority.shiro.api.ShiroException;
-import com.syshlang.system.authority.shiro.util.SerializeUtils;
+import com.syshlang.system.sso.client.api.ShiroConstant;
+import com.syshlang.system.sso.client.util.SerializeUtils;
 import com.syshlang.system.model.online.entity.UserOnline;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.session.Session;
-import org.apache.shiro.session.UnknownSessionException;
 import org.apache.shiro.session.mgt.ValidatingSession;
 import org.apache.shiro.session.mgt.eis.CachingSessionDAO;
 import org.slf4j.Logger;

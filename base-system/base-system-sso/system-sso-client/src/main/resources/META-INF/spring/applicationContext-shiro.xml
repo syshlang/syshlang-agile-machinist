@@ -76,7 +76,7 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     <!-- 会话DAO，可重写，持久化session -->
-    <bean id="sessionDAO" class="com.syshlang.system.authority.shiro.session.ShiroSessionDao">
+    <bean id="sessionDAO" class="com.syshlang.system.sso.client.session.ShiroSessionDao">
         <property name="forceLogout" value="${shiro.forceLogout.flag}"/>
         <property name="theWayCacheSession" value="${shiro.way.cachesession}"/>
     </bean>
@@ -91,9 +91,9 @@
         <property name="name" value="${shiro.session.id}"/>
     </bean>
     <!-- 会话监听器 -->
-    <bean id="sessionListener" class="com.syshlang.system.authority.shiro.listener.ShiroSessionListener"/>
+    <bean id="sessionListener" class="com.syshlang.system.sso.client.listener.ShiroSessionListener"/>
     <!-- session工厂 -->
-    <bean id="sessionFactory" class="com.syshlang.system.authority.shiro.session.ShiroSessionFactory"/>
+    <bean id="sessionFactory" class="com.syshlang.system.sso.client.session.ShiroSessionFactory"/>
     <!-- rememberMe管理器 -->
     <bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
         <!-- rememberMe cookie加密的密钥 建议每个项目都不一样 默认AES算法 密钥长度（128 256 512 位）-->
@@ -109,14 +109,14 @@
         <property name="maxAge" value="${shiro.rememberMe.timeout}"/>
     </bean>
     <!-- realm实现，继承自AuthorizingRealm -->
-    <bean id="systemRealm" class="com.syshlang.system.authority.shiro.realm.ShiroAuthorityRealm">
+    <bean id="systemRealm" class="com.syshlang.system.sso.client.realm.ShiroAuthorityRealm">
         <property name="cachingEnabled" value="false"/>
         <property name="credentialsMatcher">
             <!--<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
                 <property name="hashAlgorithmName" value="${shiro.hashAlgorithmName}"></property>
                 <property name="hashIterations" value="${shiro.hashIterations}"></property>
             </bean>-->
-            <bean class="com.syshlang.system.authority.shiro.matcher.LoginCredentialsMatcher">
+            <bean class="com.syshlang.system.sso.client.matcher.LoginCredentialsMatcher">
                 <property name="hashAlgorithmName" value="${shiro.hashAlgorithmName}"></property>
                 <property name="hashIterations" value="${shiro.hashIterations}"></property>
                 <property name="maxRetryLimit" value="${shiro.user.LoginRetryLimit}"/>
@@ -127,12 +127,12 @@
     </bean>
 
     <!-- 重写authc过滤器 -->
-    <bean id="authenticationFilter" class="com.syshlang.system.authority.shiro.filter.ShiroAuthenticationFilter">
+    <bean id="authenticationFilter" class="com.syshlang.system.sso.client.filter.ShiroAuthenticationFilter">
         <property name="localSessionKeyPrefix" value="${shiro.local.session.key.prefix}"/>
     </bean>
 
     <!-- 强制退出会话过滤器 -->
-    <bean id="sessionForceLogout" class="com.syshlang.system.authority.shiro.filter.ShiroSessionForceLogoutFilter">
+    <bean id="sessionForceLogout" class="com.syshlang.system.sso.client.filter.ShiroSessionForceLogoutFilter">
         <property name="loginUrl" value="${system.loginUrl}"/>
         <property name="forceLogout" value="${shiro.forceLogout.flag}"/>
     </bean>
@@ -142,7 +142,7 @@
           factory-bean="filterChainDefinitionMapBuilder" factory-method="buildFilterChainDefinitionMap">
     </bean>
     <bean id="filterChainDefinitionMapBuilder"
-          class="com.syshlang.system.authority.shiro.factory.ShiroFilterChainDefinitionMapBuilder">
+          class="com.syshlang.system.sso.client.factory.ShiroFilterChainDefinitionMapBuilder">
     </bean>
 
     <!-- 设置SecurityUtils，相当于调用SecurityUtils.setSecurityManager(securityManager) -->

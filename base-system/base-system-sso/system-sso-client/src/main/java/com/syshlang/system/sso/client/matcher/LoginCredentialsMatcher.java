@@ -3,11 +3,11 @@
  * @File: LoginCredentialsMatcher.java
  * @Description:
  * @Author: sunys
- * @Date: 18-8-31 上午12:42
+ * @Date: 18-9-20 下午9:59
  * @since:
  */
 
-package com.syshlang.system.authority.shiro.matcher;
+package com.syshlang.system.sso.client.matcher;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationInfo;

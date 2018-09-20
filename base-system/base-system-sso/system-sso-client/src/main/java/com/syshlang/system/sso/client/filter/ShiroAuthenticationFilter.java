@@ -3,14 +3,13 @@
  * @File: ShiroAuthenticationFilter.java
  * @Description:
  * @Author: sunys
- * @Date: 18-8-30 下午9:23
+ * @Date: 18-9-20 下午9:59
  * @since:
  */
 
-package com.syshlang.system.authority.shiro.filter;
+package com.syshlang.system.sso.client.filter;
 
 
-import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.AuthenticationFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

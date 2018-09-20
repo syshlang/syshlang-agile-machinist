@@ -3,11 +3,11 @@
  * @File: SerializeUtils.java
  * @Description:
  * @Author: sunys
- * @Date: 18-9-3 下午8:55
+ * @Date: 18-9-20 下午9:59
  * @since:
  */
 
-package com.syshlang.system.authority.shiro.util;
+package com.syshlang.system.sso.client.util;
 
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.SerializationUtils;

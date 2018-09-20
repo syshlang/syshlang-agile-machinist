@@ -9,7 +9,7 @@
 
 package com.syshlang.system.consumer.home;
 
-import com.syshlang.system.authority.shiro.api.ShiroController;
+import com.syshlang.system.sso.client.api.ShiroController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;

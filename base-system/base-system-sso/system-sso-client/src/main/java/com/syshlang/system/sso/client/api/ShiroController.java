@@ -3,11 +3,11 @@
  * @File: ShiroController.java
  * @Description:
  * @Author: sunys
- * @Date: 18-9-3 下午11:05
+ * @Date: 18-9-20 下午9:59
  * @since:
  */
 
-package com.syshlang.system.authority.shiro.api;
+package com.syshlang.system.sso.client.api;
 
 import com.syshlang.common.base.BaseController;
 import org.apache.shiro.authz.UnauthorizedException;

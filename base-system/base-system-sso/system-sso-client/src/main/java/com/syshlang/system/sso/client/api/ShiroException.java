@@ -3,11 +3,11 @@
  * @File: ShiroException.java
  * @Description:
  * @Author: sunys
- * @Date: 18-9-3 下午10:58
+ * @Date: 18-9-20 下午9:59
  * @since:
  */
 
-package com.syshlang.system.authority.shiro.api;
+package com.syshlang.system.sso.client.api;
 
 import com.syshlang.common.base.BaseException;
 

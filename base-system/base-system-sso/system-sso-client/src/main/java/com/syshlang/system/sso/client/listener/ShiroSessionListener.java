@@ -3,11 +3,11 @@
  * @File: ShiroSessionListener.java
  * @Description:
  * @Author: sunys
- * @Date: 18-8-30 下午9:23
+ * @Date: 18-9-20 下午9:59
  * @since:
  */
 
-package com.syshlang.system.authority.shiro.listener;
+package com.syshlang.system.sso.client.listener;
 
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.SessionListener;

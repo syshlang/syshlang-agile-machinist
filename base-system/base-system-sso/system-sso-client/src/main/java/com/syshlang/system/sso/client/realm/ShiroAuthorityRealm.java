@@ -3,20 +3,16 @@
  * @File: ShiroAuthorityRealm.java
  * @Description:
  * @Author: sunys
- * @Date: 18-8-30 下午9:23
+ * @Date: 18-9-20 下午9:59
  * @since:
  */
 
-package com.syshlang.system.authority.shiro.realm;
+package com.syshlang.system.sso.client.realm;
 
 import com.syshlang.system.api.common.SystemConstant;
 import com.syshlang.system.api.user.UserService;
-import com.syshlang.system.authority.shiro.matcher.LoginCredentialsMatcher;
-import com.syshlang.system.authority.shiro.util.ShiroMd5Util;
 import com.syshlang.system.model.user.entity.User;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.*;
-import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
