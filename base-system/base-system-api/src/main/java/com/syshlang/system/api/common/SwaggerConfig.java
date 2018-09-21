@@ -9,6 +9,7 @@
 
 package com.syshlang.system.api.common;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -31,32 +32,31 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig extends WebMvcConfigurerAdapter {
 
     @Bean
-    public Docket createRestApi() {
+    public Docket commonDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("API接口文档")
+                .groupName("user API Documentation")
                 .apiInfo(apiInfo())
+                .pathMapping("/")
                 .select()
-                .apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("com.syshlang.system.consumer.user"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     @Bean
-    public Docket commonDocket() {
+    public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("通用API接口文档")
-                .apiInfo(apiInfo())
-                .pathMapping("/")
+                .groupName("API")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.syshlang"))
+                .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .apiInfo(apiInfo());
     }
+
 
     private ApiInfo apiInfo() {
         ApiInfo apiInfo = new ApiInfoBuilder()
-                .title("Api Documentation")
-                .description("Api Documentation")
                 .title("syshlang-agile-machinist")
                 .description("更多请关注https://github.com/syshlang")
                 .termsOfServiceUrl("https://github.com/syshlang")
