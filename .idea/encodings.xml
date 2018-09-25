@@ -22,5 +22,6 @@
     <file url="file://$PROJECT_DIR$/machinist-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/machinist-dao/machinist-dao-mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/machinist-ui" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/machinist-ui/machinist-ui-frame" charset="UTF-8" />
   </component>
 </project>
