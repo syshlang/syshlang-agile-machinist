@@ -8102,5 +8102,5 @@
     ], function( preset ) {
         return preset;
     });
-    return require('webuploader');
+    return require('ui-frame/easyui/static/js/webuploader/webuploader');
 });
