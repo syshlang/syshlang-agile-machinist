@@ -25,6 +25,7 @@ public class ShiroFilterChainDefinitionMapBuilder{
         map.put("/logout", "logout");
         map.put("/app/**","anon");
         map.put("/static/**","anon");
+        map.put("/ui-frame/**","anon");
         map.put("/swagger-ui.html", "anon");
         map.put("/swagger-resources/**", "anon");
         map.put("/v2/api-docs/**", "anon");
