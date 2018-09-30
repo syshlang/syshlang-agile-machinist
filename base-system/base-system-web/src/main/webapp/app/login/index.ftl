@@ -2,8 +2,19 @@
 <html>
 <head>
 	<title>文档管理系统</title>
-    <script src="/app/include/head.js"></script>
-    <link rel="stylesheet" type="text/css" href="/ui-frame/easyui/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/IconExtension.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/css/common.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/css/jquery-ui-1.9.2.custom.min.css"   />
+    <link rel="stylesheet" type="text/css" href="${uiPath}/css/bootstrap.min.css">
+    <script type="text/javascript" src="${uiPath}/easyui/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="${uiPath}/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="${uiPath}/js/lib/jquery.format.js"></script>
+    <script type="text/javascript" src="${uiPath}/js/common/pascloudfunctions.js"></script>
     <link rel="stylesheet" type="text/css" href="/app/login/css/login.css">
     <script type="text/javascript" src="/app/login/js/login.js"></script>
 

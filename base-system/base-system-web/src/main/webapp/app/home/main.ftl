@@ -3,8 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>文档管理系统</title>
-    <script src="/app/include/head.js"></script>
-    <script type="text/javascript" src="/static/js/common/pascloudfunctions.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/IconExtension.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/css/common.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/css/jquery-ui-1.9.2.custom.min.css"   />
+    <link rel="stylesheet" type="text/css" href="${uiPath}/css/bootstrap.min.css">
+    <script type="text/javascript" src="${uiPath}/easyui/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="${uiPath}/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="${uiPath}/js/lib/jquery.format.js"></script>
+    <script type="text/javascript" src="${uiPath}/js/common/pascloudfunctions.js"></script>
+    <script type="text/javascript" src="${uiPath}/js/common/pascloudfunctions.js"></script>
     <script type="text/javascript" src="/app/main/js/mainIndexPage.js"></script>
 
 	<script type="text/javascript">
@@ -39,7 +51,7 @@
 		                
 		            </div>
 		            <div style="width:28%;height:64px;background-color:#fff;border-radius:32px;float:right;">
-		                <img src="/static/images/enter.png" width="100%" height="100%">
+		                <img src="${uiPath}/images/enter.png" width="100%" height="100%">
 		            </div>
 		            <div style="clear:both"></div>
                 </div>
@@ -53,7 +65,7 @@
 		                <div>租户数量：<font color="blue">${dbs}</font> 个</div>
 		            </div>
 		            <div style="width:28%;height:64px;background-color:#fff;border-radius:32px;float:right;">
-		                <img src="/static/images/enter.png" width="100%" height="100%">
+		                <img src="${uiPath}/images/enter.png" width="100%" height="100%">
 		            </div>
 		            <div style="clear:both"></div>
                 </div>

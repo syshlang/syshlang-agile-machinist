@@ -3,8 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<title>文档管理系统</title>
-    <script src="/app/include/head.js"></script>
-	<link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/IconExtension.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/css/common.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/css/jquery-ui-1.9.2.custom.min.css"   />
+    <link rel="stylesheet" type="text/css" href="${uiPath}/css/bootstrap.min.css">
+    <script type="text/javascript" src="${uiPath}/easyui/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="${uiPath}/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="${uiPath}/js/lib/jquery.format.js"></script>
+    <script type="text/javascript" src="${uiPath}/js/common/pascloudfunctions.js"></script>
+
 
     <script type="text/javascript" src="/app/home/js/mainDataGridToolbar.js"></script>
     <script type="text/javascript" src="/app/home/js/mainDataGrid.js"></script>
@@ -109,7 +122,7 @@
 </head>
 <body id="main" class="easyui-layout" style="background-color: #008000;" >
     <div data-options="region:'north'" style="height:45px;border:0;" class="top2">
-        <div class="" style="float:left;width:40px;text-align:left;color:#ffffff;margin-left:10px;margin-top:5px;"><img src="/static/images/logo.png" width="40px" /></div>
+        <div class="" style="float:left;width:40px;text-align:left;color:#ffffff;margin-left:10px;margin-top:5px;"><img src="${uiPath}/images/logo.png" width="40px" /></div>
         <div class="" style="float:left;width:160px;text-align:left;color:#ffffff;margin-left:5px;"><h2 style="">文档管理系统</h2></div>
         <!--
         <div class="" style="float:left;width:0px;text-align:left;height:40px;margin-top:5px;box-shadow: 0px 0px 4px 4px #CCFFFF;">&nbsp;</div>
@@ -121,7 +134,7 @@
                 </div>
             </div>
             <div style="float:right;width:50px;">
-                <img src="/static/images/profile.png" width="40px" height="40px" style="margin-top:5px;">
+                <img src="${uiPath}/images/profile.png" width="40px" height="40px" style="margin-top:5px;">
             </div>
             <div class="" style="clear:both;"></div>
         </div>
