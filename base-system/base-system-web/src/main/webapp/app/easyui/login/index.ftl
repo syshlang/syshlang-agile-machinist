@@ -32,6 +32,8 @@
           <h2 class="form-signin-heading">登录</h2>
           <input type="text" class="form-control" name="username" id="username" placeholder="Email Address" required="" autofocus="" value="admin"/>
           <input type="password" class="form-control" name="password" id="password" placeholder="Password" required="" value="123456"/>
+          <input type="text"  class="form-control"  name="verify" id="verify"  placeholder="请输入验证码" />
+          <img class="admin-captcha" src=""  onclick="updateVerify()">
           <label class="checkbox">
             <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> 是否记住
           </label>

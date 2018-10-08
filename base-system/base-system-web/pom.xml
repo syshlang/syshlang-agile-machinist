@@ -60,7 +60,7 @@
       <id>dev</id>
       <properties>
         <env>dev</env>
-        <theme>easyui</theme>
+        <theme>layui</theme>
       </properties>
       <activation>
         <activeByDefault>true</activeByDefault>
