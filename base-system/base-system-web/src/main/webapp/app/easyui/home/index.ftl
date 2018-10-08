@@ -19,13 +19,13 @@
     <script type="text/javascript" src="${uiPath}/js/common/pascloudfunctions.js"></script>
 
 
-    <script type="text/javascript" src="/app/home/js/mainDataGridToolbar.js"></script>
-    <script type="text/javascript" src="/app/home/js/mainDataGrid.js"></script>
-    <script type="text/javascript" src="/app/home/js/mainLeft.js"></script>
-    <script type="text/javascript" src="/app/home/js/mainTab.js"></script>
-    <script type="text/javascript" src="/app/home/js/databaseForm.js"></script>
-    <script type="text/javascript" src="/app/home/js/tenantForm.js"></script>
-    <script type="text/javascript" src="/app/home/js/main.js"></script>
+    <script type="text/javascript" src="/app/easyui/home/js/mainDataGridToolbar.js"></script>
+    <script type="text/javascript" src="/app/easyui/home/js/mainDataGrid.js"></script>
+    <script type="text/javascript" src="/app/easyui/home/js/mainLeft.js"></script>
+    <script type="text/javascript" src="/app/easyui/home/js/mainTab.js"></script>
+    <script type="text/javascript" src="/app/easyui/home/js/databaseForm.js"></script>
+    <script type="text/javascript" src="/app/easyui/home/js/tenantForm.js"></script>
+    <script type="text/javascript" src="/app/easyui/home/js/main.js"></script>
     
     <style>
     .accordion .accordion-body{

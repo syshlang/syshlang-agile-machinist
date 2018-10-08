@@ -60,6 +60,7 @@
       <id>dev</id>
       <properties>
         <env>dev</env>
+        <theme>easyui</theme>
       </properties>
       <activation>
         <activeByDefault>true</activeByDefault>
@@ -69,12 +70,14 @@
       <id>test</id>
       <properties>
         <env>test</env>
+        <theme>easyui</theme>
       </properties>
     </profile>
     <profile>
       <id>prod</id>
       <properties>
         <env>prod</env>
+        <theme>easyui</theme>
       </properties>
     </profile>
   </profiles>
