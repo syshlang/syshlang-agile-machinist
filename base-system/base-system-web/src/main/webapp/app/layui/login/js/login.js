@@ -18,16 +18,11 @@ layui.use(['form', 'layer'], function() {
 
     //监听提交
     form.on('submit(login)', function (data) {
-        var username = $('#username').val();
-        var password = $('#password').val();
-        var rememberMe = $('#rememberMe').val();
-        var params = {username:username,password:password,rememberMe:rememberMe};
         var loading = layer.load(1);
-        $.post("/system/user/login.json",params,function(data,status){
+        $.post("/system/user/login.json",data.field,function(data,status){
             if(data.code == 10000){
                 window.location.href="/system/home/index.html";
             }else{
-                //alert('提示',data.desc);
                 $("#msg").css('display','block');
                 $('#msg').html(data.desc);
             }
