@@ -19,14 +19,14 @@
     <div id="container">
         <div class="admin-login-background">
             <form class="layui-form">
-                <div class="admin-header">
+                <div class="layui-input admin-input admin-header">
                     <h2>登录</h2>
                 </div>
                 <div>
                     <i class="layui-icon layui-icon-username admin-icon admin-icon-username"></i>
                     <input type="text" id="username" name="username" placeholder="请输入用户名"
                            autocomplete="off" lay-verify="required|username"
-                           class="layui-input admin-input admin-input-username">
+                           class="layui-input admin-input ">
                 </div>
                 <div>
                     <i class="layui-icon layui-icon-password admin-icon admin-icon-password"></i>
