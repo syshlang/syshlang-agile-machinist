@@ -1,5 +1,4 @@
 function loginAction(){
-    alert();
     var username = $('#username').val();
     var password = $('#password').val();
     var rememberMe = $('#rememberMe').val();

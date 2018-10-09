@@ -23,28 +23,27 @@
                 </div>
                 <div>
                     <i class="layui-icon layui-icon-username admin-icon admin-icon-username"></i>
-                    <input type="text" name="username" placeholder="请输入用户名"
+                    <input type="text" id="username" name="username" placeholder="请输入用户名"
                            autocomplete="off"
                            class="layui-input admin-input admin-input-username">
                 </div>
                 <div>
                     <i class="layui-icon layui-icon-password admin-icon admin-icon-password"></i>
-                    <input type="password" name="password"
+                    <input type="password" id="password" name="password"
                            placeholder="请输入密码"
                            autocomplete="off"
                            class="layui-input admin-input">
                 </div>
                 <div >
-                    <input type="text" name="verify"
+                    <input type="text" id="verify" name="verify"
                            placeholder="请输入验证码"
                            autocomplete="off"
                            class="layui-input admin-input admin-input-verify">
-                    <img class="admin-captcha" src=""
-                         onclick="updateVerify()">
+                    <img class="admin-captcha" src="" onclick="updateVerify()">
                 </div>
                 <div>
                     <i class="layui-icon layui-icon-rememberMe admin-icon admin-icon-rememberMe"></i>
-                    <input type="checkbox" checked="" name="rememberMe" lay-skin="switch" lay-text="是|否">
+                    <input type="checkbox" checked="" id="rememberMe" name="rememberMe" lay-skin="switch" lay-text="是|否">
                     <label class="layui-form-label admin-rememberMe">是否记住</label>
                 </div>
                 <button type="button" class="layui-btn admin-button" lay-submit="" onClick="loginAction()">登陆</button>
@@ -57,6 +56,7 @@
 <script>
     layui.use('form', function(){
         var form = layui.form;
+        $ = layui.jquery;
         form.render();
     });
 </script>
