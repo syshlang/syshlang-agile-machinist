@@ -1,240 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>文档管理系统</title>
+    <title>文档管理系统</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/bootstrap/easyui.css">
-    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/IconExtension.css">
-    <link rel="stylesheet" type="text/css" href="${uiPath}/css/common.css">
-    <link rel="stylesheet" type="text/css" href="${uiPath}/css/jquery-ui-1.9.2.custom.min.css"   />
-    <link rel="stylesheet" type="text/css" href="${uiPath}/css/bootstrap.min.css">
-    <script type="text/javascript" src="${uiPath}/easyui/jquery-1.8.0.min.js"></script>
-    <script type="text/javascript" src="${uiPath}/easyui/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="${uiPath}/js/lib/jquery.format.js"></script>
-    <script type="text/javascript" src="${uiPath}/js/common/pascloudfunctions.js"></script>
-
-
-    <script type="text/javascript" src="/app/easyui/home/js/mainDataGridToolbar.js"></script>
-    <script type="text/javascript" src="/app/easyui/home/js/mainDataGrid.js"></script>
-    <script type="text/javascript" src="/app/easyui/home/js/mainLeft.js"></script>
-    <script type="text/javascript" src="/app/easyui/home/js/mainTab.js"></script>
-    <script type="text/javascript" src="/app/easyui/home/js/databaseForm.js"></script>
-    <script type="text/javascript" src="/app/easyui/home/js/tenantForm.js"></script>
-    <script type="text/javascript" src="/app/easyui/home/js/main.js"></script>
-    
-    <style>
-    .accordion .accordion-body{
-        background:#eee;
-        overflow:hidden;
-    }
-    .tabs li.tabs-selected a.tabs-inner {
-        font-weight: bold;
-        outline: none;
-        color:#008000;
-    }
-    .layout-split-west {
-        border-right: 0px solid #008000;
-    }
-    .layout-split-north {
-        border-bottom: 5px solid #008000;
-    }
-    .layout-split-south {
-        border-top: 5px solid #008000;
-    }
-    .layout-panel-west {
-        z-index: 2;
-        border-top:5px solid #008000;
-        border-left:5px solid #008000;
-        border-bottom:5px solid #008000;
-    }
-    
-    .layout-expand {
-        position: absolute;
-        padding: 0px;
-        font-size: 1px;
-        cursor: pointer;
-        z-index: 1;
-        border-top:5px solid #008000;
-        border-left:5px solid #008000;
-        border-bottom:5px solid #008000;
-    }
-    #center {
-        border-top:5px solid #008000;
-        border-bottom:5px solid #008000;
-        border-right:5px solid #008000;
-        border-left:5px solid #008000;
-    }
-    
-    </style>
-    
-	<script type="text/javascript">
-		$(function(){
-		    initTreeForLeftMenu();
-		    initAccordion();
-		    initMainDataGrid();
-
-		    $('#mainCenter').tabs({
-                onContextMenu:function(e, title,index){
-                    e.preventDefault();
-                    if(index>0){
-                        $('#mm-tab').menu('show', {
-                            left: e.pageX,
-                            top: e.pageY
-                        }).data("tabTitle", title);
-                    }
-                }
-            });
-            
-            $('#mm-tab').menu({
-                onClick : function (item) {
-                    closeTab(this, item.name);
-                }
-            });
-            //setInterval('NetPing()',2000);
-            //$(window).resize(function(){
-                //$("#leftMenu_accor").accordion("resize");
-            //});
-            
-            $('#mainLeft').panel({
-                onResize:function(w,h){
-                    $("#leftMenu_accor").accordion("resize");
-                }
-            });
-            
-            
-		 });
-		 
-		 
-		
-	</script>
-	
-	<style type="text/css">
-	    .formlabel{width:30%;text-align:right;float:left;}
-	    .formInput{float:left;margin-left:10px;}
-	    .border_right{border-right:#ccc 1px solid;}
-	    .border_bottom{border-bottom:#ccc 1px solid;}
-	</style>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="${uiPath}/css/layui.css">
+    <script type="text/javascript"  src="${uiPath}/layui.js"></script>
+    <script type="text/javascript"  src="/app/layui/common/base-common.js"></script>
+    <link rel="stylesheet" type="text/css" href="/app/layui/home/css/home.css">
+    <script type="text/javascript" src="/app/layui/home/js/home.js"></script>
+    <script>
+        if (window != window.top) top.location.href = self.location.href;
+    </script>
 </head>
-<body id="main" class="easyui-layout" style="background-color: #008000;" >
-    <div data-options="region:'north'" style="height:45px;border:0;" class="top2">
-        <div class="" style="float:left;width:40px;text-align:left;color:#ffffff;margin-left:10px;margin-top:5px;"><img src="${uiPath}/images/logo.png" width="40px" /></div>
-        <div class="" style="float:left;width:160px;text-align:left;color:#ffffff;margin-left:5px;"><h2 style="">文档管理系统</h2></div>
-        <!--
-        <div class="" style="float:left;width:0px;text-align:left;height:40px;margin-top:5px;box-shadow: 0px 0px 4px 4px #CCFFFF;">&nbsp;</div>
-        -->
-        <div class="" style="float:right;width:200px;text-align:left;">
-            <div style="float:left;width:149px;">
-                <div style="color:#fff;line-height:49px;width:149px;text-align:right;">欢迎你：admin 
-                    | <a href="#" onClick="exitAction()" style="color:#fff;" >退出</a> &nbsp;
-                </div>
-            </div>
-            <div style="float:right;width:50px;">
-                <img src="${uiPath}/images/profile.png" width="40px" height="40px" style="margin-top:5px;">
-            </div>
-            <div class="" style="clear:both;"></div>
-        </div>
-        
-        <div class="" style="clear:both;"></div>
+<body class="layui-layout-body">
+<nav class="navbar navbar-inverse navbar-fixed-top"><!--navbar-inverse-->
+    <ul class="layui-nav">
+        <li class="layui-nav-item">
+            <a href="">控制台<span class="layui-badge">9</span></a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="">个人中心<span class="layui-badge-dot"></span></a>
+        </li>
+        <li class="layui-nav-item" lay-unselect="">
+            <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
+            <dl class="layui-nav-child">
+                <dd><a href="javascript:;">修改信息</a></dd>
+                <dd><a href="javascript:;">安全管理</a></dd>
+                <dd><a href="/logout">退了</a></dd>
+            </dl>
+        </li>
+    </ul>
+    <div style="margin-top: 15px;">
+
+        <!-- 示例-970 -->
+        <ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-6111334333458862" data-ad-slot="3820120620"></ins>
+
     </div>
-    <div id="mainLeft" data-options="region:'west',split:true,title:'菜单管理',iconCls:'icon-folder'" style="width:180px;" >
-        <!--树形菜单  开始-->
-        
-        <ul id="leftMenu_trees" class="easyui-tree" style="display:none;" >
-		    <div id="mm" class="easyui-menu" style="width:120px;display:none;">
-		            
-		        <div onclick="removeIt()" data-options="iconCls:'icon-remove'">Remove</div>
-		        <div class="menu-sep"></div>
-		        <div onclick="collapse()">Collapse</div>
-		        <div onclick="expand()">Expand</div>
-	        </div>
-		</ul>
-		<ul id="leftMenu_accor" class="easyui-accordion" data-options="fit:true" 
-		    style="width:100%;padding:0;margin:0;height:auto;background-color:#eee">
-        </ul>
-        
-        
-		
-		
-		<!--树形菜单  结束-->
+    <div class="container">
     </div>
-    <div id="center" data-options="region:'center',border:false,resizable:true" style="background-color: #008000;">
-        <div id="mainCenter" class="easyui-tabs" data-options="region:'center',fit:true"  >
-            <div id="mainGridLayout" class="easyui-layout" data-options="title:'首页',fit:true,iconCls:'icon-house'" >
-                <div data-options="region:'center',fit:true" style="padding:0.5px;">
-		            <iframe scrolling="no" frameborder="0"  src="/module/main/main.html" style="width:100%;height:99.5%;"></iframe>
-		        </div>
-            </div>
-        </div>
-        <div id="mm-tab" class="easyui-menu" style="width: 120px;display:none;">
-            <div id="mm-tabrefresh" name="6">刷新</div>
-            <div id="mm-tabclose" name="1">关闭</div>
-            <div id="mm-tabcloseall" name="2">全部关闭</div>
-            <div id="mm-tabcloseother" name="3">除此之外全部关闭</div>
-            <div class="menu-sep"></div>
-            <div id="mm-tabcloseright" name="4">当前页右侧全部关闭</div>
-            <div id="mm-tabcloseleft" name="5">当前页左侧全部关闭</div>
-        </div>
-        
-        
-    </div>
-    
-	
+</nav>
+
 </body>
 </html>
-<script>
-        //删除Tabs
-        function closeTab(menu, type) {
-            
-            var allTabs = $("#mainCenter").tabs('tabs');
-            var allTabtitle = [];
-            $.each(allTabs, function (i, n) {
-                var opt = $(n).panel('options');
-                if (opt.closable)
-                    allTabtitle.push(opt.title);
-            });
-            var curTabTitle = $(menu).data("tabTitle");
-            
-            var curTabIndex = $('#mainCenter').tabs("getTabIndex", $('#mainCenter').tabs("getTab", curTabTitle));
-            
-            switch (type) {
-                case '1':
-                    $('#mainCenter').tabs('close', curTabIndex);
-                    return false;
-                    break;
-                case '2':
-                    for (var i = 0; i < allTabtitle.length; i++) {
-                        $('#mainCenter').tabs('close', allTabtitle[i]);
-                    }
-                    break;
-                case '3':
-                    for (var i = 0; i < allTabtitle.length; i++) {
-                        if (curTabTitle != allTabtitle[i])
-                            $('#mainCenter').tabs('close', allTabtitle[i]);
-                    }
-                    $('#mainCenter').tabs('select', curTabTitle);
-                    break;
-                case '4':
-                    for (var i = curTabIndex; i < allTabtitle.length; i++) {
-                        $('#mainCenter').tabs('close', allTabtitle[i]);
-                    }
-                    $('#mainCenter').tabs('select', curTabTitle);
-                    break;
-                case '5': 
-                    for (var i = 0; i < curTabIndex - 1; i++) {
-                        $('#mainCenter').tabs('close', allTabtitle[i]);
-                    }
-                    $('#mainCenter').tabs('select', curTabTitle);
-                    break;
-                case '6': 
-                    var panel = $("#mainCenter").tabs("getTab", curTabTitle).panel("refresh");
-                    break;
-            }
-
-        }
-
-</script>
