@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="${uiPath}/css/layui.css">
     <script type="text/javascript"  src="${uiPath}/layui.js"></script>
+    <script type="text/javascript"  src="/app/layui/common/base-common.js"></script>
     <link rel="stylesheet" type="text/css" href="/app/layui/login/css/login.css">
     <script type="text/javascript" src="/app/layui/login/js/login.js"></script>
     <script>
@@ -24,20 +25,18 @@
                 <div>
                     <i class="layui-icon layui-icon-username admin-icon admin-icon-username"></i>
                     <input type="text" id="username" name="username" placeholder="请输入用户名"
-                           autocomplete="off"
+                           autocomplete="off" lay-verify="required|username"
                            class="layui-input admin-input admin-input-username">
                 </div>
                 <div>
                     <i class="layui-icon layui-icon-password admin-icon admin-icon-password"></i>
-                    <input type="password" id="password" name="password"
-                           placeholder="请输入密码"
-                           autocomplete="off"
+                    <input type="password" id="password" name="password" placeholder="请输入密码"
+                           autocomplete="off"  lay-verify="required|password"
                            class="layui-input admin-input">
                 </div>
                 <div >
-                    <input type="text" id="verify" name="verify"
-                           placeholder="请输入验证码"
-                           autocomplete="off"
+                    <input type="text" id="verify" name="verify" placeholder="请输入验证码"
+                           autocomplete="off" lay-verify=""
                            class="layui-input admin-input admin-input-verify">
                     <img class="admin-captcha" src="" onclick="updateVerify()">
                 </div>
@@ -46,18 +45,11 @@
                     <input type="checkbox" checked="" id="rememberMe" name="rememberMe" lay-skin="switch" lay-text="是|否">
                     <label class="layui-form-label admin-rememberMe">是否记住</label>
                 </div>
-                <button type="button" class="layui-btn admin-button" lay-submit="" onClick="loginAction()">登陆</button>
+                <button type="button" class="layui-btn admin-button" lay-submit lay-filter="login">登陆</button>
                 <div id="msg" style="margin-top:5px;color:red;display:none;"></div>
             </form>
         </div>
     </div>
 </body>
 <script type="text/javascript" src="/app/layui/login/js/canvas_star.js"></script>
-<script>
-    layui.use('form', function(){
-        var form = layui.form;
-        $ = layui.jquery;
-        form.render();
-    });
-</script>
 </html>
