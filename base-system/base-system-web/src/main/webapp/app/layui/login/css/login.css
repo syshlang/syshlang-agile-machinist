@@ -112,3 +112,13 @@ i {
     display: block;
     cursor: crosshair;
 }
+
+.admin-login-footer{
+    position:fixed;
+    left: 40%;
+    bottom:0;
+    color: grey;
+    line-height:44px;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}

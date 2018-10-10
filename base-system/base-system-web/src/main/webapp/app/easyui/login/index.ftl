@@ -43,6 +43,9 @@
           <div id="msg" style="margin-top:5px;color:red;display:none;"></div>
         </form>
     </div>
+    <div class="login-footer">
+        <span>Copyright&nbsp;&nbsp;© 2017-2018&nbsp;&nbsp;<a href="https://syshlang.github.io/">syshlang.</a> &nbsp;All Rights Reserved </span>
+    </div>
 </body>
 <script type="text/javascript" src="/app/easyui/login/js/canvas_star.js"></script>
 </html>
