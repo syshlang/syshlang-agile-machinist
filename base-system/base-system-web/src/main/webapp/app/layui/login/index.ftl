@@ -43,7 +43,7 @@
                     <input type="checkbox" checked="" id="rememberMe" name="rememberMe" lay-skin="switch" lay-text="是|否">
                     <label class="layui-form-label admin-rememberMe">记住密码</label>
                 </div>
-                <button type="button" class="layui-btn admin-button" lay-submit lay-filter="login">登陆</button>
+                <button type="button" class="layui-btn admin-button" lay-submit lay-filter="login" id="loginBtn">登录</button>
             </form>
         </div>
     </div>

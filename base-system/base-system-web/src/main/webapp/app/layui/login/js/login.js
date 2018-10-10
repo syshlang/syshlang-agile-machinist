@@ -30,3 +30,11 @@ layui.use(['form', 'layer'], function() {
         return false;
     });
 });
+
+document.onkeydown = function(event) {
+    var theEvent = window.event || event;
+    var code = theEvent.keyCode || theEvent.which;
+    if (code === 13) {
+        $("#loginBtn").click();
+    }
+};

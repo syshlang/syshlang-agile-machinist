@@ -39,7 +39,7 @@
           <label class="checkbox">
             <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> 是否记住
           </label>
-          <button id="login" class="btn btn-lg btn-primary btn-block" type="button" onClick="loginAction()">登录</button>
+          <button id="loginBtn" class="btn btn-lg btn-primary btn-block" type="button" onClick="loginAction()">登录</button>
           <div id="msg" style="margin-top:5px;color:red;display:none;"></div>
         </form>
     </div>
