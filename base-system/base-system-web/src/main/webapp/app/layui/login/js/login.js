@@ -23,8 +23,7 @@ layui.use(['form', 'layer'], function() {
             if(data.code == 10000){
                 window.location.href="/system/home/index.html";
             }else{
-                $("#msg").css('display','block');
-                $('#msg').html(data.desc);
+                layer.msg(data.desc, {icon: 5, anim: 6});
             }
             layer.close(loading);
         });

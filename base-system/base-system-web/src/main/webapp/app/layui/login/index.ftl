@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>文档管理系统</title>
     <meta charset="UTF-8">
+	<title>文档管理系统</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="author" content="sunys"/>
     <link rel="stylesheet" href="${uiPath}/css/layui.css">
-    <script type="text/javascript"  src="${uiPath}/layui.js"></script>
-    <script type="text/javascript"  src="/app/layui/common/base-common.js"></script>
     <link rel="stylesheet" type="text/css" href="/app/layui/login/css/login.css">
-    <script type="text/javascript" src="/app/layui/login/js/login.js"></script>
     <script>
         if (window != window.top) top.location.href = self.location.href;
     </script>
 </head>
 <body>
     <canvas id="canvas"></canvas>
-    <div id="container">
+    <div class="container">
         <div class="admin-login-background">
             <form class="layui-form">
                 <div class="layui-input admin-input admin-header">
@@ -43,13 +41,15 @@
                 <div>
                     <i class="layui-icon layui-icon-rememberMe admin-icon admin-icon-rememberMe"></i>
                     <input type="checkbox" checked="" id="rememberMe" name="rememberMe" lay-skin="switch" lay-text="是|否">
-                    <label class="layui-form-label admin-rememberMe">是否记住</label>
+                    <label class="layui-form-label admin-rememberMe">记住密码</label>
                 </div>
                 <button type="button" class="layui-btn admin-button" lay-submit lay-filter="login">登陆</button>
-                <div id="msg" style="margin-top:5px;color:red;display:none;"></div>
             </form>
         </div>
     </div>
 </body>
+<script type="text/javascript"  src="${uiPath}/layui.js"></script>
+<script type="text/javascript"  src="/app/layui/common/base-common.js"></script>
+<script type="text/javascript" src="/app/layui/login/js/login.js"></script>
 <script type="text/javascript" src="/app/layui/login/js/canvas_star.js"></script>
 </html>
