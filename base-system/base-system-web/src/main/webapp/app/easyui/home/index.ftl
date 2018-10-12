@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>文档管理系统</title>
+	<title>${system_name}${system_env}</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -17,16 +17,14 @@
     <script type="text/javascript" src="${uiPath}/easyui/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="${uiPath}/js/lib/jquery.format.js"></script>
     <script type="text/javascript" src="${uiPath}/js/common/pascloudfunctions.js"></script>
+    <script type="text/javascript" src="${basePath}/app/easyui/home/js/mainDataGridToolbar.js"></script>
+    <script type="text/javascript" src="${basePath}/app/easyui/home/js/mainDataGrid.js"></script>
+    <script type="text/javascript" src="${basePath}/app/easyui/home/js/mainLeft.js"></script>
+    <script type="text/javascript" src="${basePath}/app/easyui/home/js/mainTab.js"></script>
+    <script type="text/javascript" src="${basePath}/app/easyui/home/js/databaseForm.js"></script>
+    <script type="text/javascript" src="${basePath}/app/easyui/home/js/tenantForm.js"></script>
+    <script type="text/javascript" src="${basePath}/app/easyui/home/js/main.js"></script>
 
-
-    <script type="text/javascript" src="/app/easyui/home/js/mainDataGridToolbar.js"></script>
-    <script type="text/javascript" src="/app/easyui/home/js/mainDataGrid.js"></script>
-    <script type="text/javascript" src="/app/easyui/home/js/mainLeft.js"></script>
-    <script type="text/javascript" src="/app/easyui/home/js/mainTab.js"></script>
-    <script type="text/javascript" src="/app/easyui/home/js/databaseForm.js"></script>
-    <script type="text/javascript" src="/app/easyui/home/js/tenantForm.js"></script>
-    <script type="text/javascript" src="/app/easyui/home/js/main.js"></script>
-    
     <style>
     .accordion .accordion-body{
         background:#eee;
@@ -73,6 +71,7 @@
     </style>
     
 	<script type="text/javascript">
+        var basePath = '${basePath}';
 		$(function(){
 		    initTreeForLeftMenu();
 		    initAccordion();
@@ -121,9 +120,9 @@
 	</style>
 </head>
 <body id="main" class="easyui-layout" style="background-color: #008000;" >
-    <div data-options="region:'north'" style="height:45px;border:0;" class="top2">
+    <div data-options="region:'north'" style="height:75px;border:0;" class="top2">
         <div class="" style="float:left;width:40px;text-align:left;color:#ffffff;margin-left:10px;margin-top:5px;"><img src="${uiPath}/images/logo.png" width="40px" /></div>
-        <div class="" style="float:left;width:160px;text-align:left;color:#ffffff;margin-left:5px;"><h2 style="">文档管理系统</h2></div>
+        <div class="" style="float:left;text-align:left;color:#ffffff;margin-left:5px;"><h2 style="">${system_name}${system_env}</h2></div>
         <!--
         <div class="" style="float:left;width:0px;text-align:left;height:40px;margin-top:5px;box-shadow: 0px 0px 4px 4px #CCFFFF;">&nbsp;</div>
         -->

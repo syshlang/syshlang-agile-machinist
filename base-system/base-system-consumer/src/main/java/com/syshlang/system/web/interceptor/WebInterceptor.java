@@ -55,7 +55,9 @@ public class WebInterceptor  extends HandlerInterceptorAdapter {
 
         String contextPath = request.getContextPath();
         request.setAttribute("basePath", contextPath);
-        uiPath = contextPath+"/"+uiPath;
+        if (StringUtils.isNotBlank(contextPath)){
+            uiPath = contextPath+uiPath;
+        }
         request.setAttribute("uiPath", uiPath);
         return true;
     }

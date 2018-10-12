@@ -3,22 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="/static/easyui/themes/bootstrap/easyui.css">
-    <link rel="stylesheet" type="text/css" href="/static/easyui/themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="/static/easyui/themes/IconExtension.css">
+	<link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/IconExtension.css">
     
-    <link id="themesUI" href="/static/css/jquery-ui-1.9.2.custom.min.css" rel="stylesheet"  type="text/css"/>
+    <link id="themesUI" href="${uiPath}/css/jquery-ui-1.9.2.custom.min.css" rel="stylesheet"  type="text/css"/>
    
     
-	<script type="text/javascript" src="/static/easyui/jquery-1.8.0.min.js"></script>
-    <script type="text/javascript" src="/static/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="${uiPath}/easyui/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="${uiPath}/easyui/jquery.easyui.min.js"></script>
     
-    <script type="text/javascript" src="/static/js/lib/jquery.format.js"></script>
+    <script type="text/javascript" src="${uiPath}/js/lib/jquery.format.js"></script>
     
-    <script type="text/javascript" src="/static/js/common/pascloudfunctions.js"></script>
+    <script type="text/javascript" src="${uiPath}/js/common/pascloudfunctions.js"></script>
     
-    <script type="text/javascript" src="/app/main/js/mainDataGridToolbar.js"></script>
-    <script type="text/javascript" src="/app/main/js/mainDataGrid.js"></script>
+    <script type="text/javascript" src="${basePath}/app/main/js/mainDataGridToolbar.js"></script>
+    <script type="text/javascript" src="${basePath}/app/main/js/mainDataGrid.js"></script>
     
 	<script type="text/javascript">
 		$(function(){

@@ -2,27 +2,27 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>文档管理系统</title>
-	<link rel="stylesheet" type="text/css" href="/static/easyui/themes/metro/easyui.css">
+	<title>${system_name}${system_env}</title>
+	<link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/metro/easyui.css">
 	
-    <link rel="stylesheet" type="text/css" href="/static/easyui/themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="/static/easyui/themes/IconExtension.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/easyui/themes/IconExtension.css">
     
-    <link rel="stylesheet" type="text/css" href="/static/css/common.css">
+    <link rel="stylesheet" type="text/css" href="${uiPath}/css/common.css">
     
-    <link id="themesUI" href="/static/css/jquery-ui-1.9.2.custom.min.css" rel="stylesheet"  type="text/css"/>
+    <link id="themesUI" href="${uiPath}/css/jquery-ui-1.9.2.custom.min.css" rel="stylesheet"  type="text/css"/>
    
     
-	<script type="text/javascript" src="/static/easyui/jquery-1.8.0.min.js"></script>
-    <script type="text/javascript" src="/static/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="${uiPath}/easyui/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="${uiPath}/easyui/jquery.easyui.min.js"></script>
     
-    <script type="text/javascript" src="/static/js/common/pascloudfunctions.js"></script>
+    <script type="text/javascript" src="${uiPath}/js/common/pascloudfunctions.js"></script>
     
     
-    <script type="text/javascript" src="/app/main/js/mainDataGridToolbar.js"></script>
-    <script type="text/javascript" src="/app/main/js/mainDataGrid.js"></script>
-    <script type="text/javascript" src="/app/main/js/mainLeft.js"></script>
-    <script type="text/javascript" src="/app/main/js/main.js"></script>
+    <script type="text/javascript" src="${basePath}/app/main/js/mainDataGridToolbar.js"></script>
+    <script type="text/javascript" src="${basePath}/app/main/js/mainDataGrid.js"></script>
+    <script type="text/javascript" src="${basePath}/app/main/js/mainLeft.js"></script>
+    <script type="text/javascript" src="${basePath}/app/main/js/main.js"></script>
     
 	<script type="text/javascript">
 		$(function(){
@@ -77,7 +77,7 @@
     <div data-options="region:'north'" style="height:50px;background-color:#99FFFF;border:0;" class="top">
         <!--
         <div class="logo" style="float:left;width:50px;"></div>-->
-        <div class="" style="float:left;width:160px;text-align:left;color:#ffffff;margin-left:20px;"><h2>文档管理系统</h2></div>
+        <div class="" style="float:left;width:160px;text-align:left;color:#ffffff;margin-left:20px;"><h2>${system_name}${system_env}</h2></div>
         <!--
         <div class="" style="float:left;width:1px;text-align:left;height:40px;background-color:#cccccc;margin-top:5px;">&nbsp;</div>
         -->
@@ -92,7 +92,7 @@
                 </div>-->
             </div>
             <div style="float:right;width:50px;">
-                <img src="/static/images/profile.png" width="40px" height="40px" style="margin-top:5px;">
+                <img src="${uiPath}/images/profile.png" width="40px" height="40px" style="margin-top:5px;">
             </div>
             <div class="" style="clear:both;"></div>
         </div>

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>文档管理系统</title>
+	<title>${system_name}${system_env}</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -17,7 +17,7 @@
     <script type="text/javascript" src="${uiPath}/js/lib/jquery.format.js"></script>
     <script type="text/javascript" src="${uiPath}/js/common/pascloudfunctions.js"></script>
     <script type="text/javascript" src="${uiPath}/js/common/pascloudfunctions.js"></script>
-    <script type="text/javascript" src="/app/main/js/mainIndexPage.js"></script>
+    <script type="text/javascript" src="${basePath}/app/main/js/mainIndexPage.js"></script>
 
 	<script type="text/javascript">
 		$(function(){

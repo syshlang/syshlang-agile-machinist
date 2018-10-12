@@ -10,9 +10,9 @@ function loginAction(){
 	}
 	var params = {username:username,password:password,rememberMe:rememberMe};
 	
-	$.post("/system/user/login.json",params,function(data,status){
+	$.post(basePath+"/system/user/login.json",params,function(data,status){
 		if(data.code == 10000){
-			window.location.href="/system/home/index.html";
+			window.location.href=basePath+"/system/home/index.html";
 		}else{
 			//alert('提示',data.desc);	
 			$("#msg").css('display','block'); 
