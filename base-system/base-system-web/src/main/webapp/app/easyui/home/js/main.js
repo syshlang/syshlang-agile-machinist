@@ -30,7 +30,7 @@ function exitAction(){
 			window.location.href="/module/login/index.html";
 		}
 	});*/
-    window.location.href="/logout";
+    window.location.href=basePath+"/logout";
 }
 
 
