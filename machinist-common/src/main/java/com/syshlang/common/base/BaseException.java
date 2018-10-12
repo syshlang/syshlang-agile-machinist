@@ -9,6 +9,7 @@
 
 package com.syshlang.common.base;
 
+import com.syshlang.common.util.MessageSourceHelper;
 import com.syshlang.common.util.MyMessageUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +25,7 @@ public class BaseException extends RuntimeException{
     private static final long serialVersionUID = 1L;
     private static Logger log = LoggerFactory.getLogger(BaseException.class);
 
-    /**
+    /**SpringUtils.java
      * 所属模块
      */
     private String module;
@@ -35,6 +36,11 @@ public class BaseException extends RuntimeException{
     private Integer code;
 
     /**
+     * 错误编码
+     */
+    private String codeStr;
+
+    /**
      * 错误码对应的参数
      */
     private Object[] args;
@@ -43,6 +49,10 @@ public class BaseException extends RuntimeException{
      * 错误消息
      */
     private String defaultMessage;
+
+    public BaseException() {
+
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -64,6 +74,14 @@ public class BaseException extends RuntimeException{
         this.code = code;
     }
 
+    public String getCodeStr() {
+        return codeStr;
+    }
+
+    public void setCodeStr(String codeStr) {
+        this.codeStr = codeStr;
+    }
+
     public Object[] getArgs() {
         return args;
     }
@@ -80,31 +98,32 @@ public class BaseException extends RuntimeException{
         this.defaultMessage = defaultMessage;
     }
 
-    public BaseException(String module, Integer code, Object[] args, String defaultMessage) {
+    public BaseException(String module, Integer code,String codeStr, Object[] args, String defaultMessage) {
         this.module = module;
         this.code = code;
+        this.codeStr = codeStr;
         this.args = args;
         this.defaultMessage = defaultMessage;
     }
 
-    public BaseException(String module, Integer code, Object[] args)
+    public BaseException(String module, Integer code,String codeStr, Object[] args)
     {
-        this(module, code, args, null);
+        this(module, code,codeStr, args, null);
     }
 
     public BaseException(String module, String defaultMessage)
     {
-        this(module, null, null, defaultMessage);
+        this(module, null, null,null, defaultMessage);
     }
 
     public BaseException(Integer code, Object[] args)
     {
-        this(null, code, args, null);
+        this(null, code,null, args, null);
     }
 
     public BaseException(String defaultMessage)
     {
-        this(null, null, null, defaultMessage);
+        this(null, null, null,null, defaultMessage);
     }
 
     public BaseException(String defaultMessage,Throwable throwable){
@@ -120,8 +139,8 @@ public class BaseException extends RuntimeException{
     @Override
     public String getMessage() {
         String message = null;
-        if (code != null) {
-            message = MyMessageUtils.message(String.valueOf(code), args);
+        if (codeStr != null) {
+            message = MessageSourceHelper.getMessage(String.valueOf(codeStr), args);
         }
         if (message == null) {
             message = defaultMessage;

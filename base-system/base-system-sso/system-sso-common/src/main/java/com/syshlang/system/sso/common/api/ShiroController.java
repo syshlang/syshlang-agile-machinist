@@ -26,7 +26,7 @@ public class ShiroController extends BaseController {
 
     @Override
     protected String doExceptionHandler(HttpServletRequest request, HttpServletResponse response, Exception exception) {
-        LOGGER.error("详情：", exception);
+        LOGGER.error("详情：{}", exception.toString());
         request.setAttribute("ex", exception);
         if (null != request.getHeader("X-Requested-With")
                 && "XMLHttpRequest".equalsIgnoreCase(request.getHeader("X-Requested-With"))) {

@@ -15,12 +15,12 @@ import com.syshlang.common.base.BaseException;
  * @author sunys
  */
 public class ShiroException extends BaseException {
-    public ShiroException(String module, Integer code, Object[] args, String defaultMessage) {
-        super(module, code, args, defaultMessage);
+    public ShiroException(String module, Integer code,String codeStr, Object[] args, String defaultMessage) {
+        super(module, code,codeStr, args, defaultMessage);
     }
 
-    public ShiroException(String module, Integer code, Object[] args) {
-        super(module, code, args);
+    public ShiroException(String module, Integer code,String codeStr, Object[] args) {
+        super(module, code, codeStr,args);
     }
 
     public ShiroException(String module, String defaultMessage) {
