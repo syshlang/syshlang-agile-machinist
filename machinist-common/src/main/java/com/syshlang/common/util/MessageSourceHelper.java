@@ -9,6 +9,7 @@
 
 package com.syshlang.common.util;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 
 import java.util.Locale;
@@ -45,8 +46,12 @@ public class MessageSourceHelper {
     	if (messageSource == null){
     		return null;
 		}
-		return messageSource.getMessage(key, arguments, locale);
+		String message = messageSource.getMessage(key, arguments, locale);
+    	if (StringUtils.isNotBlank(message) && message.equals(key)){
+			return null;
+		}
+		return message;
 	}
-	
+
 
 }
