@@ -13,6 +13,7 @@
     </script>
 </head>
 <body class="layui-layout-body">
+<#--<#--https://gitee.com/lylyly123/based_on_the_layui_community/blob/master/src/main/webapp/index.jsp-->-->
 <nav class="navbar navbar-inverse navbar-fixed-top"><!--navbar-inverse-->
     <ul class="layui-nav">
         <li class="layui-nav-item">
