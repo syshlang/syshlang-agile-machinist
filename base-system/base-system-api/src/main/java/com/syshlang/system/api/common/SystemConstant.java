@@ -73,7 +73,7 @@ public class SystemConstant extends ApiConstant {
      * 系统异常类型枚举
      */
     public enum SYSTEM_EXCEPTION{
-        EXCEPTION_USER(1010,"user.Login","用户相关异常"),
+        EXCEPTION_USER(1010,"exception.user.Login","用户相关异常"),
         EXCEPTION_PARAM(1020,"exception.param","参数相关异常");
         private final Integer code; //异常代号前缀
         private final String codeStr; //异常编码
