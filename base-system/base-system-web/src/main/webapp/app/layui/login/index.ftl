@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-	<title>文档管理系统</title>
+	<title>${system_name}${system_env}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="author" content="sunys"/>
     <link rel="stylesheet" href="${uiPath}/css/layui.css">
-    <link rel="stylesheet" type="text/css" href="/app/layui/login/css/login.css">
+    <link rel="stylesheet" type="text/css" href="${basePath}/app/layui/login/css/login.css">
     <script>
         if (window != window.top) top.location.href = self.location.href;
+        var basePath = '${basePath}';
     </script>
 </head>
 <body>
@@ -52,7 +53,7 @@
     </div>
 </body>
 <script type="text/javascript"  src="${uiPath}/layui.js"></script>
-<script type="text/javascript"  src="/app/layui/common/base-common.js"></script>
-<script type="text/javascript" src="/app/layui/login/js/login.js"></script>
-<script type="text/javascript" src="/app/layui/login/js/canvas_star.js"></script>
+<script type="text/javascript"  src="${basePath}/app/layui/common/base-common.js"></script>
+<script type="text/javascript" src="${basePath}/app/layui/login/js/login.js"></script>
+<script type="text/javascript" src="${basePath}/app/layui/login/js/canvas_star.js"></script>
 </html>

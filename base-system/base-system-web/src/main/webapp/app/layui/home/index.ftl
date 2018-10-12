@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>文档管理系统</title>
+    <title>${system_name}${system_env}</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="${uiPath}/css/layui.css">
-    <script type="text/javascript"  src="${uiPath}/layui.js"></script>
-    <script type="text/javascript"  src="/app/layui/common/base-common.js"></script>
-    <link rel="stylesheet" type="text/css" href="/app/layui/home/css/home.css">
-    <script type="text/javascript" src="/app/layui/home/js/home.js"></script>
+    <link rel="stylesheet" type="text/css" href="${basePath}/app/layui/home/css/home.css">
     <script>
         if (window != window.top) top.location.href = self.location.href;
+        var basePath = '${basePath}';
     </script>
 </head>
 <body class="layui-layout-body">
@@ -41,6 +39,8 @@
     <div class="container">
     </div>
 </nav>
-
 </body>
+<script type="text/javascript"  src="${uiPath}/layui.js"></script>
+<script type="text/javascript"  src="${basePath}/app/layui/common/base-common.js"></script>
+<script type="text/javascript" src="${basePath}/app/layui/home/js/home.js"></script>
 </html>

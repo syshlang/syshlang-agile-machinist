@@ -19,9 +19,9 @@ layui.use(['form', 'layer'], function() {
     //监听提交
     form.on('submit(login)', function (data) {
         var loading = layer.load(1);
-        $.post("/system/user/login.json",data.field,function(data,status){
+        $.post(basePath+"/system/user/login.json",data.field,function(data,status){
             if(data.code == 10000){
-                window.location.href="/system/home/index.html";
+                window.location.href=basePath+"/system/home/index.html";
             }else{
                 layer.msg(data.desc, {icon: 5, anim: 6});
             }
