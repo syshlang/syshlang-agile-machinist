@@ -9,6 +9,7 @@
 
 package com.syshlang.common.util.enumutil;
 
+import com.syshlang.common.base.BaseException;
 import org.apache.commons.lang3.EnumUtils;
 
 import java.lang.reflect.Field;
@@ -65,10 +66,44 @@ public class EnumUtil extends EnumUtils {
             }
             Method method = e.getClass().getDeclaredMethod("getDesc");
             Object result = method.invoke(e);
-            return String.valueOf(result);
+            if (result != null){
+                return String.valueOf(result);
+            }
         } catch (IllegalArgumentException | NoSuchMethodException
                 | IllegalAccessException | InvocationTargetException var3) {
             return null;
         }
+        return null;
     }
+
+    public static  <E extends Enum<E>>  BaseException productException(E e,Object[] args,String module){
+        BaseException baseException = new BaseException();
+        try {
+            if (e == null) {
+                return null;
+            }
+            Method methodCode = e.getClass().getDeclaredMethod("getCode");
+            Object resultCode = methodCode.invoke(e);
+            if (resultCode != null){
+                baseException.setCode(Integer.valueOf(String.valueOf(resultCode)));
+            }
+            Method methodCodeStr = e.getClass().getDeclaredMethod("getCodeStr");
+            Object resultCodeStr = methodCodeStr.invoke(e);
+            if (resultCodeStr != null){
+                baseException.setCodeStr(String.valueOf(resultCodeStr));
+            }
+            Method methodDesc = e.getClass().getDeclaredMethod("getDesc");
+            Object resultDesc = methodDesc.invoke(e);
+            if (resultDesc != null){
+                baseException.setDefaultMessage(String.valueOf(resultDesc));
+            }
+            if (args != null){
+                baseException.setArgs(args);
+            }
+            baseException.setModule(module);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e1) {
+        }
+        return baseException;
+    }
+
 }
