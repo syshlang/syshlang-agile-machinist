@@ -22,6 +22,7 @@
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
+    <#--https://gitee.com/lylyly123/based_on_the_layui_community/tree/master/src/main/webapp/js-->
     <!-- 顶部 -->
     <div class="layui-header header">
         <div class="layui-main">
@@ -40,7 +41,7 @@
                     <a href="">个人中心<span class="layui-badge-dot"></span></a>
                 </li>
                 <li class="layui-nav-item" lay-unselect="">
-                    <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
+                    <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img">admin</a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;">修改信息</a></dd>
                         <dd><a href="javascript:;">安全管理</a></dd>
