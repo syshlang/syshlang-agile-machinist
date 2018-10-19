@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
 	<title>${system_name}${system_env}</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="author" content="sunys"/>
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="${uiPath}/css/layui.css">
     <link rel="stylesheet" type="text/css" href="${basePath}/app/layui/login/css/login.css">
     <script>
