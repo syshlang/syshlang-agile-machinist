@@ -29,7 +29,7 @@ public class ShiroFilterChainDefinitionMapBuilder{
         map.put("/swagger-resources/**", "anon");
         map.put("/v2/api-docs/**", "anon");
         map.put("/webjars/springfox-swagger-ui/**", "anon");
-        map.put("/**", "forceLogout,authc");
+        map.put("/**", "forceLogout,authc,login");
         return map;
     }
 }

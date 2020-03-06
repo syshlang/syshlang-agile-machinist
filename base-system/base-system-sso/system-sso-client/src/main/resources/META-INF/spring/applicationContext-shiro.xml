@@ -32,6 +32,7 @@
             <util:map>
                 <entry key="authc" value-ref="authenticationFilter"/>
                 <entry key="forceLogout" value-ref="sessionForceLogout"/>
+                <entry key="login" value-ref="loginFilter"/>
             </util:map>
         </property>
         <property name="filterChainDefinitionMap" ref="filterChainDefinitionMap"/>
@@ -136,6 +137,8 @@
         <property name="loginUrl" value="${system.loginUrl}"/>
         <property name="forceLogout" value="${shiro.forceLogout.flag}"/>
     </bean>
+
+    <bean id="loginFilter" class="com.syshlang.system.sso.client.filter.LoginFilter"/>
 
     <!-- 配置一个 bean, 该 bean 实际上是一个 Map. 通过实例工厂方法的方式 -->
     <bean id="filterChainDefinitionMap"
